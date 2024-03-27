@@ -7,12 +7,12 @@ class InputField extends StatefulWidget {
   final String hintText;
   final Key? fieldKey;
   final bool? isPasswordField;
-  final prefixIcon;
+  final IconData? prefixIcon;
   const InputField({
     super.key,
     this.controller,
     required this.hintText,
-    required this.prefixIcon,
+    this.prefixIcon,
     this.fieldKey,
     this.isPasswordField
   });
@@ -50,11 +50,11 @@ class _InputFieldState extends State<InputField> {
         contentPadding:
             const EdgeInsets.only(left:15,right:15),
         focusedBorder: OutlineInputBorder(
-          // borderSide: BorderSide(color: Colors.white),
+          borderSide: BorderSide(color: Colors.white),
           borderRadius: BorderRadius.circular(5),
         ),
         enabledBorder: UnderlineInputBorder(
-          // borderSide: BorderSide(color: Colors.white),
+          borderSide: BorderSide(color: Colors.white),
           borderRadius: BorderRadius.circular(5),
         ),
         prefixIcon: Icon(
@@ -62,19 +62,6 @@ class _InputFieldState extends State<InputField> {
           color: Colors.grey,
           size: 20,
         ),
-        suffixIcon:GestureDetector(
-            onTap: () {
-              setState(() {
-                print(_obscureText);
-                _obscureText = !_obscureText;
-                print(_obscureText);
-              });
-            },
-            child:AbsorbPointer(
-              // absorbing: widget.isPasswordField??false,
-              child: (widget.isPasswordField==true)? Icon(_obscureText ? Icons.visibility_off : Icons.visibility, color: _obscureText == false ? Colors.blue : Colors.grey,) : Text(""),  
-            )
-          ),
       ),
       
     );

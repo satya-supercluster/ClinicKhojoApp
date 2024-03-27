@@ -31,11 +31,19 @@ class EmergencyAppointmentTile extends StatefulWidget {
 }
 
 class _EmergencyAppointmentTileState extends State<EmergencyAppointmentTile> {
+  bool check=false;
+  @override
+  void initState(){
+    super.initState();
+    setState(() {
+      check=false;
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Container(
       width:MediaQuery.of(context).size.width,
-      height:70,
+      height:80,
       clipBehavior: Clip.hardEdge,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(14),
@@ -52,7 +60,7 @@ class _EmergencyAppointmentTileState extends State<EmergencyAppointmentTile> {
               ),
               color: Color.fromARGB(255, 19, 3, 190),
             ),
-            width:(MediaQuery.of(context).size.width)/4,
+            width:(MediaQuery.of(context).size.width)/5,
             padding: EdgeInsets.all(5),
             child:Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -67,20 +75,21 @@ class _EmergencyAppointmentTileState extends State<EmergencyAppointmentTile> {
                       color: Colors.white,
                     ),
                     SizedBox(width:5),
-                    Text(widget.day+" "+widget.month,style:TextStyle(fontSize: 12,color: Colors.white))
+                    Text(widget.day+" "+widget.month,style:TextStyle(fontSize: 10,color: Colors.white))
                   ],
                 ),
+                SizedBox(height:3),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(widget.start+"-"+widget.end,style:TextStyle(fontSize: 10,fontWeight: FontWeight.w600,color: Colors.white))
+                    Text(widget.start+"-"+widget.end,style:TextStyle(fontSize: 7,fontWeight: FontWeight.w600,color: Colors.white))
                   ],
                 )
               ],
             )
           ),
           Container(
-            width:2.5*((MediaQuery.of(context).size.width)/4),
+            width:4*((MediaQuery.of(context).size.width)/5)-50,
             child:Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -90,14 +99,37 @@ class _EmergencyAppointmentTileState extends State<EmergencyAppointmentTile> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(widget.name,style:TextStyle(fontSize: 16,fontWeight: FontWeight.w600,color: Colors.black)),
-                          SizedBox(width:5),
-                          Container(
-                            padding: EdgeInsets.all(2),
-                            color: Colors.red,
-                            child: Text("Emergency",style:TextStyle(fontSize: 8,fontWeight: FontWeight.w400,color: Colors.white))
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Text(widget.name,style:TextStyle(fontSize: 16,fontWeight: FontWeight.w600,color: Colors.black)),
+                              SizedBox(width:5),
+                              Container(
+                                padding: EdgeInsets.all(2),
+                                color: Colors.red,
+                                child: Text("Emergency",style:TextStyle(fontSize: 8,fontWeight: FontWeight.w400,color: Colors.white))
+                              )
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              Text("Arrived",style: TextStyle(fontSize: 10,fontWeight: FontWeight.w600,color: Colors.red),),
+                              SizedBox(width:5),
+                              Container(
+                                height: 20,
+                                child: Switch(
+                                  value:check,
+                                  activeColor: Colors.redAccent,
+                                  onChanged: (value){
+                                    setState(() {
+                                      check=value;
+                                    });
+                                  },
+                                ),
+                              ),
+                            ],
                           )
                         ],
                       ),
@@ -110,7 +142,10 @@ class _EmergencyAppointmentTileState extends State<EmergencyAppointmentTile> {
                           Container(
                             child:Text("Gender:"+widget.gender,style:TextStyle(fontSize: 10,fontWeight: FontWeight.w600,color: Colors.black54)),
                           ),
-                          SizedBox(width:10),
+                        ],
+                      ),
+                      Row(
+                        children: [
                           Container(
                             child:Text("Place:"+widget.place,style:TextStyle(fontSize: 10,fontWeight: FontWeight.w600,color: Colors.black54)),
                           ),
