@@ -1,6 +1,4 @@
-import 'package:clinic_khojo/pages/public/login.dart';
-import 'package:clinic_khojo/pages/public/signup.dart';
-import 'package:clinic_khojo/pages/public/splash.dart';
+import 'package:clinic_khojo/pages/public/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,18 +7,15 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: LoginScreen(),
+      home: SplashScreen(),
     );
   }
 }
