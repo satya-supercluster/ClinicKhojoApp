@@ -1,3 +1,4 @@
+import 'package:clinic_khojo/pages/public/otp_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -22,14 +23,16 @@ class _LoginPageState extends State<LoginPage> {
         body:SingleChildScrollView(
           child: Container(
             width:width,
-            height: height-25,
+            height: height*0.98,
+            alignment: Alignment.center,
             padding: EdgeInsets.symmetric(horizontal: 10),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Expanded(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Stack(
                         children: [
@@ -64,17 +67,15 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       Row(
                         children: [
-                          Expanded(
-                            child: Padding(
-                              padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
-                              child: Text(
-                                'Enter your mobile number and login',
-                                style: TextStyle(
-                                  color: Color(0xFFFFFFFF),
-                                  fontSize: 16,
-                                  decoration: TextDecoration.none,
-                                  fontWeight: FontWeight.w400,
-                                ),
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
+                            child: Text(
+                              'Enter your mobile number and login',
+                              style: TextStyle(
+                                color: Color(0xFFFFFFFF),
+                                fontSize: 16,
+                                decoration: TextDecoration.none,
+                                fontWeight: FontWeight.w400,
                               ),
                             ),
                           ),
@@ -82,35 +83,32 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       Row(
                         children: [
-                          Expanded(
-                            child: Padding(
-                              padding: const EdgeInsets.fromLTRB(20, 10, 0, 0),
-                              child: Text(
-                                'Phone Number',
-                                style: TextStyle(
-                                  color: Color(0xFFFFFFFF),
-                                  fontSize: 12,
-                                  decoration: TextDecoration.none,
-                                  fontWeight: FontWeight.w400,
-                                ),
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(20, 10, 0, 0),
+                            child: Text(
+                              'Phone Number',
+                              style: TextStyle(
+                                color: Color(0xFFFFFFFF),
+                                fontSize: 12,
+                                decoration: TextDecoration.none,
+                                fontWeight: FontWeight.w400,
                               ),
                             ),
                           ),
                         ],
                       ),
-                      // DividerRow(width: MediaQuery.of(context).size.width,pad: 1),
                       Padding(
                         padding: const EdgeInsets.fromLTRB(20,5,20,10),
                         child: TextFormField(
                           textAlignVertical: TextAlignVertical.center,
-                          // keyboardType: TextInputType.number,
-                          // inputFormatters:[
-                          //   FilteringTextInputFormatter.allow(RegExp('[0-9]')),
-                          //   LengthLimitingTextInputFormatter(10)
-                          // ],
+                          keyboardType: TextInputType.number,
+                          inputFormatters:[
+                            FilteringTextInputFormatter.allow(RegExp('[0-9]')),
+                            LengthLimitingTextInputFormatter(10)
+                          ],
                           cursorColor: Colors.black,
                           controller: phoneNumberController,
-                          autofocus: true,
+                          autofocus: false,
                           style: TextStyle(fontSize: 15,fontWeight: FontWeight.w400,color: Colors.black),
                           decoration: InputDecoration(
                             filled: true,
@@ -135,12 +133,17 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Expanded(
                             child: GestureDetector(
                               onTap: () {
                                 // Handle sign up action
-                                
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (BuildContext context) => OtpPage()));
                               },
                               child: Container(
                                 margin: const EdgeInsets.fromLTRB(20, 60, 20,0),
@@ -182,7 +185,7 @@ class _LoginPageState extends State<LoginPage> {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 45, 0, 5),
+                        padding: const EdgeInsets.fromLTRB(0, 0, 45, 5),
                         child: Text(
                           'An ISO 9001:2015 Certified Company',
                           style: TextStyle(
