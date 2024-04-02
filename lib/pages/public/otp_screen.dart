@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:clinic_khojo/pages/private/doctor_search_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -197,17 +198,23 @@ class _OtpPageState extends State<OtpPage> {
                             ),
                             shadowColor: MaterialStateProperty.all<Color>(Colors.red),
                           ),
-                          onPressed: isLoading ? null : () async {
-                            if (otpE.length == 6) {
-                              isLoading=true;
-                              // _verifyOTP(otpE);
-                            }
-                            },
+                          // onPressed: isLoading ? null : () async {
+                          //   if (otpE.length == 6) {
+                          //     isLoading=true;
+                          //     // _verifyOTP(otpE);
+                          //   }
+                          //   },
+                          onPressed: (){
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (BuildContext context) => SearchDoctors()));
+                          },
                           child: isLoading
                               ? CircularProgressIndicator() // Show loader when loading
                               : Text(
-                            isLoading ? 'Verifying...' : 'Verify' ,
-                            style: TextStyle(color: Color(0xFF0529BB), fontWeight: FontWeight.bold, fontSize: 17),
+                            isLoading ? 'Verifying...' : 'Login' ,
+                            style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold, fontSize: 17),
                           ),
                         ),
                       ),
