@@ -1,3 +1,6 @@
+import 'package:clinic_khojo/pages/private/appointment_history_page.dart';
+import 'package:clinic_khojo/pages/private/search_doctor_screen.dart';
+import 'package:clinic_khojo/pages/private/doctors_profile_page.dart';
 import 'package:clinic_khojo/pages/public/splash_screen.dart';
 import 'package:flutter/material.dart';
 
