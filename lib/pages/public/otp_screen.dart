@@ -1,11 +1,11 @@
 import 'dart:async';
 
-import 'package:clinic_khojo/pages/private/home_page.dart';
 import 'package:clinic_khojo/pages/private/navigation.dart';
-import 'package:clinic_khojo/pages/private/search_doctor_screen.dart';
+import 'package:clinic_khojo/utils/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:pinput/pinput.dart';
 
 class OtpPage extends StatefulWidget {
@@ -118,12 +118,7 @@ class _OtpPageState extends State<OtpPage> {
                             padding: EdgeInsets.symmetric(horizontal: 20),
                             child: Text(
                               'Please enter the verification code we\'ve sent you on +91 '+phoneNumber+". Edit",
-                              style: TextStyle(
-                                color: Color(0xFFFFFFFF),
-                                fontSize: 16,
-                                decoration: TextDecoration.none,
-                                fontWeight: FontWeight.w400,
-                              ),
+                              style:GoogleFonts.poppins(fontSize:14,fontWeight:FontWeight.w400,color:Colors.white),
                             ),
                           ),
                         ),
@@ -167,20 +162,19 @@ class _OtpPageState extends State<OtpPage> {
                       )
                     ),
                     Padding(
-                      padding: const EdgeInsets.fromLTRB(0, 5, 20, 0),
-                      child: Align(
-                        alignment: Alignment.topRight,
-                        child: Text(
-                          formatTime(_timeLeftInSeconds),
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 14,
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.w300,
+                      padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 32),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text("Trying to capture",style:GoogleFonts.poppins(fontSize:8,fontWeight:FontWeight.w500,color:Colors.white)),
+                          Text(
+                            formatTime(_timeLeftInSeconds),
+                            style:GoogleFonts.poppins(fontSize:8,fontWeight:FontWeight.w500,color:Colors.white)
                           ),
-                        ),
+                        ],
                       ),
                     ),
+                    SizedBox(height:100),
                     Container(
                       width: width,
                       height:50,
@@ -197,7 +191,7 @@ class _OtpPageState extends State<OtpPage> {
                             ),
                             
                           ),
-                          shadowColor: MaterialStateProperty.all<Color>(Colors.red),
+                          shadowColor: MaterialStateProperty.all<Color>(Constants.textRed),
                         ),
                         // onPressed: isLoading ? null : () async {
                         //   if (otpE.length == 6) {
@@ -215,7 +209,7 @@ class _OtpPageState extends State<OtpPage> {
                             ? CircularProgressIndicator() // Show loader when loading
                             : Text(
                           isLoading ? 'Verifying...' : 'Login' ,
-                          style: TextStyle(color: Colors.red, fontWeight: FontWeight.bold, fontSize: 17),
+                          style: GoogleFonts.poppins(color:Constants.textRed, fontWeight: FontWeight.w500, fontSize: 13),
                         ),
                       ),
                     ),
@@ -227,18 +221,11 @@ class _OtpPageState extends State<OtpPage> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(0, 0, 45, 5),
-                      child: Text(
-                        'An ISO 9001:2015 Certified Company',
-                        style: TextStyle(
-                          color: Color(0xFFFFFFFF),
-                          fontSize: 12,
-                          fontWeight: FontWeight.w300,
-                          decoration: TextDecoration.none,
-                        ),
-                      ),
+                    Text(
+                      'An ISO 9001:2015 Certified Company',
+                      style:GoogleFonts.poppins(fontSize:10,fontWeight:FontWeight.w400,color:Colors.white)
                     ),
+                    SizedBox(height:5),
                     Padding(
                       padding: const EdgeInsets.fromLTRB(0, 0, 0, 20),
                       child: Row(
@@ -246,12 +233,7 @@ class _OtpPageState extends State<OtpPage> {
                         children: [
                           Text(
                             'Powered by',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 14,
-                              fontWeight: FontWeight.w400,
-                              decoration: TextDecoration.none,
-                            ),
+                            style:GoogleFonts.poppins(fontSize:12,fontWeight:FontWeight.w400,color:Colors.white)
                           ),
                           SizedBox(width: 5), // Adjust the spacing between text and image
                           Image.asset(
@@ -262,12 +244,7 @@ class _OtpPageState extends State<OtpPage> {
                           SizedBox(width: 5), // Adjust the spacing between image and text
                           Text(
                             'ZORWAY',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 14,
-                              fontWeight: FontWeight.w400,
-                              decoration: TextDecoration.none,
-                            ),
+                            style:GoogleFonts.poppins(fontSize:12,fontWeight:FontWeight.w400,color:Colors.white)
                           ),
                         ],
                       ),

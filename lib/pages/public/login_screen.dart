@@ -1,8 +1,10 @@
 import 'package:clinic_khojo/pages/public/otp_screen.dart';
+import 'package:clinic_khojo/utils/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -70,12 +72,7 @@ class _LoginPageState extends State<LoginPage> {
                           padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
                           child: Text(
                             'Enter your mobile number and login',
-                            style: TextStyle(
-                              color: Color(0xFFFFFFFF),
-                              fontSize: 16,
-                              decoration: TextDecoration.none,
-                              fontWeight: FontWeight.w400,
-                            ),
+                            style:GoogleFonts.poppins(fontSize:14,fontWeight:FontWeight.w400,color:Colors.white)
                           ),
                         ),
                       ],
@@ -86,12 +83,7 @@ class _LoginPageState extends State<LoginPage> {
                           padding: const EdgeInsets.fromLTRB(20, 10, 0, 0),
                           child: Text(
                             'Phone Number',
-                            style: TextStyle(
-                              color: Color(0xFFFFFFFF),
-                              fontSize: 12,
-                              decoration: TextDecoration.none,
-                              fontWeight: FontWeight.w400,
-                            ),
+                            style:GoogleFonts.poppins(fontSize:8,fontWeight:FontWeight.w400,color:Colors.white)
                           ),
                         ),
                       ],
@@ -126,7 +118,7 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                           prefixIcon:SizedBox(
                             width: 30,
-                            child: Center(child: Text("+91",style: TextStyle(fontSize: 15,fontWeight: FontWeight.w400,color: Colors.black38),))  
+                            child: Center(child: Text("+91",style:GoogleFonts.poppins(fontSize:13,fontWeight:FontWeight.w400,color:Constants.themeGrey),))  
                           ),
                         ),
                       ),
@@ -156,12 +148,7 @@ class _LoginPageState extends State<LoginPage> {
                                   padding: const EdgeInsets.all(10),
                                   child: Text(
                                     'Get Otp',
-                                    style: TextStyle(
-                                      color: Color(0xFFFA0808),
-                                      fontSize: 16,
-                                      decoration: TextDecoration.none,
-                                      fontWeight: FontWeight.w600,
-                                    ),
+                                    style:GoogleFonts.poppins(fontSize:13,fontWeight:FontWeight.w500,color:Constants.textRed),
                                   ),
                                 ),
                               ),
@@ -173,7 +160,7 @@ class _LoginPageState extends State<LoginPage> {
                     SizedBox(height:10),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20),
-                      child: Text("By Continuing, You agree to clinic khojo's Terms of Services and Privacy Poilicy.",style: TextStyle(fontSize: 12,color: Colors.white70),),
+                      child: Text("By Continuing, You agree to clinic khojo's Terms of Services and Privacy Poilicy.",style:GoogleFonts.poppins(fontSize:10,fontWeight:FontWeight.w500,color:Colors.white),),
                     ),
                   ],
                 ),
@@ -183,18 +170,11 @@ class _LoginPageState extends State<LoginPage> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(0, 0, 45, 5),
-                      child: Text(
-                        'An ISO 9001:2015 Certified Company',
-                        style: TextStyle(
-                          color: Color(0xFFFFFFFF),
-                          fontSize: 12,
-                          fontWeight: FontWeight.w300,
-                          decoration: TextDecoration.none,
-                        ),
-                      ),
+                    Text(
+                      'An ISO 9001:2015 Certified Company',
+                      style:GoogleFonts.poppins(fontSize:10,fontWeight:FontWeight.w400,color:Colors.white)
                     ),
+                    SizedBox(height:5),
                     Padding(
                       padding: const EdgeInsets.fromLTRB(0, 0, 0, 20),
                       child: Row(
@@ -202,12 +182,7 @@ class _LoginPageState extends State<LoginPage> {
                         children: [
                           Text(
                             'Powered by',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 14,
-                              fontWeight: FontWeight.w400,
-                              decoration: TextDecoration.none,
-                            ),
+                            style:GoogleFonts.poppins(fontSize:12,fontWeight:FontWeight.w400,color:Colors.white)
                           ),
                           SizedBox(width: 5), // Adjust the spacing between text and image
                           Image.asset(
@@ -218,12 +193,7 @@ class _LoginPageState extends State<LoginPage> {
                           SizedBox(width: 5), // Adjust the spacing between image and text
                           Text(
                             'ZORWAY',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 14,
-                              fontWeight: FontWeight.w400,
-                              decoration: TextDecoration.none,
-                            ),
+                            style:GoogleFonts.poppins(fontSize:12,fontWeight:FontWeight.w400,color:Colors.white)
                           ),
                         ],
                       ),

@@ -2,7 +2,6 @@ import 'package:clinic_khojo/pages/private/search_doctor_screen.dart';
 import 'package:clinic_khojo/utils/constants.dart';
 import 'package:clinic_khojo/widgets/features/home_page/sort_tile.dart';
 import 'package:clinic_khojo/widgets/global/search_bar.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
