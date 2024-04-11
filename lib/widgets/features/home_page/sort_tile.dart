@@ -24,6 +24,8 @@ class SortingTile extends StatefulWidget {
 class _SortingTileState extends State<SortingTile> {
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width; // Gives the width
+    double height = MediaQuery.of(context).size.height;
     return GestureDetector(
       onTap:(){
         Navigator.push(
@@ -33,20 +35,19 @@ class _SortingTileState extends State<SortingTile> {
       },
       child: Container(
         // height:99,
-        width:60,
         child:Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Container(
-              width:60,
-              height:60,
+              width:width*0.2,
+              height:width*0.2,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.all(Radius.circular(8)),
                 color:Constants.themeLightBlue,
               ),
               child:Center(
-                child:Image.asset(widget.image,width:40,height:40)
+                child:Image.asset(widget.image,width:width*0.17,height:width*0.17,fit: BoxFit.fill,)
               )
             ),
             SizedBox(height:8),

@@ -1,6 +1,7 @@
 import 'package:clinic_khojo/pages/public/otp_screen.dart';
 import 'package:clinic_khojo/utils/constants.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
@@ -41,18 +42,18 @@ class _LoginPageState extends State<LoginPage> {
                           alignment: Alignment.center,
                           child: Container(
                             width: width * 0.5,
-                            height: width * 0.5,
+                            height: width * 0.307,
                             decoration: BoxDecoration(
                               image: DecorationImage(
-                                image: AssetImage("assets/appLogo1.jpg"),
+                                image: AssetImage("assets/appLogo1.png"),
                                 fit: BoxFit.fill,
                               ),
                             ),
                           ),
                         ),
                         Positioned(
-                          top: height*0.056,
-                          right: width * 0.308,
+                          top: height*0.015,
+                          right: width * 0.26,
                           child: Container(
                             width: width * 0.03,
                             height: width * 0.03, // Adjust the size as needed
@@ -68,22 +69,26 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     Row(
                       children: [
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
-                          child: Text(
-                            'Enter your mobile number and login',
-                            style:GoogleFonts.poppins(fontSize:14,fontWeight:FontWeight.w400,color:Colors.white)
+                        Expanded(
+                          child: Padding(
+                            padding: EdgeInsets.fromLTRB(20, 10, 20, 0),
+                            child: Text(
+                              'Enter your mobile number and login',
+                              style:GoogleFonts.poppins(fontSize:14,fontWeight:FontWeight.w400,color:Colors.white)
+                            ),
                           ),
                         ),
                       ],
                     ),
                     Row(
                       children: [
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(20, 10, 0, 0),
-                          child: Text(
-                            'Phone Number',
-                            style:GoogleFonts.poppins(fontSize:8,fontWeight:FontWeight.w400,color:Colors.white)
+                        Expanded(
+                          child: Padding(
+                            padding: const EdgeInsets.fromLTRB(20, 10, 20, 0),
+                            child: Text(
+                              'Phone Number',
+                              style:GoogleFonts.poppins(fontSize:8,fontWeight:FontWeight.w400,color:Colors.white)
+                            ),
                           ),
                         ),
                       ],
@@ -91,10 +96,11 @@ class _LoginPageState extends State<LoginPage> {
                     Padding(
                       padding: const EdgeInsets.fromLTRB(20,5,20,10),
                       child: TextFormField(
+                        // initialValue: phoneNumberController.text!=""?phoneNumberController.text:"",
                         textAlignVertical: TextAlignVertical.center,
-                        keyboardType: TextInputType.number,
+                        // keyboardType: TextInputType.number,
                         inputFormatters:[
-                          FilteringTextInputFormatter.allow(RegExp('[0-9]')),
+                          FilteringTextInputFormatter.digitsOnly,
                           LengthLimitingTextInputFormatter(10)
                         ],
                         cursorColor: Colors.black,
@@ -134,7 +140,7 @@ class _LoginPageState extends State<LoginPage> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (BuildContext context) => OtpPage()));
+                                      builder: (BuildContext context) => OtpPage(phoneNumber: phoneNumberController.text,)));
                             },
                             child: Container(
                               margin: const EdgeInsets.fromLTRB(20, 60, 20,0),
@@ -158,10 +164,34 @@ class _LoginPageState extends State<LoginPage> {
                       ],
                     ),
                     SizedBox(height:10),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20),
-                      child: Text("By Continuing, You agree to clinic khojo's Terms of Services and Privacy Poilicy.",style:GoogleFonts.poppins(fontSize:10,fontWeight:FontWeight.w500,color:Colors.white),),
-                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Expanded(
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(horizontal: 55),
+                            child:RichText(
+                              text:TextSpan(
+                                children: [
+                                  TextSpan(text:"By Continuing, You agree to clinic khojo's ",style:GoogleFonts.poppins(fontSize:10,fontWeight:FontWeight.w500,color:Colors.white),),
+                                  TextSpan(text: "Terms of Services",style:GoogleFonts.poppins(fontSize:10,fontWeight:FontWeight.w500,color:Colors.white,decoration:TextDecoration.underline,decorationColor:Colors.white),
+                                    // recognizer: TapGestureRecognizer() ..onTap(){
+                                    //   print("Hello")
+                                    // }
+                                  ),
+                                  TextSpan(text:" and ",style:GoogleFonts.poppins(fontSize:10,fontWeight:FontWeight.w500,color:Colors.white),),
+                                  TextSpan(text:"Privacy Poilicy.",style:GoogleFonts.poppins(fontSize:10,fontWeight:FontWeight.w500,color:Colors.white,decoration:TextDecoration.underline,decorationColor:Colors.white),
+                                    // recognizer: TapGestureRecognizer() ..onTap(){
+                                    //   print("Hello")
+                                    // }
+                                  )
+                                ]
+                              )
+                            )
+                          ),
+                        )
+                      ],
+                    )
                   ],
                 ),
               ),

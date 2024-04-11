@@ -1,7 +1,7 @@
 import 'dart:async';
-// import 'package:google_fonts/google_fonts.dart';
 import 'package:clinic_khojo/pages/public/login_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -20,9 +20,12 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
   startTime() {
     var _duration = new Duration(seconds: 2);
     return new Timer(_duration, ()=>Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (BuildContext context) => LoginPage())));
+        context,
+        MaterialPageRoute(
+          builder: (BuildContext context) => LoginPage()
+        )
+      )
+    );
   }
 
   @override
@@ -38,96 +41,88 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
       onWillPop: () async {
         return false;
       },
-      child:  Container(
-          decoration: BoxDecoration(color: Color(0xFF0529BB)),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Expanded(
-                child: Stack(
-                  children: [
-                    Align(
-                      alignment: Alignment.center,
-                      child: Container(
-                        width: width * 0.6,
-                        height: width * 0.6,
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            image: AssetImage("assets/appLogo1.jpg"),
-                            fit: BoxFit.fill,
+      child:  Scaffold(
+        body: Container(
+            decoration: BoxDecoration(color: Color(0xFF0529BB)),
+            width:width,
+            height:height,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Expanded(
+                  child: Stack(
+                    children: [
+                      Align(
+                        alignment: Alignment.center,
+                        child: Container(
+                          width: width * 0.6,
+                          height: width * 0.367,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage("assets/appLogo1.png"),
+                              fit: BoxFit.fill,
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                    Positioned(
-                      top: height * 0.390,
-                      right: width * 0.286,
-                      child: Container(
-                        width: width * 0.03,
-                        height: width * 0.03, // Adjust the size as needed
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            image: AssetImage("assets/image8.png"),
-                            fit: BoxFit.fill,
+                      Positioned(
+                        top: height*0.4,
+                        right: width * 0.25,
+                        child: Container(
+                          width: width * 0.03,
+                          height: width * 0.03, // Adjust the size as needed
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage("assets/image8.png"),
+                              fit: BoxFit.fill,
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(0, 0, 0, 5),
-                child: Text(
-                  'An ISO 9001:2015 Certified Company',
-                  style: TextStyle(
-                    color: Color(0xFFFFFFFF),
-                    // fontFamily:  GoogleFonts.poppins().fontFamily,
-                    fontSize: 12,
-                    fontWeight: FontWeight.w300,
-                    decoration: TextDecoration.none,
+                    ],
                   ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(0, 0, 0, 20),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Powered by',
-                      style: TextStyle(
-                        color: Colors.white,
-                        // fontFamily:  GoogleFonts.poppins().fontFamily,
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400,
-                        decoration: TextDecoration.none,
+                Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Text(
+                        'An ISO 9001:2015 Certified Company',
+                        style:GoogleFonts.poppins(fontSize:10,fontWeight:FontWeight.w400,color:Colors.white)
                       ),
-                    ),
-                    SizedBox(width: 5), // Adjust the spacing between text and image
-                    Image.asset(
-                      "assets/icon1.png",
-                      width: 20, // Adjust the width of the image
-                      height: 20, // Adjust the height of the image
-                    ),
-                    SizedBox(width: 5), // Adjust the spacing between image and text
-                    Text(
-                      'ZORWAY',
-                      style: TextStyle(
-                        color: Colors.white,
-                        // fontFamily:  GoogleFonts.poppins().fontFamily,
-                        fontSize: 14,
-                        fontWeight: FontWeight.w400,
-                        decoration: TextDecoration.none,
+                      SizedBox(height:5),
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(0, 0, 0, 20),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Powered by',
+                              style:GoogleFonts.poppins(fontSize:12,fontWeight:FontWeight.w400,color:Colors.white)
+                            ),
+                            SizedBox(width: 5), // Adjust the spacing between text and image
+                            Image.asset(
+                              "assets/icon1.png",
+                              width: 20, // Adjust the width of the image
+                              height: 20, // Adjust the height of the image
+                            ),
+                            SizedBox(width: 5), // Adjust the spacing between image and text
+                            Text(
+                              'ZORWAY',
+                              style:GoogleFonts.poppins(fontSize:12,fontWeight:FontWeight.w400,color:Colors.white)
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
-        ),
+      ),
     );
   }
 

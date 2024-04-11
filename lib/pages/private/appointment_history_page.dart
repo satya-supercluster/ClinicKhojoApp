@@ -169,7 +169,8 @@ class _AppointmentHistoryPageState extends State<AppointmentHistoryPage> {
                     );
                   },
                 ),
-              )
+              ),
+              SizedBox(height:60)
             ],
           ),
         ),

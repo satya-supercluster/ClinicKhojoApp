@@ -3,13 +3,18 @@ import 'dart:async';
 import 'package:clinic_khojo/pages/private/navigation.dart';
 import 'package:clinic_khojo/utils/constants.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pinput/pinput.dart';
 
 class OtpPage extends StatefulWidget {
-  const OtpPage({super.key});
+  final String phoneNumber;
+  const OtpPage({
+    super.key,
+    required this.phoneNumber
+  });
 
   @override
   State<OtpPage> createState() => _OtpPageState();
@@ -64,7 +69,6 @@ class _OtpPageState extends State<OtpPage> {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;    // Gives the width
     double height = MediaQuery.of(context).size.height;
-    String phoneNumber="9807886234";
     return Scaffold(
       body:SingleChildScrollView(
         child: Container(
@@ -86,18 +90,18 @@ class _OtpPageState extends State<OtpPage> {
                           alignment: Alignment.center,
                           child: Container(
                             width: width * 0.5,
-                            height: width * 0.5,
+                            height: width * 0.307,
                             decoration: BoxDecoration(
                               image: DecorationImage(
-                                image: AssetImage("assets/appLogo1.jpg"),
+                                image: AssetImage("assets/appLogo1.png"),
                                 fit: BoxFit.fill,
                               ),
                             ),
                           ),
                         ),
                         Positioned(
-                          top: height*0.056,
-                          right: width * 0.308,
+                          top: height*0.015,
+                          right: width * 0.26,
                           child: Container(
                             width: width * 0.03,
                             height: width * 0.03, // Adjust the size as needed
@@ -115,13 +119,21 @@ class _OtpPageState extends State<OtpPage> {
                       children: [
                         Expanded(
                           child: Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 20),
-                            child: Text(
-                              'Please enter the verification code we\'ve sent you on +91 '+phoneNumber+". Edit",
-                              style:GoogleFonts.poppins(fontSize:14,fontWeight:FontWeight.w400,color:Colors.white),
+                            padding: const EdgeInsets.symmetric(horizontal: 20),
+                            child: RichText(
+                              text: TextSpan(
+                                style: GoogleFonts.poppins(fontSize:14,fontWeight:FontWeight.w400,color:Colors.white),
+                                children:[
+                                  TextSpan(text: 'Please enter the verification code we\'ve sent you on +91 '+widget.phoneNumber+". ", style:GoogleFonts.poppins(fontSize:14,fontWeight:FontWeight.w400,color:Colors.white)),
+                                  TextSpan(text: "Edit",style:GoogleFonts.poppins(fontSize:14,fontWeight:FontWeight.w400,color:Colors.white,decoration:TextDecoration.underline,decorationColor:Colors.white),
+                                  recognizer: TapGestureRecognizer() ..onTap=(){
+                                    Navigator.of(context).pop();
+                                  }),
+                                ],
+                              ),
                             ),
                           ),
-                        ),
+                        )
                       ],
                     ),
                     Padding(

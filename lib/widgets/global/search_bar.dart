@@ -18,7 +18,7 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
     double height = MediaQuery.of(context).size.height;
     return Container(
       width:width*0.822,
-      height:32,
+      height:height*0.05,
       decoration: BoxDecoration(
         border:Border.all(
           width: 1,
@@ -33,16 +33,17 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
         children:[
           Container(
             alignment: Alignment.center,
-            width:20,
+            width:width*0.06,
             padding: EdgeInsets.all(2),
             child: Icon(
               Icons.search,
-              size:25,
+              size:width*0.05,
               color:Constants.themeGrey
             ),
           ),
           Expanded(
             child:TextField(
+              cursorColor: Colors.black,
               decoration: InputDecoration(
                 hintText: "Search Doctors...",
                 hintStyle: GoogleFonts.poppins(fontSize:10,),
@@ -60,8 +61,8 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
           ),
           Container(
             alignment: Alignment.center,
-            width:46,
-            height: 32,
+            width:width*0.13,
+            height: height*0.05,
             decoration: BoxDecoration(
               border:Border(
                 left:BorderSide(
