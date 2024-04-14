@@ -26,7 +26,7 @@ class _HomePageState extends State<HomePage> {
                   SizedBox(height:20),
                   Row(children: [
                     SizedBox(width:28),
-                    Text("Welcome Back!",style:GoogleFonts.poppins(fontSize:12,fontWeight:FontWeight.w400,color:Constants.themeGrey)),
+                    Text("Welcome Back!",style:TextStyle(fontSize:12,fontWeight:FontWeight.w400,color:Constants.themeGrey)),
                   ],),
                   SizedBox(height:3),
                   Container(
@@ -43,9 +43,9 @@ class _HomePageState extends State<HomePage> {
                                   Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (BuildContext context) => SearchDoctors()));
+                                    builder: (BuildContext context) => SearchDoctorsPage(title:"Doctors near you",heading: "Top Doctors",)));
                                 },
-                                child: Text("Explore Doctors",style:GoogleFonts.poppins(fontSize:20,fontWeight:FontWeight.w500,color:Constants.themeHeadingBlue))
+                                child: Text("Explore Doctors",style:TextStyle(fontSize:20,fontWeight:FontWeight.w500,color:Constants.themeHeadingBlue))
                               )
                             ],
                           )
@@ -63,7 +63,7 @@ class _HomePageState extends State<HomePage> {
                                   children: [
                                     Image.asset("assets/Subtract.png",width: 11.83,height:16),
                                     SizedBox(width:3),
-                                    Text("Ayushmaan",style:GoogleFonts.poppins(fontSize:8,fontWeight:FontWeight.w500)),
+                                    Text("Ayushmaan",style:TextStyle(fontSize:8,fontWeight:FontWeight.w500)),
                                   ],
                                 )
                               ),
@@ -78,7 +78,7 @@ class _HomePageState extends State<HomePage> {
                                   children: [
                                     Image.asset("assets/Subtract.png",width: 11.83,height:16),
                                     SizedBox(width:3),
-                                    Text("ABHA",style:GoogleFonts.poppins(fontSize:8,fontWeight:FontWeight.w500)),
+                                    Text("ABHA",style:TextStyle(fontSize:8,fontWeight:FontWeight.w500)),
                                   ],
                                 )
                               ),
@@ -94,7 +94,7 @@ class _HomePageState extends State<HomePage> {
                   Row(
                     children: [
                       SizedBox(width:24),
-                      Text("View By Specialist",style:GoogleFonts.poppins(fontSize:14,fontWeight:FontWeight.w500,color:Constants.themeSubheadingGrey))
+                      Text("View By Specialist",style:TextStyle(fontSize:14,fontWeight:FontWeight.w500,color:Constants.themeSubheadingGrey))
                     ],
                   ),
                   SizedBox(height:10),
@@ -103,10 +103,10 @@ class _HomePageState extends State<HomePage> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children:[
-                        SortingTile(title:"Heart",no:"5"+" Doctors",image:"assets/heart.png"),
-                        SortingTile(title:"Dental",no:"5"+" Doctors",image:"assets/dental.png"),
-                        SortingTile(title:"Eye",no:"5"+" Doctors",image:"assets/eye.png"),
-                        SortingTile(title:"More",no:"",image:"assets/more.png"),
+                        SortingTile(title:"View By Specialist",value:"Heart",no:"5"+" Doctors",image:"assets/heart.png"),
+                        SortingTile(title:"View By Specialist",value:"Dental",no:"5"+" Doctors",image:"assets/dental.png"),
+                        SortingTile(title:"View By Specialist",value:"Eye",no:"5"+" Doctors",image:"assets/eye.png"),
+                        SortingTile(title:"View By Specialist",value:"More",no:"",image:"assets/more.png"),
                       ]
                     ),
                   ),
@@ -114,7 +114,7 @@ class _HomePageState extends State<HomePage> {
                   Row(
                     children: [
                       SizedBox(width:24),
-                      Text("View By Symptom",style:GoogleFonts.poppins(fontSize:14,fontWeight:FontWeight.w500,color:Constants.themeSubheadingGrey))
+                      Text("View By Symptom",style:TextStyle(fontSize:14,fontWeight:FontWeight.w500,color:Constants.themeSubheadingGrey))
                     ],
                   ),
                   SizedBox(height:10),
@@ -123,10 +123,10 @@ class _HomePageState extends State<HomePage> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children:[
-                        SortingTile(title:"Pregnany",no:"5"+" Doctors",image:"assets/pregnant.png"),
-                        SortingTile(title:"Fever",no:"5"+" Doctors",image:"assets/fever.png"),
-                        SortingTile(title:"Dengue",no:"5"+" Doctors",image:"assets/dengue.png"),
-                        SortingTile(title:"More",no:"",image:"assets/more.png"),
+                        SortingTile(title:"View By Symptom",value:"Pregnany",no:"5"+" Doctors",image:"assets/pregnant.png"),
+                        SortingTile(title:"View By Symptom",value:"Fever",no:"5"+" Doctors",image:"assets/fever.png"),
+                        SortingTile(title:"View By Symptom",value:"Dengue",no:"5"+" Doctors",image:"assets/dengue.png"),
+                        SortingTile(title:"View By Symptom",value:"More",no:"",image:"assets/more.png"),
                       ]
                     ),
                   ),
@@ -136,8 +136,8 @@ class _HomePageState extends State<HomePage> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text("View By Hospital",style:GoogleFonts.poppins(fontSize:14,fontWeight:FontWeight.w500,color:Constants.themeSubheadingGrey)),
-                        Text("View All",style:GoogleFonts.poppins(fontSize:12,fontWeight:FontWeight.w500,color:Constants.themeGrey)),
+                        Text("View By Hospital",style:TextStyle(fontSize:14,fontWeight:FontWeight.w500,color:Constants.themeSubheadingGrey)),
+                        Text("View All",style:TextStyle(fontSize:12,fontWeight:FontWeight.w500,color:Constants.themeGrey)),
                       ],
                     ),
                   ),
@@ -187,7 +187,7 @@ class HospitalTile extends StatelessWidget {
             ),
           ),
           SizedBox(height:6),
-          Text("Bansal Hospital",style:GoogleFonts.poppins(fontSize:10,fontWeight:FontWeight.w500)),
+          Text("Bansal Hospital",style:TextStyle(fontSize:10,fontWeight:FontWeight.w500)),
           SizedBox(height:6),
           Container(
             width:79,
@@ -198,7 +198,7 @@ class HospitalTile extends StatelessWidget {
                   children: [
                     Image.asset("assets/icon/location.png",width:5.98,height:5.98),
                     SizedBox(width:1.85),
-                    Text("xyz",style:GoogleFonts.poppins(fontSize:4.99,fontWeight:FontWeight.w500,color:Constants.themeSubheadingGrey)),
+                    Text("xyz",style:TextStyle(fontSize:4.99,fontWeight:FontWeight.w500,color:Constants.themeSubheadingGrey)),
                   ],
                 ),
                 Row(
@@ -210,7 +210,7 @@ class HospitalTile extends StatelessWidget {
                     SizedBox(width:1.85),
                     Align(
                       alignment: Alignment.center,
-                      child: Text("3.9",style: GoogleFonts.poppins(fontWeight:FontWeight.w500,fontSize:4.99,color:Constants.themeGrey))
+                      child: Text("3.9",style: TextStyle(fontWeight:FontWeight.w500,fontSize:4.99,color:Constants.themeGrey))
                     )
                   ],
                 )

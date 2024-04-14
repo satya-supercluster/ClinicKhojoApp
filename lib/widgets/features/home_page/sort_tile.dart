@@ -1,20 +1,23 @@
-import 'package:clinic_khojo/pages/private/specialist_doctors_page.dart';
+import 'dart:io';
 import 'package:clinic_khojo/utils/constants.dart';
+import 'package:clinic_khojo/widgets/features/search_doctor/search_doctors_tile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+import 'package:clinic_khojo/pages/private/search_doctor_screen.dart';
 
 class SortingTile extends StatefulWidget {
   final String title;
   final String no;
   final String image;
+  final String value;
   const SortingTile({
     super.key,
     required this.title,
     required this.no,
-    required this.image
+    required this.image,
+    required this.value
   });
 
   @override
@@ -31,7 +34,7 @@ class _SortingTileState extends State<SortingTile> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (BuildContext context) => SpecialistDoctorsPage(specialist: widget.title,)));
+            builder: (BuildContext context) => SearchDoctorsPage(title: widget.title, heading: widget.value+" Specialist")));
       },
       child: Container(
         // height:99,
@@ -47,13 +50,13 @@ class _SortingTileState extends State<SortingTile> {
                 color:Constants.themeLightBlue,
               ),
               child:Center(
-                child:Image.asset(widget.image,width:width*0.17,height:width*0.17,fit: BoxFit.fill,)
+                child:Image.asset(widget.image,width:width*0.14,height:width*0.14,fit: BoxFit.fill,)
               )
             ),
             SizedBox(height:8),
-            Text(widget.title,style: GoogleFonts.poppins(fontSize:12,fontWeight:FontWeight.w500),),
+            Text(widget.value,style: TextStyle(fontSize:12,fontWeight:FontWeight.w500),),
             // SizedBox(height:1),
-            Text(widget.no,style: GoogleFonts.poppins(fontSize:10,fontWeight:FontWeight.w500,color:Constants.themeGrey))
+            Text(widget.no,style: TextStyle(fontSize:10,fontWeight:FontWeight.w500,color:Constants.themeGrey))
           ],
         )
       ),

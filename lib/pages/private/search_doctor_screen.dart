@@ -12,13 +12,19 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class SearchDoctors extends StatefulWidget {
-  const SearchDoctors({super.key});
+class SearchDoctorsPage extends StatefulWidget {
+  final String title;
+  final String heading;
+  const SearchDoctorsPage({
+    super.key,
+    required this.title,
+    required this.heading
+  });
   @override
-  State<SearchDoctors> createState() => _SearchDoctorsState();
+  State<SearchDoctorsPage> createState() => _SearchDoctorsPageState();
 }
 
-class _SearchDoctorsState extends State<SearchDoctors> {
+class _SearchDoctorsPageState extends State<SearchDoctorsPage> {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width; // Gives the width
@@ -148,8 +154,8 @@ class _SearchDoctorsState extends State<SearchDoctors> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children:[
               CommonAppBar(
-                title: 'Doctors Near You',
-                heading: "Top Doctors"
+                title: widget.title,
+                heading: widget.heading
               ),
               CustomSearchBar(), 
               SizedBox(height:20),
@@ -159,7 +165,7 @@ class _SearchDoctorsState extends State<SearchDoctors> {
                   itemBuilder: (context,index){
                     return Column(
                       children: [
-                        SearchDoctorsTile(map:l[index]),
+                        SearchDoctorsTile(map:l[index],title:widget.title),
                         SizedBox(height:20),
                       ],
                     );

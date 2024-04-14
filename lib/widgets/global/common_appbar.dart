@@ -1,4 +1,5 @@
 import 'package:clinic_khojo/utils/constants.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CommonAppBar extends StatelessWidget {
@@ -17,32 +18,37 @@ class CommonAppBar extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(height:20),
+          // SizedBox(height:19),
           Row(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Container(
-                  alignment: Alignment.centerLeft,
-                  child:GestureDetector(
-                    onTap: () {
+                GestureDetector(
+                  onTap: () {
                       Navigator.of(context).pop();
-                    },
-                    child: Icon(
+                  },
+                  child: Container(
+                    padding: EdgeInsets.fromLTRB(0, 20, 0, 5),
+                    alignment: Alignment.center,
+                    child:Icon(
                       size: 18,
                       Icons.arrow_back_ios,
                       color: Colors.red,
                     ),
                   ),
                 ),
-                Text(
-                  title,
-                  style: TextStyle(color: Constants.themeGrey,fontSize: 12,fontWeight: FontWeight.w400),
+                Container(
+                  padding: EdgeInsets.fromLTRB(0, 20, 0, 5),
+                  alignment: Alignment.center,
+                  child: Text(
+                    title,
+                    style: TextStyle(color: Constants.themeGrey,fontSize: 12,fontWeight: FontWeight.w400),
+                  ),
                 ),
               ],
           ),
           Padding(
-            padding: EdgeInsets.fromLTRB(8, 5, 0, 0),
+            padding: EdgeInsets.fromLTRB(8, 0, 0, 0),
             child:Text(heading,style: TextStyle(color: Constants.themeHeadingBlue,fontSize: 20,fontWeight: FontWeight.w500),
           )
           ),

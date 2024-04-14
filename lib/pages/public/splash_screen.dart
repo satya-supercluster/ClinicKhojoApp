@@ -90,7 +90,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
                     children: [
                       Text(
                         'An ISO 9001:2015 Certified Company',
-                        style:GoogleFonts.poppins(fontSize:10,fontWeight:FontWeight.w400,color:Colors.white)
+                        style:TextStyle(fontSize:10,fontWeight:FontWeight.w400,color:Colors.white)
                       ),
                       SizedBox(height:5),
                       Padding(
@@ -100,7 +100,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
                           children: [
                             Text(
                               'Powered by',
-                              style:GoogleFonts.poppins(fontSize:12,fontWeight:FontWeight.w400,color:Colors.white)
+                              style:TextStyle(fontSize:12,fontWeight:FontWeight.w400,color:Colors.white)
                             ),
                             SizedBox(width: 5), // Adjust the spacing between text and image
                             Image.asset(
@@ -111,7 +111,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
                             SizedBox(width: 5), // Adjust the spacing between image and text
                             Text(
                               'ZORWAY',
-                              style:GoogleFonts.poppins(fontSize:12,fontWeight:FontWeight.w400,color:Colors.white)
+                              style:TextStyle(fontSize:12,fontWeight:FontWeight.w400,color:Colors.white)
                             ),
                           ],
                         ),

@@ -23,7 +23,7 @@ class OtpPage extends StatefulWidget {
 class _OtpPageState extends State<OtpPage> {
   bool isLoading = false;
   String otpE = '';
-  int _timeLeftInSeconds = 90; // 3 minutes in seconds
+  int _timeLeftInSeconds = 90; // 1.5 minutes in seconds
   Timer? _timer;
 
   @override
@@ -122,10 +122,10 @@ class _OtpPageState extends State<OtpPage> {
                             padding: const EdgeInsets.symmetric(horizontal: 20),
                             child: RichText(
                               text: TextSpan(
-                                style: GoogleFonts.poppins(fontSize:14,fontWeight:FontWeight.w400,color:Colors.white),
+                                style: TextStyle(fontSize:14,fontWeight:FontWeight.w400,color:Colors.white),
                                 children:[
-                                  TextSpan(text: 'Please enter the verification code we\'ve sent you on +91 '+widget.phoneNumber+". ", style:GoogleFonts.poppins(fontSize:14,fontWeight:FontWeight.w400,color:Colors.white)),
-                                  TextSpan(text: "Edit",style:GoogleFonts.poppins(fontSize:14,fontWeight:FontWeight.w400,color:Colors.white,decoration:TextDecoration.underline,decorationColor:Colors.white),
+                                  TextSpan(text: 'Please enter the verification code we\'ve sent you on +91 '+widget.phoneNumber+". ", style:TextStyle(fontSize:14,fontWeight:FontWeight.w400,color:Colors.white)),
+                                  TextSpan(text: "Edit",style:TextStyle(fontSize:14,fontWeight:FontWeight.w400,color:Colors.white,decoration:TextDecoration.underline,decorationColor:Colors.white),
                                   recognizer: TapGestureRecognizer() ..onTap=(){
                                     Navigator.of(context).pop();
                                   }),
@@ -178,10 +178,10 @@ class _OtpPageState extends State<OtpPage> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text("Trying to capture",style:GoogleFonts.poppins(fontSize:8,fontWeight:FontWeight.w500,color:Colors.white)),
+                          Text("Trying to capture",style:TextStyle(fontSize:8,fontWeight:FontWeight.w500,color:Colors.white)),
                           Text(
                             formatTime(_timeLeftInSeconds),
-                            style:GoogleFonts.poppins(fontSize:8,fontWeight:FontWeight.w500,color:Colors.white)
+                            style:TextStyle(fontSize:8,fontWeight:FontWeight.w500,color:Colors.white)
                           ),
                         ],
                       ),
@@ -221,7 +221,7 @@ class _OtpPageState extends State<OtpPage> {
                             ? CircularProgressIndicator() // Show loader when loading
                             : Text(
                           isLoading ? 'Verifying...' : 'Login' ,
-                          style: GoogleFonts.poppins(color:Constants.textRed, fontWeight: FontWeight.w500, fontSize: 13),
+                          style: TextStyle(color:Constants.textRed, fontWeight: FontWeight.w500, fontSize: 13),
                         ),
                       ),
                     ),
@@ -235,7 +235,7 @@ class _OtpPageState extends State<OtpPage> {
                   children: [
                     Text(
                       'An ISO 9001:2015 Certified Company',
-                      style:GoogleFonts.poppins(fontSize:10,fontWeight:FontWeight.w400,color:Colors.white)
+                      style:TextStyle(fontSize:10,fontWeight:FontWeight.w400,color:Colors.white)
                     ),
                     SizedBox(height:5),
                     Padding(
@@ -245,7 +245,7 @@ class _OtpPageState extends State<OtpPage> {
                         children: [
                           Text(
                             'Powered by',
-                            style:GoogleFonts.poppins(fontSize:12,fontWeight:FontWeight.w400,color:Colors.white)
+                            style:TextStyle(fontSize:12,fontWeight:FontWeight.w400,color:Colors.white)
                           ),
                           SizedBox(width: 5), // Adjust the spacing between text and image
                           Image.asset(
@@ -256,7 +256,7 @@ class _OtpPageState extends State<OtpPage> {
                           SizedBox(width: 5), // Adjust the spacing between image and text
                           Text(
                             'ZORWAY',
-                            style:GoogleFonts.poppins(fontSize:12,fontWeight:FontWeight.w400,color:Colors.white)
+                            style:TextStyle(fontSize:12,fontWeight:FontWeight.w400,color:Colors.white)
                           ),
                         ],
                       ),

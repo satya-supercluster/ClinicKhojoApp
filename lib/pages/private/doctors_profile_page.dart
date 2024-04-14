@@ -25,31 +25,36 @@ class _DoctorProfileState extends State<DoctorProfile> {
           padding: EdgeInsets.symmetric(horizontal: 16),
           child: Column(
             children: [
-              SizedBox(height:20,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
-                    alignment: Alignment.centerLeft,
+                    alignment: Alignment.center,
                     child:GestureDetector(
                       onTap: () {
                         Navigator.of(context).pop();
                       },
-                      child: Icon(
-                        size: 18,
-                        Icons.arrow_back_ios,
-                        color: Colors.red,
+                      child: Container(
+                        padding: EdgeInsets.fromLTRB(0, 20, 0, 24),
+                        child: Icon(
+                          size: 18,
+                          Icons.arrow_back_ios,
+                          color: Colors.red,
+                        ),
                       ),
                     ),
                   ),
-                  Text(
-                    widget.map['title']??"",
-                    style: TextStyle(color: Constants.themeGrey,fontSize: 12,fontWeight: FontWeight.w400),
+                  Container(
+                    padding: EdgeInsets.fromLTRB(0, 20, 0, 24),
+                    alignment: Alignment.center,
+                    child: Text(
+                      widget.map['title']??"",
+                      style: TextStyle(color: Constants.themeGrey,fontSize: 12,fontWeight: FontWeight.w400),
+                    ),
                   ),
                 ],
               ),
-              SizedBox(height:24),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -65,7 +70,7 @@ class _DoctorProfileState extends State<DoctorProfile> {
                         ),
                       ),
                       SizedBox(height:8),
-                      Text(widget.map['name']??"",style:GoogleFonts.poppins(fontSize:18,fontWeight:FontWeight.w500,color:Constants.themeHeadingBlue))
+                      Text(widget.map['name']??"",style:TextStyle(fontSize:18,fontWeight:FontWeight.w500,color:Constants.themeHeadingBlue))
                     ],
                   ),
                 ],
@@ -74,7 +79,7 @@ class _DoctorProfileState extends State<DoctorProfile> {
               Row(
                 children: [
                   SizedBox(width:8),
-                  Text("More Details",style:GoogleFonts.poppins(fontSize:18,fontWeight:FontWeight.w500,color:Constants.themeSubheadingGrey))
+                  Text("More Details",style:TextStyle(fontSize:18,fontWeight:FontWeight.w500,color:Constants.themeSubheadingGrey))
                 ],
               ),
               SizedBox(height:10),
@@ -88,65 +93,65 @@ class _DoctorProfileState extends State<DoctorProfile> {
                   children: [
                     Row(
                       children: [
-                        Text("Gender:",style:GoogleFonts.poppins(fontSize:10,fontWeight:FontWeight.w400,color:Constants.themeGrey)),
+                        Text("Gender:",style:TextStyle(fontSize:10,fontWeight:FontWeight.w400,color:Constants.themeGrey)),
                         SizedBox(width:24),
-                        Expanded(child: Text("Male",style:GoogleFonts.poppins(fontSize:12,fontWeight:FontWeight.w500,color:Constants.themeSubheadingGrey))),
+                        Expanded(child: Text("Male",style:TextStyle(fontSize:12,fontWeight:FontWeight.w500,color:Constants.themeSubheadingGrey))),
                       ],
                     ),
                     SizedBox(height:8),
                     Row(
                       children: [
-                        Text("Address:",style:GoogleFonts.poppins(fontSize:10,fontWeight:FontWeight.w400,color:Constants.themeGrey)),
+                        Text("Address:",style:TextStyle(fontSize:10,fontWeight:FontWeight.w400,color:Constants.themeGrey)),
                         SizedBox(width:24),
-                        Expanded(child: Text(widget.map['location']??"xyz",style:GoogleFonts.poppins(fontSize:12,fontWeight:FontWeight.w500,color:Constants.themeSubheadingGrey))),
+                        Expanded(child: Text(widget.map['location']??"xyz",style:TextStyle(fontSize:12,fontWeight:FontWeight.w500,color:Constants.themeSubheadingGrey))),
                       ],
                     ),
                     SizedBox(height:8),
                     Row(
                       children: [
-                        Text("Degree:",style:GoogleFonts.poppins(fontSize:10,fontWeight:FontWeight.w400,color:Constants.themeGrey)),
+                        Text("Degree:",style:TextStyle(fontSize:10,fontWeight:FontWeight.w400,color:Constants.themeGrey)),
                         SizedBox(width:24),
-                        Expanded(child: Text(widget.map['degree']??"xyz",style:GoogleFonts.poppins(fontSize:12,fontWeight:FontWeight.w500,color:Constants.themeSubheadingGrey))),
+                        Expanded(child: Text(widget.map['degree']??"xyz",style:TextStyle(fontSize:12,fontWeight:FontWeight.w500,color:Constants.themeSubheadingGrey))),
                       ],
                     ),
                     SizedBox(height:8),
                     Row(
                       children: [
-                        Text("Specialization:",style:GoogleFonts.poppins(fontSize:10,fontWeight:FontWeight.w400,color:Constants.themeGrey)),
+                        Text("Specialization:",style:TextStyle(fontSize:10,fontWeight:FontWeight.w400,color:Constants.themeGrey)),
                         SizedBox(width:24),
-                        Expanded(child: Text(widget.map['specialization']??"xyz",style:GoogleFonts.poppins(fontSize:12,fontWeight:FontWeight.w500,color:Constants.themeSubheadingGrey))),
+                        Expanded(child: Text(widget.map['specialization']??"xyz",style:TextStyle(fontSize:12,fontWeight:FontWeight.w500,color:Constants.themeSubheadingGrey))),
                       ],
                     ),
                     SizedBox(height:8),
                     Row(
                       children: [
-                        Text("Years of Experience:",style:GoogleFonts.poppins(fontSize:10,fontWeight:FontWeight.w400,color:Constants.themeGrey)),
+                        Text("Years of Experience:",style:TextStyle(fontSize:10,fontWeight:FontWeight.w400,color:Constants.themeGrey)),
                         SizedBox(width:24),
-                        Expanded(child: Text("2",style:GoogleFonts.poppins(fontSize:12,fontWeight:FontWeight.w500,color:Constants.themeSubheadingGrey))),
+                        Expanded(child: Text("2",style:TextStyle(fontSize:12,fontWeight:FontWeight.w500,color:Constants.themeSubheadingGrey))),
                       ],
                     ),
                     SizedBox(height:8),
                     Row(
                       children: [
-                        Text("Title of clinic:",style:GoogleFonts.poppins(fontSize:10,fontWeight:FontWeight.w400,color:Constants.themeGrey)),
+                        Text("Title of clinic:",style:TextStyle(fontSize:10,fontWeight:FontWeight.w400,color:Constants.themeGrey)),
                         SizedBox(width:24),
-                        Expanded(child: Text(widget.map['title']??"xyz",style:GoogleFonts.poppins(fontSize:12,fontWeight:FontWeight.w500,color:Constants.themeSubheadingGrey))),
+                        Expanded(child: Text(widget.map['title']??"xyz",style:TextStyle(fontSize:12,fontWeight:FontWeight.w500,color:Constants.themeSubheadingGrey))),
                       ],
                     ),
                     SizedBox(height:8),
                     Row(
                       children: [
-                        Text("Title of clinic:",style:GoogleFonts.poppins(fontSize:10,fontWeight:FontWeight.w400,color:Constants.themeGrey)),
+                        Text("Title of clinic:",style:TextStyle(fontSize:10,fontWeight:FontWeight.w400,color:Constants.themeGrey)),
                         SizedBox(width:24),
-                        Expanded(child: Text(widget.map['title']??"xyz",style:GoogleFonts.poppins(fontSize:12,fontWeight:FontWeight.w500,color:Constants.themeSubheadingGrey))),
+                        Expanded(child: Text(widget.map['title']??"xyz",style:TextStyle(fontSize:12,fontWeight:FontWeight.w500,color:Constants.themeSubheadingGrey))),
                       ],
                     ),
                     SizedBox(height:8),
                     Row(
                       children: [
-                        Text("Title of clinic:",style:GoogleFonts.poppins(fontSize:10,fontWeight:FontWeight.w400,color:Constants.themeGrey)),
+                        Text("Title of clinic:",style:TextStyle(fontSize:10,fontWeight:FontWeight.w400,color:Constants.themeGrey)),
                         SizedBox(width:24),
-                        Expanded(child: Text(widget.map['title']??"xyz",style:GoogleFonts.poppins(fontSize:12,fontWeight:FontWeight.w500,color:Constants.themeSubheadingGrey))),
+                        Expanded(child: Text(widget.map['title']??"xyz",style:TextStyle(fontSize:12,fontWeight:FontWeight.w500,color:Constants.themeSubheadingGrey))),
                       ],
                     ),
                   ],
