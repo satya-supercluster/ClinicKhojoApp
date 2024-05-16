@@ -38,7 +38,7 @@ class _DoctorProfileState extends State<DoctorProfile> {
                       child: Container(
                         padding: EdgeInsets.fromLTRB(0, 20, 0, 24),
                         child: Icon(
-                          size: 18,
+                          size: 22,
                           Icons.arrow_back_ios,
                           color: Colors.red,
                         ),
@@ -50,7 +50,7 @@ class _DoctorProfileState extends State<DoctorProfile> {
                     alignment: Alignment.center,
                     child: Text(
                       widget.map['title']??"",
-                      style: TextStyle(color: Constants.themeGrey,fontSize: 12,fontWeight: FontWeight.w400),
+                      style: TextStyle(color: Constants.themeGrey,fontSize: 14,fontWeight: FontWeight.w400),
                     ),
                   ),
                 ],
@@ -59,7 +59,9 @@ class _DoctorProfileState extends State<DoctorProfile> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
+                      SizedBox(height:50),
                       Container(
                         width:width*0.25,
                         height:width*0.25,
@@ -75,7 +77,7 @@ class _DoctorProfileState extends State<DoctorProfile> {
                   ),
                 ],
               ),
-              SizedBox(height:24),
+              SizedBox(height:30),
               Row(
                 children: [
                   SizedBox(width:8),

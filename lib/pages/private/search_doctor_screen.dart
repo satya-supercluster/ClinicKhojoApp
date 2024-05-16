@@ -1,7 +1,10 @@
 import 'dart:ui';
 
 import 'package:clinic_khojo/pages/private/doctors_profile_page.dart';
+import 'package:clinic_khojo/pages/private/home_page.dart';
 import 'package:clinic_khojo/utils/constants.dart';
+import 'package:clinic_khojo/widgets/features/search_doctor/doctors_tile.dart';
+import 'package:clinic_khojo/widgets/features/search_doctor/hospitals_tile.dart';
 import 'package:clinic_khojo/widgets/features/search_doctor/search_doctors_tile.dart';
 import 'package:clinic_khojo/widgets/global/common_appbar.dart';
 import 'package:clinic_khojo/widgets/global/search_bar.dart';
@@ -155,7 +158,7 @@ class _SearchDoctorsPageState extends State<SearchDoctorsPage> {
             children:[
               CommonAppBar(
                 title: widget.title,
-                heading: widget.heading
+                heading: "Search Doctors"
               ),
               CustomSearchBar(), 
               SizedBox(height:20),
@@ -165,7 +168,7 @@ class _SearchDoctorsPageState extends State<SearchDoctorsPage> {
                   itemBuilder: (context,index){
                     return Column(
                       children: [
-                        SearchDoctorsTile(map:l[index],title:widget.title),
+                        HospitalsTile(map: l[index],),
                         SizedBox(height:20),
                       ],
                     );
