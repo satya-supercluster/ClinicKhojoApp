@@ -91,22 +91,35 @@ class _HospitalsTileState extends State<HospitalsTile> {
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      Align(
+                        alignment: Alignment.center,
+                        child: Image.asset("assets/star.png",width:12,height:12),
+                      ),
+                      SizedBox(width:3.7),
+                      Align(
+                        alignment: Alignment.center,
+                        child: Text("${widget.map['rating']}",style: TextStyle(fontWeight:FontWeight.w500,fontSize:10,color:Constants.themeGrey))
+                      ),
+                      SizedBox(width:12),
                       Text("Fee: ₹${widget.map['fee']}",style: TextStyle(fontWeight:FontWeight.w500,fontSize:11,color:Colors.green),),
                       SizedBox(width:12),
-                      Expanded(child: Text("Location: ${widget.map['specialization']}",style: TextStyle(fontWeight:FontWeight.w500,fontSize:11,color:Constants.themeGrey),)),
+                      Expanded(child: Text("Location: ${widget.map['location']}",style: TextStyle(fontWeight:FontWeight.w500,fontSize:11,color:Constants.themeGrey),)),
                     ],
                   ),
                   SizedBox(height:5),
                   Row(
                     children: [
-                      Container(
-                        alignment: Alignment.center,
-                        padding:EdgeInsets.fromLTRB(8.5, 6, 8.5, 6),
-                        decoration:BoxDecoration(
-                          color:Colors.white,
-                          borderRadius: BorderRadius.all(Radius.circular(2)),
-                        ),
-                        child: Text("Appointment",style: GoogleFonts.poppins(fontWeight:FontWeight.w500,fontSize:10,color:Constants.themeGrey)),
+                      GestureDetector(
+                        onTap: (){
+                          Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (BuildContext context) => DoctorProfile(map:widget.map)));
+                        },
+                        child: Container(
+                          padding: EdgeInsets.fromLTRB(0, 1, 0, 1),
+                          child: Text("View Profile",style: TextStyle(fontWeight:FontWeight.w500,fontSize:14,decoration:TextDecoration.underline,color:Colors.red,decorationColor:Colors.red),)
+                        )
                       ),
                     ],
                   ),

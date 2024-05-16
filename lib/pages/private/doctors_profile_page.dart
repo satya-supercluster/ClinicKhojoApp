@@ -5,7 +5,7 @@ import 'package:flutter/painting.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class DoctorProfile extends StatefulWidget {
-  final Map<String,String> map;
+  final Map<String,dynamic> map;
   const DoctorProfile({
     super.key,
     required this.map,

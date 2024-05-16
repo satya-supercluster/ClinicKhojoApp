@@ -104,7 +104,7 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
                           }
                           widget.filters[index]['enabled']=!pre;
                           if(widget.filters[index]['enabled']==true){
-                            widget.setFilter(widget.filters[index]['filter']);
+                            widget.setFilter(widget.filters[index]['filter']); 
                           }
                         });
                       },
@@ -113,12 +113,12 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
                         children: [
                           Container(
                             padding: EdgeInsets.symmetric(vertical: 10,horizontal: 20),
-                            decoration: BoxDecoration(
+                            decoration: BoxDecoration( 
                               color:(widget.filters[index]['enabled']==true)?Constants.themeGrey:Colors.white,
                               border:Border.all(width:1,color:Constants.themeSubheadingGrey),
                               borderRadius: BorderRadius.all(Radius.circular(10))
                             ),
-                            child:Text("${widget.filters[index]['filter']}")
+                            child:Text("${widget.filters[index]['filter']}",style:TextStyle(fontSize: 12,fontWeight: FontWeight.w600,color: (widget.filters[index]['enabled']==true)?Colors.white:Constants.themeGrey,))
                           ),
                         ],
                       ),

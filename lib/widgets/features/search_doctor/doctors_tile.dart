@@ -5,8 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 class DoctorsTile extends StatefulWidget {
-  final Map<String,String> map;
-  // final String link;
+  final Map<String,dynamic> map;
   const DoctorsTile({
     required this.map,
     super.key,
@@ -43,8 +42,8 @@ class _DoctorsTileState extends State<DoctorsTile> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Container(
-                  width:width*0.17,
-                  height: width*0.17,
+                  width:width*0.2,
+                  height: width*0.2,
                   padding:EdgeInsets.all(5),
                   decoration: BoxDecoration(
                     image: DecorationImage(
@@ -63,7 +62,7 @@ class _DoctorsTileState extends State<DoctorsTile> {
                 children: [
                   Row(
                     children: [
-                      Text(widget.map['name']??"",style: TextStyle(fontWeight:FontWeight.w500,fontSize:14),)
+                      Text("${widget.map['name']}",style: TextStyle(fontWeight:FontWeight.bold,fontSize:18),)
                     ],
                   ),
                   SizedBox(height: 5,),
@@ -74,9 +73,28 @@ class _DoctorsTileState extends State<DoctorsTile> {
                       SizedBox(width:12),
                       Text("Fee: ₹${widget.map['fee']}",style: TextStyle(fontWeight:FontWeight.w500,fontSize:11,color:Colors.green),),
                       SizedBox(width:12),
-                      Expanded(child: Text("${widget.map['specialization']}",style: TextStyle(fontWeight:FontWeight.w500,fontSize:11,color:Constants.themeGrey),)),
+                      Expanded(child: Text("${widget.map['specialization']} Specialist",style: TextStyle(fontWeight:FontWeight.w500,fontSize:11,color:Constants.themeGrey),)),
                     ],
                   ),
+                  SizedBox(height:1),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      // image of star should be added here
+                      Align(
+                        alignment: Alignment.center,
+                        child: Image.asset("assets/star.png",width:12,height:12),
+                      ),
+                      SizedBox(width:3.7),
+                      Align(
+                        alignment: Alignment.center,
+                        child: Text("${widget.map['rating']}",style: TextStyle(fontWeight:FontWeight.w500,fontSize:10,color:Constants.themeGrey))
+                      ),
+                      SizedBox(width:12),
+                      Expanded(child: Text("Location: ${widget.map['location']}",style: TextStyle(fontWeight:FontWeight.w500,fontSize:11,color:Constants.themeGrey),)),
+                    ],
+                  ),
+                  SizedBox(height:1),
                   Row(
                     children: [
                       GestureDetector(

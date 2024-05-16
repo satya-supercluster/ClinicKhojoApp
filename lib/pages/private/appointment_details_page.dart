@@ -8,7 +8,7 @@ import 'package:flutter/widgets.dart';
 
 class AppointmentDetailsPage extends StatefulWidget {
   final String title;
-  final Map<String,String> map;
+  final Map<String,dynamic> map;
   const AppointmentDetailsPage({
     required this.title,
     required this.map,
@@ -130,7 +130,7 @@ class _AppointmentDetailsPageState extends State<AppointmentDetailsPage> {
                                 children: [
                                   //Title
                         
-                                  Text(widget.map['title']??"",style: TextStyle(fontWeight:FontWeight.bold,fontSize:18),),
+                                  Text("${widget.map['title']}",style: TextStyle(fontWeight:FontWeight.bold,fontSize:18),),
                         
                                   SizedBox(height:4),
                                   // Degree, Specialization and Fee
@@ -139,13 +139,13 @@ class _AppointmentDetailsPageState extends State<AppointmentDetailsPage> {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
-                                      Text(widget.map['degree']??"",style: TextStyle(fontWeight:FontWeight.w500,fontSize:10,color:Constants.themeGrey),),
+                                      Text("${widget.map['degree']}",style: TextStyle(fontWeight:FontWeight.w500,fontSize:10,color:Constants.themeGrey),),
                                       SizedBox(width:5),
                                       Expanded(
-                                        child: Center(child: Text(widget.map['specialization']??"",style: TextStyle(fontWeight:FontWeight.w500,fontSize:10,color:Constants.themeGrey),))
+                                        child: Center(child: Text("${widget.map['specialization']}",style: TextStyle(fontWeight:FontWeight.w500,fontSize:10,color:Constants.themeGrey),))
                                       ),
                                       SizedBox(width:5),
-                                      Text("Fee: ₹"+(widget.map['fee']??""),style: TextStyle(fontWeight:FontWeight.w500,fontSize:10,color:Colors.green),),
+                                      Text("Fee: ₹${widget.map['fee']}",style: TextStyle(fontWeight:FontWeight.w500,fontSize:10,color:Colors.green),),
                                     ],
                                   ),
                                   SizedBox(height:12),
@@ -170,7 +170,7 @@ class _AppointmentDetailsPageState extends State<AppointmentDetailsPage> {
                                       SizedBox(width:3.7),
                                       Align(
                                         alignment: Alignment.center,
-                                        child: Text(widget.map['rating']??"",style: TextStyle(fontWeight:FontWeight.w500,fontSize:10,color:Constants.themeGrey))
+                                        child: Text("${widget.map['rating']}",style: TextStyle(fontWeight:FontWeight.w500,fontSize:10,color:Constants.themeGrey))
                                       )
                                     ],
                                   ),

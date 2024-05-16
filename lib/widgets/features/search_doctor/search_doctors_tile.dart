@@ -123,7 +123,7 @@ class _SearchDoctorsTileState extends State<SearchDoctorsTile> {
                       SizedBox(width:3.7),
                       Align(
                         alignment: Alignment.center,
-                        child: Text(widget.map['rating']??"",style: GoogleFonts.poppins(fontWeight:FontWeight.w500,fontSize:10,color:Constants.themeGrey))
+                        child: Text("${widget.map['rating']}",style: GoogleFonts.poppins(fontWeight:FontWeight.w500,fontSize:10,color:Constants.themeGrey))
                       )
                     ],
                   ),

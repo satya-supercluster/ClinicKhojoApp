@@ -6,7 +6,10 @@ import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CustomSearchBar extends StatefulWidget {
-  const CustomSearchBar({super.key});
+  final Function action;
+  const CustomSearchBar({
+    super.key, required this.action
+  });
 
   @override
   State<CustomSearchBar> createState() => _CustomSearchBarState();
@@ -15,6 +18,7 @@ class CustomSearchBar extends StatefulWidget {
 class _CustomSearchBarState extends State<CustomSearchBar> {
   String filter="";
   List<Map<String,dynamic>> filters=[];
+  TextEditingController searchController=TextEditingController();
   void initState(){
     super.initState();
     filter="";
@@ -79,6 +83,9 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
             child:TextField(
               cursorColor: Colors.black,
               autofocus: true,
+              controller: searchController,
+              onEditingComplete:widget.action(searchController.text) ,
+              onChanged: widget.action(searchController.text),
               decoration: InputDecoration(
                 hintText: "Search Doctors...",
                 hintStyle: GoogleFonts.poppins(fontSize:12,),
