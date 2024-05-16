@@ -31,7 +31,7 @@ class CommonAppBar extends StatelessWidget {
                     padding: EdgeInsets.fromLTRB(0, 20, 0, 5),
                     alignment: Alignment.center,
                     child:Icon(
-                      size: 18,
+                      size: 22,
                       Icons.arrow_back_ios,
                       color: Colors.red,
                     ),
@@ -42,7 +42,7 @@ class CommonAppBar extends StatelessWidget {
                   alignment: Alignment.center,
                   child: Text(
                     title,
-                    style: TextStyle(color: Constants.themeGrey,fontSize: 12,fontWeight: FontWeight.w400),
+                    style: TextStyle(color: Constants.themeGrey,fontSize: 14,fontWeight: FontWeight.w400),
                   ),
                 ),
               ],

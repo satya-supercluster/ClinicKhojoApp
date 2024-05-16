@@ -98,34 +98,34 @@ class _AppointmentHistoryTileState extends State<AppointmentHistoryTile> {
             children: [
               Expanded(
                 flex:3,
-                child: Container(
-                  width: double.infinity,
-                  alignment: Alignment.center,
-                  padding: EdgeInsets.symmetric(horizontal: 20,vertical: 8),
-                  decoration: BoxDecoration(
-                    color:Colors.white,
-                    borderRadius: BorderRadius.all(Radius.circular(20)),
-                    //BoxShadow
-                    boxShadow: [
-                          BoxShadow(
-                            color:Colors.black.withOpacity(0.15),
-                            blurRadius: 8,
-                            offset: Offset(0,4),
-                          ),
-                        ]
-                  ),
-                  child:GestureDetector(
-                    onTap:(){
-                      Navigator.push(
-                        context, MaterialPageRoute(
-                          builder: ((context) => AppointmentFormPage())
-                        )
-                      );
-                    },
-                    child: Text("Book Another Appointment",style:GoogleFonts.poppins(fontSize:10,fontWeight:FontWeight.w500,color:Constants.textRed
-                    )
+                child: GestureDetector(
+                  onTap:(){
+                    Navigator.push(
+                      context, MaterialPageRoute(
+                        builder: ((context) => AppointmentFormPage())
+                      )
+                    );
+                  },
+                  child: Container(
+                    width: double.infinity,
+                    alignment: Alignment.center,
+                    padding: EdgeInsets.symmetric(horizontal: 20,vertical: 8),
+                    decoration: BoxDecoration(
+                      color:Colors.white,
+                      borderRadius: BorderRadius.all(Radius.circular(20)),
+                      //BoxShadow
+                      boxShadow: [
+                            BoxShadow(
+                              color:Colors.black.withOpacity(0.15),
+                              blurRadius: 8,
+                              offset: Offset(0,4),
+                            ),
+                          ]
                     ),
-                  )
+                    child:Text("Book Another Appointment",style:GoogleFonts.poppins(fontSize:10,fontWeight:FontWeight.w500,color:Constants.textRed
+                    )
+                    )
+                  ),
                 ),
               ),
               SizedBox(width:8),

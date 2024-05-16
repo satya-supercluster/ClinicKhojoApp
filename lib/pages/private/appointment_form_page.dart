@@ -22,6 +22,25 @@ class _AppointmentFormPageState extends State<AppointmentFormPage> {
     var _blockValue=null;
     double width = MediaQuery.of(context).size.width; // Gives the width
     double height = MediaQuery.of(context).size.height;
+    List<String> blocks=["Bachhwara",
+      "Bakhari",
+      "Balia",
+      "Barauni",
+      "Begusarai",
+      "Bhagwanpur",
+      "Birpur",
+      "Cheriabariyarpur",
+      "Chhorahi",
+      "Dandari",
+      "Garhpura",
+      "Khodawandpur",
+      "Mansurchak",
+      "Matihani",
+      "Naokothi",
+      "Sahebpur Kamal",
+      "Samho Akha Kurha",
+      "Teghra"
+    ];
     return SafeArea(
       child: Scaffold(
         body:Container(
@@ -244,7 +263,7 @@ class _AppointmentFormPageState extends State<AppointmentFormPage> {
                               ]
                             ),
                             child: DropdownButtonFormField(
-                              hint: Text("Block no.",style: TextStyle(fontSize: 15,fontWeight: FontWeight.w400,color: Constants.themeGrey)),
+                              hint: Text("Select Block",style: TextStyle(fontSize: 15,fontWeight: FontWeight.w400,color: Constants.themeGrey)),
                               decoration: InputDecoration(
                                 filled: true,
                                 fillColor: Constants.themeInputGrey,
@@ -269,7 +288,7 @@ class _AppointmentFormPageState extends State<AppointmentFormPage> {
                                   _blockValue=newValue;
                                 });
                               },
-                              items: ["Block 1","Block 2","Block 3"].map((value){
+                              items: blocks.map((value){
                                 return DropdownMenuItem(
                                   child: Text(value,style: TextStyle(fontSize: 15,fontWeight: FontWeight.w400,color: Constants.themeGrey)),
                                   value: value.split(" ").last,

@@ -56,7 +56,7 @@ class _AppointmentDetailsPageState extends State<AppointmentDetailsPage> {
                         child: Container(
                           padding: EdgeInsets.fromLTRB(0, 20, 0, 24),
                           child: Icon(
-                            size: 18,
+                            size: 22,
                             Icons.arrow_back_ios,
                             color: Colors.red,
                           ),
@@ -68,7 +68,7 @@ class _AppointmentDetailsPageState extends State<AppointmentDetailsPage> {
                       alignment: Alignment.center,
                       child: Text(
                         widget.title,
-                        style: TextStyle(color: Constants.themeGrey,fontSize: 12,fontWeight: FontWeight.w400),
+                        style: TextStyle(color: Constants.themeGrey,fontSize: 14,fontWeight: FontWeight.w400),
                       ),
                     ),
                   ],
@@ -208,7 +208,7 @@ class _AppointmentDetailsPageState extends State<AppointmentDetailsPage> {
                                             },
                                             child: Container(
                                               padding: EdgeInsets.fromLTRB(0, 1, 0, 1),
-                                              child: Text("View Profile",style: TextStyle(fontWeight:FontWeight.w500,fontSize:12,decoration:TextDecoration.underline,color:Colors.red,decorationColor:Colors.red),)
+                                              child: Text("View Profile",style: TextStyle(fontWeight:FontWeight.w500,fontSize:14,decoration:TextDecoration.underline,color:Colors.red,decorationColor:Colors.red),)
                                             )
                                           ),
                                         ],

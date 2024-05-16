@@ -115,6 +115,7 @@ class _OtpPageState extends State<OtpPage> {
                         ),
                       ],
                     ),
+                    SizedBox(height:50),
                     Row(
                       children: [
                         Expanded(
@@ -124,8 +125,8 @@ class _OtpPageState extends State<OtpPage> {
                               text: TextSpan(
                                 style: TextStyle(fontSize:14,fontWeight:FontWeight.w400,color:Colors.white),
                                 children:[
-                                  TextSpan(text: 'Please enter the verification code we\'ve sent you on +91 '+widget.phoneNumber+". ", style:TextStyle(fontSize:14,fontWeight:FontWeight.w400,color:Colors.white)),
-                                  TextSpan(text: "Edit",style:TextStyle(fontSize:14,fontWeight:FontWeight.w400,color:Colors.white,decoration:TextDecoration.underline,decorationColor:Colors.white),
+                                  TextSpan(text: 'Please enter the verification code we\'ve sent you on +91 '+widget.phoneNumber+". ", style:TextStyle(fontSize:15,fontWeight:FontWeight.w400,color:Colors.white)),
+                                  TextSpan(text: "Edit",style:TextStyle(fontSize:15,fontWeight:FontWeight.w400,color:Colors.white,decoration:TextDecoration.underline,decorationColor:Colors.white),
                                   recognizer: TapGestureRecognizer() ..onTap=(){
                                     Navigator.of(context).pop();
                                   }),
@@ -137,7 +138,7 @@ class _OtpPageState extends State<OtpPage> {
                       ],
                     ),
                     Padding(
-                      padding:EdgeInsets.fromLTRB(20, 30, 20, 0), 
+                      padding:EdgeInsets.fromLTRB(20, 15, 20, 0), 
                       child: SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         child: Row(
@@ -178,15 +179,15 @@ class _OtpPageState extends State<OtpPage> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text("Trying to capture",style:TextStyle(fontSize:8,fontWeight:FontWeight.w500,color:Colors.white)),
+                          Text("Trying to capture",style:TextStyle(fontSize:10,fontWeight:FontWeight.w500,color:Colors.white)),
                           Text(
                             formatTime(_timeLeftInSeconds),
-                            style:TextStyle(fontSize:8,fontWeight:FontWeight.w500,color:Colors.white)
+                            style:TextStyle(fontSize:10,fontWeight:FontWeight.w500,color:Colors.white)
                           ),
                         ],
                       ),
                     ),
-                    SizedBox(height:100),
+                    SizedBox(height:50),
                     Container(
                       width: width,
                       height:50,
@@ -221,7 +222,7 @@ class _OtpPageState extends State<OtpPage> {
                             ? CircularProgressIndicator() // Show loader when loading
                             : Text(
                           isLoading ? 'Verifying...' : 'Login' ,
-                          style: TextStyle(color:Constants.textRed, fontWeight: FontWeight.w500, fontSize: 13),
+                          style: TextStyle(color:Constants.textRed, fontWeight: FontWeight.w500, fontSize: 15),
                         ),
                       ),
                     ),

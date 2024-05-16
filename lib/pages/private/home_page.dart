@@ -2,6 +2,7 @@ import 'package:clinic_khojo/pages/private/search_doctor_screen.dart';
 import 'package:clinic_khojo/utils/constants.dart';
 import 'package:clinic_khojo/widgets/features/home_page/sort_tile.dart';
 import 'package:clinic_khojo/widgets/global/search_bar.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -15,6 +16,121 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width; // Gives the width
+    double height = MediaQuery.of(context).size.height;
+    List<Map<String,String>> l=
+    [
+      {
+        "name": "Dr. Satyam Gupta",
+        "title": "Dr. Satyam's Clinic",
+        "rating": "5.0",
+        "dp": "assets/doctor.jpg",
+        "image": "assets/img.jpg",
+        "degree": "MBBS",
+        "specialization": "heart specialist",
+        "fee": "500"
+      },
+      {
+        "name": "Dr. Ananya Singh",
+        "title": "Heart Care Center",
+        "rating": "4.7",
+        "dp": "assets/doctor.jpg",
+        "image": "assets/img.jpg",
+        "degree": "MD",
+        "specialization": "cardiologist",
+        "fee": "600"
+      },
+      {
+        "name": "Dr. Rohit Sharma",
+        "title": "Sharma Cardiology Clinic",
+        "rating": "4.5",
+        "dp": "assets/doctor.jpg",
+        "image": "assets/img.jpg",
+        "degree": "MBBS",
+        "specialization": "cardiologist",
+        "fee": "550"
+      },
+      {
+        "name": "Dr. Priya Patel",
+        "title": "Healthy Heart Hospital",
+        "rating": "4.9",
+        "dp": "assets/doctor.jpg",
+        "image": "assets/img.jpg",
+        "degree": "MD",
+        "specialization": "pediatric cardiologist",
+        "fee": "700"
+      },
+      {
+        "name": "Dr. Sameer Gupta",
+        "title": "Gupta Heart Clinic",
+        "rating": "4.8",
+        "dp": "assets/doctor.jpg",
+        "image": "assets/img.jpg",
+        "degree": "MBBS",
+        "specialization": "electrophysiologist",
+        "fee": "650"
+      },
+      {
+        "name": "Dr. Aarav Verma",
+        "title": "Verma Cardiac Center",
+        "rating": "4.6",
+        "dp": "assets/doctor.jpg",
+        "image": "assets/img.jpg",
+        "degree": "MD",
+        "specialization": "cardiovascular surgeon",
+        "fee": "750"
+      },
+      {
+        "name": "Dr. Neha Shah",
+        "title": "Heartbeat Clinic",
+        "rating": "4.7",
+        "dp": "assets/doctor.jpg",
+        "image": "assets/img.jpg",
+        "degree": "MBBS",
+        "specialization": "cardiologist",
+        "fee": "600"
+      },
+      {
+        "name": "Dr. Karan Kapoor",
+        "title": "Kapoor Heart Institute",
+        "rating": "4.9",
+        "dp": "assets/doctor.jpg",
+        "image": "assets/img.jpg",
+        "degree": "MD",
+        "specialization": "cardiologist",
+        "fee": "700"
+      },
+      {
+        "name": "Dr. Anika Reddy",
+        "title": "Reddy Heart Center",
+        "rating": "4.8",
+        "dp": "assets/doctor.jpg",
+        "image": "assets/img.jpg",
+        "degree": "MBBS",
+        "specialization": "heart specialist",
+        "fee": "550"
+      },
+      {
+        "name": "Dr. Arjun Singh",
+        "title": "Singh Cardiology Clinic",
+        "rating": "4.6",
+        "dp": "assets/doctor.jpg",
+        "image": "assets/img.jpg",
+        "degree": "MD",
+        "specialization": "cardiologist",
+        "fee": "650"
+      },
+      {
+        "name": "Dr. Riya Gupta",
+        "title": "Gupta Heart Care",
+        "rating": "4.7",
+        "dp": "assets/doctor.jpg",
+        "image": "assets/img.jpg",
+        "degree": "MBBS",
+        "specialization": "pediatric cardiologist",
+        "fee": "600"
+      }
+    ];
     return SafeArea(
       child: Scaffold(
         body:Stack(
@@ -26,7 +142,7 @@ class _HomePageState extends State<HomePage> {
                   SizedBox(height:20),
                   Row(children: [
                     SizedBox(width:28),
-                    Text("Welcome Back!",style:TextStyle(fontSize:12,fontWeight:FontWeight.w400,color:Constants.themeGrey)),
+                    Text("Welcome Back!",style:TextStyle(fontSize:14,fontWeight:FontWeight.w400,color:Constants.themeGrey)),
                   ],),
                   SizedBox(height:3),
                   Container(
@@ -38,15 +154,7 @@ class _HomePageState extends State<HomePage> {
                           child:Row(
                             children: [
                               // hatana h yha se gesture detector
-                              GestureDetector(
-                                onTap:(){
-                                  Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (BuildContext context) => SearchDoctorsPage(title:"Doctors near you",heading: "Top Doctors",)));
-                                },
-                                child: Text("Explore Doctors",style:TextStyle(fontSize:20,fontWeight:FontWeight.w500,color:Constants.themeHeadingBlue))
-                              )
+                              Text("Explore Doctors",style:TextStyle(fontSize:20,fontWeight:FontWeight.w500,color:Constants.themeHeadingBlue))
                             ],
                           )
                         ),
@@ -89,7 +197,83 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   SizedBox(height:10),
-                  CustomSearchBar(),
+                  GestureDetector(
+                    onTap:(){
+                      Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (BuildContext context) => SearchDoctorsPage(title:"Doctors near you",heading: "Top Doctors",)));
+                    },
+                    child: Container(
+                      width:width*0.822,
+                      height:height*0.05,
+                      decoration: BoxDecoration(
+                        border:Border.all(
+                          width: 1,
+                          color:Constants.themeGrey
+                        ),
+                        borderRadius: BorderRadius.all(Radius.circular(27))
+                      ),
+                      padding: EdgeInsets.only(left:13),
+                      child:Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children:[
+                          Container(
+                            alignment: Alignment.center,
+                            width:width*0.06,
+                            padding: EdgeInsets.all(2),
+                            child: Icon(
+                              Icons.search,
+                              size:width*0.05,
+                              color:Constants.themeGrey
+                            ),
+                          ),
+                          Expanded(
+                            child:TextField(
+                              enabled: false,
+                              autofocus: false,
+                              cursorColor: Colors.black,
+                              decoration: InputDecoration(
+                                hintText: "Search Doctors...",
+                                hintStyle: GoogleFonts.poppins(fontSize:12),
+                                contentPadding: EdgeInsets.only(left:4,bottom: 10),
+                                floatingLabelBehavior: FloatingLabelBehavior.never,
+                                labelText: null,
+                                focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(color: Colors.white, width: 0),
+                                ),
+                                enabledBorder: OutlineInputBorder(
+                                  borderSide: BorderSide(color: Colors.white, width: 0),
+                                ),
+                              ),
+                            )
+                          ),
+                          Container(
+                            alignment: Alignment.center,
+                            width:width*0.13,
+                            height: height*0.05,
+                            decoration: BoxDecoration(
+                              border:Border(
+                                left:BorderSide(
+                                  width:1,
+                                  color: Constants.themeGrey
+                                ),
+                              ),
+                              borderRadius: BorderRadius.only(topRight: Radius.circular(50),
+                              bottomRight: Radius.circular(50)),
+                              color: Constants.themeLightRed
+                            ),
+                            child: Icon(
+                              Icons.tune,
+                              size:25,
+                              color:Colors.red
+                            ),
+                          )
+                        ]
+                      )
+                    ),
+                  ),
                   SizedBox(height:20),
                   Row(
                     children: [

@@ -1,4 +1,5 @@
 import 'package:clinic_khojo/utils/constants.dart';
+import 'package:clinic_khojo/widgets/global/filter_bottom_sheet.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -12,6 +13,39 @@ class CustomSearchBar extends StatefulWidget {
 }
 
 class _CustomSearchBarState extends State<CustomSearchBar> {
+  String filter="";
+  List<Map<String,dynamic>> filters=[];
+  void initState(){
+    super.initState();
+    filter="";
+    filters=[
+      {
+        "filter":"Specialization",
+        "enabled":false
+      },
+      {
+        "filter":"Symptom",
+        "enabled":false
+      },
+      {
+        "filter":"Doctor",
+        "enabled":false
+      },
+      {
+        "filter":"Location",
+        "enabled":false 
+      },
+      {
+        "filter":"Hospital/Clinic",
+        "enabled":false
+      },
+    ];
+  }
+  void setFilter(String s){
+    setState(() {
+      filter=s;
+    });
+  }
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width; // Gives the width
@@ -44,10 +78,11 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
           Expanded(
             child:TextField(
               cursorColor: Colors.black,
+              autofocus: true,
               decoration: InputDecoration(
                 hintText: "Search Doctors...",
-                hintStyle: GoogleFonts.poppins(fontSize:10,),
-                // contentPadding: EdgeInsets.only(top:2),
+                hintStyle: GoogleFonts.poppins(fontSize:12,),
+                contentPadding: EdgeInsets.only(left:4,bottom:10),
                 floatingLabelBehavior: FloatingLabelBehavior.never,
                 labelText: null,
                 focusedBorder: OutlineInputBorder(
@@ -59,25 +94,31 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
               ),
             )
           ),
-          Container(
-            alignment: Alignment.center,
-            width:width*0.13,
-            height: height*0.05,
-            decoration: BoxDecoration(
-              border:Border(
-                left:BorderSide(
-                  width:1,
-                  color: Constants.themeGrey
+          GestureDetector(
+            onTap:(){
+               FocusScope.of(context).requestFocus(FocusNode());
+              showModalBottomSheet(context: context, builder: (ctx)=>FilterBottomSheet(setFilter:setFilter,filters:filters));
+            },
+            child: Container(
+              alignment: Alignment.center,
+              width:width*0.13,
+              height: height*0.05,
+              decoration: BoxDecoration(
+                border:Border(
+                  left:BorderSide(
+                    width:1,
+                    color: Constants.themeGrey
+                  ),
                 ),
+                borderRadius: BorderRadius.only(topRight: Radius.circular(50),
+                bottomRight: Radius.circular(50)),
+                color: Constants.themeLightRed
               ),
-              borderRadius: BorderRadius.only(topRight: Radius.circular(50),
-              bottomRight: Radius.circular(50)),
-              color: Constants.themeLightRed
-            ),
-            child: Icon(
-              Icons.tune,
-              size:25,
-              color:Colors.red
+              child: Icon(
+                Icons.tune,
+                size:25,
+                color:Colors.red
+              ),
             ),
           )
         ]
