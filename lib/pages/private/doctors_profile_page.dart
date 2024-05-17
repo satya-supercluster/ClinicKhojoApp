@@ -49,7 +49,7 @@ class _DoctorProfileState extends State<DoctorProfile> {
                     padding: EdgeInsets.fromLTRB(0, 20, 0, 24),
                     alignment: Alignment.center,
                     child: Text(
-                      widget.map['title']??"",
+                      widget.map['name']??"",
                       style: TextStyle(color: Constants.themeGrey,fontSize: 14,fontWeight: FontWeight.w400),
                     ),
                   ),

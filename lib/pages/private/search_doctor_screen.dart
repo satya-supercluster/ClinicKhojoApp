@@ -28,24 +28,22 @@ class SearchDoctorsPage extends StatefulWidget {
 }
 
 class _SearchDoctorsPageState extends State<SearchDoctorsPage> {
-  List<Map<String,dynamic>>result=[];
-  void initState(){
-    super.initState();
-    setState(() {
-      result=l;
-    });
-  }
+  List<Map<String,dynamic>>result=l;
+  // void initState(){
+  //   super.initState();
+  //   setState(() {
+  //     result=l;
+  //   });
+  // }
   void runFilter(String search){
-    // if(search.isEmpty){
-    //   setState(() {
-    //     result=l;
-    //   });
-    // }
-    // else{
-    if(result.isNotEmpty)
+    if(search.isEmpty){
+      result=l;
+    }
+    else{
       result=l.where((element)=>element['name'].toLowerCase().contains(search.toLowerCase())).toList();
-    // }
+    }
     print(search);
+    print(result);
   }
   @override
   Widget build(BuildContext context) {
@@ -68,7 +66,7 @@ class _SearchDoctorsPageState extends State<SearchDoctorsPage> {
               CustomSearchBar(action:runFilter), 
               SizedBox(height:20),
               Expanded(
-                child:(result==[])?Center(child: Text("No Data"),): ListView.builder(
+                child:(result.isEmpty)?Center(child: Text("No Data"),): ListView.builder(
                   itemCount: result.length,
                   itemBuilder: (context,index){
                     return Column(

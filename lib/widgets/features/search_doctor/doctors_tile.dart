@@ -1,4 +1,5 @@
 import 'package:clinic_khojo/pages/private/appointment_details_page.dart';
+import 'package:clinic_khojo/pages/private/available_hospitals_page.dart';
 import 'package:clinic_khojo/pages/private/doctors_profile_page.dart';
 import 'package:clinic_khojo/utils/constants.dart';
 import 'package:flutter/cupertino.dart';
@@ -25,7 +26,7 @@ class _DoctorsTileState extends State<DoctorsTile> {
         Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (BuildContext context) => AppointmentDetailsPage(title:"Search Doctors",map:widget.map)));
+              builder: (BuildContext context) => AvailableHospitalsPage(doctorsDetails:widget.map)));
       },
       child: Container(
         width:width,

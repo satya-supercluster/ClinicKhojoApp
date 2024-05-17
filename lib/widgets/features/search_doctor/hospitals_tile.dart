@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 class HospitalsTile extends StatefulWidget {
-  final Map<String,String> map;
+  final Map<String,dynamic> map;
   const HospitalsTile({
     required this.map,
     super.key,
@@ -85,7 +85,7 @@ class _HospitalsTileState extends State<HospitalsTile> {
                   //Title  
                   Row(
                     children: [
-                      Expanded(child: Text(widget.map['title']??"",style: GoogleFonts.poppins(fontWeight:FontWeight.bold,fontSize:18),)),
+                      Expanded(child: Text(widget.map['name']??"",style: GoogleFonts.poppins(fontWeight:FontWeight.bold,fontSize:18),)),
                     ],
                   ),
                   Row(
