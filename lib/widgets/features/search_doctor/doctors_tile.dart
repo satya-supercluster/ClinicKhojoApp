@@ -48,7 +48,7 @@ class _DoctorsTileState extends State<DoctorsTile> {
                   padding:EdgeInsets.all(5),
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage(widget.map['dp']??""),
+                      image: AssetImage(widget.map['image']??"assets/doctor.jpg"),
                       fit: BoxFit.cover,
                     ),
                     borderRadius: BorderRadius.all(Radius.circular(8))

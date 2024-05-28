@@ -1,3 +1,4 @@
+import 'package:clinic_khojo/data.dart';
 import 'package:clinic_khojo/pages/private/search_doctor_screen.dart';
 import 'package:clinic_khojo/utils/constants.dart';
 import 'package:clinic_khojo/widgets/features/home_page/sort_tile.dart';
@@ -18,7 +19,8 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width; // Gives the width
     double height = MediaQuery.of(context).size.height;
-    List<Map<String,String>> l=
+    List<Map<String,dynamic>>details=l;
+    List<Map<String,String>> lt=
     [
       {
         "name": "Dr. Satyam Gupta",
@@ -131,6 +133,27 @@ class _HomePageState extends State<HomePage> {
         "fee": "600"
       }
     ];
+    List<Map<String,dynamic>>specialist=[
+      {
+        'value':'Heart',
+        'no':5,
+        'image':"assets/heart.png"
+      },
+      {
+        'value':'Dental',
+        'no':5,
+        'image':"assets/dental.png"
+      },
+      {
+        'value':'Eye',
+        'no':5,
+        'image':"assets/eye.png"
+      },
+      {
+        'value':'More',
+        'image':"assets/more.png"
+      },
+    ];
     return SafeArea(
       child: Scaffold(
         body:Stack(
@@ -171,7 +194,7 @@ class _HomePageState extends State<HomePage> {
                                   children: [
                                     Image.asset("assets/Subtract.png",width: 11.83,height:16),
                                     SizedBox(width:3),
-                                    Text("Ayushmaan",style:TextStyle(fontSize:8,fontWeight:FontWeight.w500)),
+                                    Text("Ayushmaan",style:TextStyle(fontSize:10,fontWeight:FontWeight.w500)),
                                   ],
                                 )
                               ),
@@ -186,7 +209,7 @@ class _HomePageState extends State<HomePage> {
                                   children: [
                                     Image.asset("assets/Subtract.png",width: 11.83,height:16),
                                     SizedBox(width:3),
-                                    Text("ABHA",style:TextStyle(fontSize:8,fontWeight:FontWeight.w500)),
+                                    Text("ABHA",style:TextStyle(fontSize:10,fontWeight:FontWeight.w500)),
                                   ],
                                 )
                               ),
@@ -202,7 +225,7 @@ class _HomePageState extends State<HomePage> {
                       Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (BuildContext context) => SearchDoctorsPage(title:"Doctors near you",heading: "Top Doctors",)));
+                        builder: (BuildContext context) => SearchDoctorsPage(title:"Explore Doctors",details: details,)));
                     },
                     child: Container(
                       width:width*0.822,
@@ -286,12 +309,14 @@ class _HomePageState extends State<HomePage> {
                     padding: const EdgeInsets.symmetric(horizontal: 16),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children:[
-                        SortingTile(title:"View By Specialist",value:"Heart",no:"5"+" Doctors",image:"assets/heart.png"),
-                        SortingTile(title:"View By Specialist",value:"Dental",no:"5"+" Doctors",image:"assets/dental.png"),
-                        SortingTile(title:"View By Specialist",value:"Eye",no:"5"+" Doctors",image:"assets/eye.png"),
-                        SortingTile(title:"View By Specialist",value:"More",no:"",image:"assets/more.png"),
-                      ]
+                      children:List.generate(specialist.length, 
+                        (index) => GestureDetector(
+                          onTap:()=>{
+                            Navigator.push(context,MaterialPageRoute(builder: (context)=>SearchDoctorsPage(title: "View By Specialist", details: details)))
+                          },
+                          child: SortingTile(no: '${specialist[index]['no']} Doctors', image: specialist[index]['image'], value: specialist[index]['value'])
+                          )
+                      )
                     ),
                   ),
                   SizedBox(height:20),
@@ -307,10 +332,10 @@ class _HomePageState extends State<HomePage> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children:[
-                        SortingTile(title:"View By Symptom",value:"Pregnany",no:"5"+" Doctors",image:"assets/pregnant.png"),
-                        SortingTile(title:"View By Symptom",value:"Fever",no:"5"+" Doctors",image:"assets/fever.png"),
-                        SortingTile(title:"View By Symptom",value:"Dengue",no:"5"+" Doctors",image:"assets/dengue.png"),
-                        SortingTile(title:"View By Symptom",value:"More",no:"",image:"assets/more.png"),
+                        SortingTile(value:"Pregnany",no:"5"+" Doctors",image:"assets/pregnant.png"),
+                        SortingTile(value:"Fever",no:"5"+" Doctors",image:"assets/fever.png"),
+                        SortingTile(value:"Dengue",no:"5"+" Doctors",image:"assets/dengue.png"),
+                        SortingTile(value:"More",no:"",image:"assets/more.png"),
                       ]
                     ),
                   ),

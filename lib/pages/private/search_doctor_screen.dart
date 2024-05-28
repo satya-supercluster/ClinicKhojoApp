@@ -1,5 +1,3 @@
-
-import 'package:clinic_khojo/data.dart';
 import 'package:clinic_khojo/pages/private/doctors_profile_page.dart';
 import 'package:clinic_khojo/pages/private/home_page.dart';
 import 'package:clinic_khojo/utils/constants.dart';
@@ -17,33 +15,46 @@ import 'package:google_fonts/google_fonts.dart';
 
 class SearchDoctorsPage extends StatefulWidget {
   final String title;
-  final String heading;
+  final List<Map<String,dynamic>>details;
+  final String? value;
   const SearchDoctorsPage({
     super.key,
     required this.title,
-    required this.heading
+    required this.details,
+    this.value
   });
   @override
   State<SearchDoctorsPage> createState() => _SearchDoctorsPageState();
 }
 
 class _SearchDoctorsPageState extends State<SearchDoctorsPage> {
-  List<Map<String,dynamic>>result=l;
-  // void initState(){
-  //   super.initState();
-  //   setState(() {
-  //     result=l;
-  //   });
-  // }
+  List<Map<String,dynamic>>result=[];
+  @override
+  void initState(){
+    super.initState();
+    setState(() {
+      result=widget.details;
+    });
+  }
   void runFilter(String search){
     if(search.isEmpty){
-      result=l;
+      result=widget.details;
+      print(result.length);
+      // print(result);
     }
     else{
-      result=l.where((element)=>element['name'].toLowerCase().contains(search.toLowerCase())).toList();
+      // result=widget.details.where((element)=>element['name'].toLowerCase().contains(search.toLowerCase())).toList();
+      result = widget.details
+        .where((element) =>
+            element.containsKey('name') &&
+            (element['name'] is String) &&
+            (element['name'] as String)
+                .toLowerCase()
+                .contains(search.toLowerCase()))
+        .toList();
+      // print(result);
+      print(result.length);
     }
-    print(search);
-    print(result);
   }
   @override
   Widget build(BuildContext context) {

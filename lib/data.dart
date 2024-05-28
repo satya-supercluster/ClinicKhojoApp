@@ -8,7 +8,7 @@ List<Map<String,dynamic>> l=
     "rating": 4.5,
     "location": "New York",
     "dp": "assets/doctor.jpg",
-    "image": "assets/img.jpg",
+    "image": "assets/doctor.jpg",
     "clinics": [
       {
         "name": "City Hospital",
@@ -32,7 +32,7 @@ List<Map<String,dynamic>> l=
     "rating": 4.7,
     "location": "Los Angeles",
     "dp": "assets/doctor.jpg",
-    "image": "assets/img.jpg",
+    "image": "assets/doctor.jpg",
     "clinics": [
       {
         "name": "Sunshine Dermatology",
@@ -56,7 +56,7 @@ List<Map<String,dynamic>> l=
     "rating": 4.8,
     "location": "Chicago",
     "dp": "assets/doctor.jpg",
-    "image": "assets/img.jpg",
+    "image": "assets/doctor.jpg",
     "clinics": [
       {
         "name": "Neurology Center",
@@ -80,7 +80,7 @@ List<Map<String,dynamic>> l=
     "rating": 4.6,
     "location": "Houston",
     "dp": "assets/doctor.jpg",
-    "image": "assets/img.jpg",
+    "image": "assets/doctor.jpg",
     "clinics": [
       {
         "name": "Children's Hospital",
@@ -104,7 +104,7 @@ List<Map<String,dynamic>> l=
     "rating": 4.7,
     "location": "Phoenix",
     "dp": "assets/doctor.jpg",
-    "image": "assets/img.jpg",
+    "image": "assets/doctor.jpg",
     "clinics": [
       {
         "name": "Bone & Joint Center",
@@ -128,7 +128,7 @@ List<Map<String,dynamic>> l=
     "rating": 4.8,
     "location": "San Francisco",
     "dp": "assets/doctor.jpg",
-    "image": "assets/img.jpg",
+    "image": "assets/doctor.jpg",
     "clinics": [
       {
         "name": "Heart Health Institute",
@@ -152,7 +152,7 @@ List<Map<String,dynamic>> l=
     "rating": 4.7,
     "location": "Miami",
     "dp": "assets/doctor.jpg",
-    "image": "assets/img.jpg",
+    "image": "assets/doctor.jpg",
     "clinics": [
       {
         "name": "Women's Health Center",
@@ -176,7 +176,7 @@ List<Map<String,dynamic>> l=
     "rating": 4.5,
     "location": "Dallas",
     "dp": "assets/doctor.jpg",
-    "image": "assets/img.jpg",
+    "image": "assets/doctor.jpg",
     "clinics": [
       {
         "name": "Urology Specialists",
@@ -200,7 +200,7 @@ List<Map<String,dynamic>> l=
     "rating": 4.6,
     "location": "Philadelphia",
     "dp": "assets/doctor.jpg",
-    "image": "assets/img.jpg",
+    "image": "assets/doctor.jpg",
     "clinics": [
       {
         "name": "Eye Care Center",
@@ -224,7 +224,7 @@ List<Map<String,dynamic>> l=
     "rating": 4.8,
     "location": "San Diego",
     "dp": "assets/doctor.jpg",
-    "image": "assets/img.jpg",
+    "image": "assets/doctor.jpg",
     "clinics": [
       {
         "name": "Endocrine Associates",
@@ -248,7 +248,7 @@ List<Map<String,dynamic>> l=
     "rating": 4.7,
     "location": "Austin",
     "dp": "assets/doctor.jpg",
-    "image": "assets/img.jpg",
+    "image": "assets/doctor.jpg",
     "clinics": [
       {
         "name": "Gastro Health Center",
@@ -272,7 +272,7 @@ List<Map<String,dynamic>> l=
     "rating": 4.6,
     "location": "San Antonio",
     "dp": "assets/doctor.jpg",
-    "image": "assets/img.jpg",
+    "image": "assets/doctor.jpg",
     "clinics": [
       {
         "name": "Rheumatology Clinic",
@@ -296,7 +296,7 @@ List<Map<String,dynamic>> l=
     "rating": 4.7,
     "location": "Jacksonville",
     "dp": "assets/doctor.jpg",
-    "image": "assets/img.jpg",
+    "image": "assets/doctor.jpg",
     "clinics": [
       {
         "name": "Mental Health Center",
@@ -320,7 +320,7 @@ List<Map<String,dynamic>> l=
     "rating": 4.8,
     "location": "Fort Worth",
     "dp": "assets/doctor.jpg",
-    "image": "assets/img.jpg",
+    "image": "assets/doctor.jpg",
     "clinics": [
       {
         "name": "Hematology Center",
@@ -344,7 +344,7 @@ List<Map<String,dynamic>> l=
     "rating": 4.6,
     "location": "Charlotte",
     "dp": "assets/doctor.jpg",
-    "image": "assets/img.jpg",
+    "image": "assets/doctor.jpg",
     "clinics": [
       {
         "name": "Lung Health Center",
@@ -368,7 +368,7 @@ List<Map<String,dynamic>> l=
     "rating": 4.8,
     "location": "San Francisco",
     "dp": "assets/doctor.jpg",
-    "image": "assets/img.jpg",
+    "image": "assets/doctor.jpg",
     "clinics": [
       {
         "name": "Heart Wellness Center",
@@ -392,7 +392,7 @@ List<Map<String,dynamic>> l=
     "rating": 4.7,
     "location": "Denver",
     "dp": "assets/doctor.jpg",
-    "image": "assets/img.jpg",
+    "image": "assets/doctor.jpg",
     "clinics": [
       {
         "name": "Allergy Center",
@@ -416,7 +416,7 @@ List<Map<String,dynamic>> l=
     "rating": 4.5,
     "location": "El Paso",
     "dp": "assets/doctor.jpg",
-    "image": "assets/img.jpg",
+    "image": "assets/doctor.jpg",
     "clinics": [
       {
         "name": "Senior Health Center",
@@ -440,7 +440,7 @@ List<Map<String,dynamic>> l=
     "rating": 4.8,
     "location": "Washington, D.C.",
     "dp": "assets/doctor.jpg",
-    "image": "assets/img.jpg",
+    "image": "assets/doctor.jpg",
     "clinics": [
       {
         "name": "Endocrine Health Center",
@@ -464,7 +464,7 @@ List<Map<String,dynamic>> l=
     "rating": 4.6,
     "location": "Boston",
     "dp": "assets/doctor.jpg",
-    "image": "assets/img.jpg",
+    "image": "assets/doctor.jpg",
     "clinics": [
       {
         "name": "Skin Health Center",
@@ -488,7 +488,7 @@ List<Map<String,dynamic>> l=
     "rating": 4.7,
     "location": "Seattle",
     "dp": "assets/doctor.jpg",
-    "image": "assets/img.jpg",
+    "image": "assets/doctor.jpg",
     "clinics": [
       {
         "name": "Joint Health Center",
@@ -512,7 +512,7 @@ List<Map<String,dynamic>> l=
     "rating": 4.7,
     "location": "Portland",
     "dp": "assets/doctor.jpg",
-    "image": "assets/img.jpg",
+    "image": "assets/doctor.jpg",
     "clinics": [
       {
         "name": "Digestive Health Center",
@@ -536,7 +536,7 @@ List<Map<String,dynamic>> l=
     "rating": 4.8,
     "location": "Las Vegas",
     "dp": "assets/doctor.jpg",
-    "image": "assets/img.jpg",
+    "image": "assets/doctor.jpg",
     "clinics": [
       {
         "name": "Blood Disorders Center",
@@ -560,7 +560,7 @@ List<Map<String,dynamic>> l=
     "rating": 4.9,
     "location": "Memphis",
     "dp": "assets/doctor.jpg",
-    "image": "assets/img.jpg",
+    "image": "assets/doctor.jpg",
     "clinics": [
       {
         "name": "Cancer Treatment Center",
@@ -584,7 +584,7 @@ List<Map<String,dynamic>> l=
     "rating": 4.7,
     "location": "Detroit",
     "dp": "assets/doctor.jpg",
-    "image": "assets/img.jpg",
+    "image": "assets/doctor.jpg",
     "clinics": [
       {
         "name": "Lung Health Center",
@@ -608,7 +608,7 @@ List<Map<String,dynamic>> l=
     "rating": 4.8,
     "location": "Baltimore",
     "dp": "assets/doctor.jpg",
-    "image": "assets/img.jpg",
+    "image": "assets/doctor.jpg",
     "clinics": [
       {
         "name": "Brain Health Center",
@@ -632,7 +632,7 @@ List<Map<String,dynamic>> l=
     "rating": 4.6,
     "location": "Oklahoma City",
     "dp": "assets/doctor.jpg",
-    "image": "assets/img.jpg",
+    "image": "assets/doctor.jpg",
     "clinics": [
       {
         "name": "Children's Health Center",
@@ -656,7 +656,7 @@ List<Map<String,dynamic>> l=
     "rating": 4.7,
     "location": "Tucson",
     "dp": "assets/doctor.jpg",
-    "image": "assets/img.jpg",
+    "image": "assets/doctor.jpg",
     "clinics": [
       {
         "name": "Orthopedic Health Center",
@@ -680,7 +680,7 @@ List<Map<String,dynamic>> l=
     "rating": 4.7,
     "location": "Milwaukee",
     "dp": "assets/doctor.jpg",
-    "image": "assets/img.jpg",
+    "image": "assets/doctor.jpg",
     "clinics": [
       {
         "name": "Women's Health Associates",
@@ -704,7 +704,7 @@ List<Map<String,dynamic>> l=
     "rating": 4.5,
     "location": "Indianapolis",
     "dp": "assets/doctor.jpg",
-    "image": "assets/img.jpg",
+    "image": "assets/doctor.jpg",
     "clinics": [
       {
         "name": "Urology Health Center",
@@ -728,7 +728,7 @@ List<Map<String,dynamic>> l=
     "rating": 4.7,
     "location": "Kansas City",
     "dp": "assets/doctor.jpg",
-    "image": "assets/img.jpg",
+    "image": "assets/doctor.jpg",
     "clinics": [
       {
         "name": "Allergy Treatment Center",
@@ -752,7 +752,7 @@ List<Map<String,dynamic>> l=
     "rating": 4.6,
     "location": "New Orleans",
     "dp": "assets/doctor.jpg",
-    "image": "assets/img.jpg",
+    "image": "assets/doctor.jpg",
     "clinics": [
       {
         "name": "Eye Care Associates",

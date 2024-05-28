@@ -84,8 +84,8 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
               cursorColor: Colors.black,
               autofocus: true,
               controller: searchController,
-              onEditingComplete:widget.action(searchController.text) ,
-              onChanged: widget.action(searchController.text),
+              // onEditingComplete:widget.action(searchController.text) ,
+              onChanged: (value) => widget.action(value),
               decoration: InputDecoration(
                 hintText: "Search Doctors...",
                 hintStyle: GoogleFonts.poppins(fontSize:12,),

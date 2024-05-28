@@ -49,7 +49,7 @@ class _DoctorProfileState extends State<DoctorProfile> {
                     padding: EdgeInsets.fromLTRB(0, 20, 0, 24),
                     alignment: Alignment.center,
                     child: Text(
-                      widget.map['name']??"",
+                      '${widget.map['name']}',
                       style: TextStyle(color: Constants.themeGrey,fontSize: 14,fontWeight: FontWeight.w400),
                     ),
                   ),
@@ -72,7 +72,7 @@ class _DoctorProfileState extends State<DoctorProfile> {
                         ),
                       ),
                       SizedBox(height:8),
-                      Text(widget.map['name']??"",style:TextStyle(fontSize:18,fontWeight:FontWeight.w500,color:Constants.themeHeadingBlue))
+                      Text('${widget.map['name']}',style:TextStyle(fontSize:18,fontWeight:FontWeight.w500,color:Constants.themeHeadingBlue))
                     ],
                   ),
                 ],
@@ -105,7 +105,7 @@ class _DoctorProfileState extends State<DoctorProfile> {
                       children: [
                         Text("Address:",style:TextStyle(fontSize:10,fontWeight:FontWeight.w400,color:Constants.themeGrey)),
                         SizedBox(width:24),
-                        Expanded(child: Text(widget.map['location']??"xyz",style:TextStyle(fontSize:12,fontWeight:FontWeight.w500,color:Constants.themeSubheadingGrey))),
+                        Expanded(child: Text('${widget.map['location']}',style:TextStyle(fontSize:12,fontWeight:FontWeight.w500,color:Constants.themeSubheadingGrey))),
                       ],
                     ),
                     SizedBox(height:8),
@@ -113,7 +113,7 @@ class _DoctorProfileState extends State<DoctorProfile> {
                       children: [
                         Text("Degree:",style:TextStyle(fontSize:10,fontWeight:FontWeight.w400,color:Constants.themeGrey)),
                         SizedBox(width:24),
-                        Expanded(child: Text(widget.map['degree']??"xyz",style:TextStyle(fontSize:12,fontWeight:FontWeight.w500,color:Constants.themeSubheadingGrey))),
+                        Expanded(child: Text('${widget.map['degree']}',style:TextStyle(fontSize:12,fontWeight:FontWeight.w500,color:Constants.themeSubheadingGrey))),
                       ],
                     ),
                     SizedBox(height:8),
@@ -121,7 +121,7 @@ class _DoctorProfileState extends State<DoctorProfile> {
                       children: [
                         Text("Specialization:",style:TextStyle(fontSize:10,fontWeight:FontWeight.w400,color:Constants.themeGrey)),
                         SizedBox(width:24),
-                        Expanded(child: Text(widget.map['specialization']??"xyz",style:TextStyle(fontSize:12,fontWeight:FontWeight.w500,color:Constants.themeSubheadingGrey))),
+                        Expanded(child: Text('${widget.map['specialization']}',style:TextStyle(fontSize:12,fontWeight:FontWeight.w500,color:Constants.themeSubheadingGrey))),
                       ],
                     ),
                     SizedBox(height:8),
@@ -137,7 +137,7 @@ class _DoctorProfileState extends State<DoctorProfile> {
                       children: [
                         Text("Title of clinic:",style:TextStyle(fontSize:10,fontWeight:FontWeight.w400,color:Constants.themeGrey)),
                         SizedBox(width:24),
-                        Expanded(child: Text(widget.map['title']??"xyz",style:TextStyle(fontSize:12,fontWeight:FontWeight.w500,color:Constants.themeSubheadingGrey))),
+                        Expanded(child: Text('${widget.map['title']}',style:TextStyle(fontSize:12,fontWeight:FontWeight.w500,color:Constants.themeSubheadingGrey))),
                       ],
                     ),
                     SizedBox(height:8),
@@ -145,7 +145,7 @@ class _DoctorProfileState extends State<DoctorProfile> {
                       children: [
                         Text("Title of clinic:",style:TextStyle(fontSize:10,fontWeight:FontWeight.w400,color:Constants.themeGrey)),
                         SizedBox(width:24),
-                        Expanded(child: Text(widget.map['title']??"xyz",style:TextStyle(fontSize:12,fontWeight:FontWeight.w500,color:Constants.themeSubheadingGrey))),
+                        Expanded(child: Text('${widget.map['title']}',style:TextStyle(fontSize:12,fontWeight:FontWeight.w500,color:Constants.themeSubheadingGrey))),
                       ],
                     ),
                     SizedBox(height:8),
@@ -153,7 +153,7 @@ class _DoctorProfileState extends State<DoctorProfile> {
                       children: [
                         Text("Title of clinic:",style:TextStyle(fontSize:10,fontWeight:FontWeight.w400,color:Constants.themeGrey)),
                         SizedBox(width:24),
-                        Expanded(child: Text(widget.map['title']??"xyz",style:TextStyle(fontSize:12,fontWeight:FontWeight.w500,color:Constants.themeSubheadingGrey))),
+                        Expanded(child: Text('${widget.map['title']}',style:TextStyle(fontSize:12,fontWeight:FontWeight.w500,color:Constants.themeSubheadingGrey))),
                       ],
                     ),
                   ],

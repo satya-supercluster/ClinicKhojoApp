@@ -1,3 +1,4 @@
+import 'package:clinic_khojo/pages/private/appointment_form_page.dart';
 import 'package:clinic_khojo/pages/private/doctors_profile_page.dart';
 import 'package:clinic_khojo/services/functions/common_functions.dart';
 import 'package:clinic_khojo/utils/constants.dart';
@@ -8,10 +9,12 @@ import 'package:flutter/widgets.dart';
 
 class AppointmentDetailsPage extends StatefulWidget {
   final String title;
-  final Map<String,dynamic> map;
+  final Map<String,dynamic> doctorsDetails;
+  final int index;
   const AppointmentDetailsPage({
     required this.title,
-    required this.map,
+    required this.doctorsDetails,
+    required this.index,
     super.key,
   });
 
@@ -94,8 +97,8 @@ class _AppointmentDetailsPageState extends State<AppointmentDetailsPage> {
                                         margin:EdgeInsets.only(top:5,right:3),
                                         decoration: BoxDecoration(
                                           image: DecorationImage(
-                                            image: AssetImage(widget.map['image']??""),
-                                            fit: BoxFit.fill,
+                                            image: AssetImage(widget.doctorsDetails['image']??"assets/doctor.jpg"),
+                                            fit: BoxFit.cover,
                                           ),
                                           borderRadius: BorderRadius.all(Radius.circular(8))
                                         ),
@@ -126,7 +129,7 @@ class _AppointmentDetailsPageState extends State<AppointmentDetailsPage> {
                               children: [
                                 //Title
                       
-                                Text("${widget.map['title']}",style: TextStyle(fontWeight:FontWeight.bold,fontSize:18),),
+                                Text("${widget.doctorsDetails['name']}",style: TextStyle(fontWeight:FontWeight.bold,fontSize:18),),
                       
                                 SizedBox(height:4),
                                 // Degree, Specialization and Fee
@@ -135,13 +138,13 @@ class _AppointmentDetailsPageState extends State<AppointmentDetailsPage> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text("${widget.map['degree']}",style: TextStyle(fontWeight:FontWeight.w500,fontSize:10,color:Constants.themeGrey),),
-                                    SizedBox(width:5),
+                                    Text("${widget.doctorsDetails['degree']}",style: TextStyle(fontWeight:FontWeight.w500,fontSize:10,color:Constants.themeGrey),),
+                                    SizedBox(width:10),
+                                    Text("Fee: ₹${widget.doctorsDetails['fee']}",style: TextStyle(fontWeight:FontWeight.w500,fontSize:10,color:Colors.green),),
+                                    SizedBox(width:10),
                                     Expanded(
-                                      child: Center(child: Text("${widget.map['specialization']}",style: TextStyle(fontWeight:FontWeight.w500,fontSize:10,color:Constants.themeGrey),))
+                                      child: Text("${widget.doctorsDetails['specialization']} Specialist",style: TextStyle(fontWeight:FontWeight.w500,fontSize:10,color:Constants.themeGrey),)
                                     ),
-                                    SizedBox(width:5),
-                                    Text("Fee: ₹${widget.map['fee']}",style: TextStyle(fontWeight:FontWeight.w500,fontSize:10,color:Colors.green),),
                                   ],
                                 ),
                                 SizedBox(height:12),
@@ -166,7 +169,7 @@ class _AppointmentDetailsPageState extends State<AppointmentDetailsPage> {
                                     SizedBox(width:3.7),
                                     Align(
                                       alignment: Alignment.center,
-                                      child: Text("${widget.map['rating']}",style: TextStyle(fontWeight:FontWeight.w500,fontSize:10,color:Constants.themeGrey))
+                                      child: Text("${widget.doctorsDetails['rating']}",style: TextStyle(fontWeight:FontWeight.w500,fontSize:10,color:Constants.themeGrey))
                                     )
                                   ],
                                 ),
@@ -182,7 +185,7 @@ class _AppointmentDetailsPageState extends State<AppointmentDetailsPage> {
                                           padding:EdgeInsets.all(5),
                                           decoration: BoxDecoration(
                                             image: DecorationImage(
-                                              image: AssetImage(widget.map['dp']??""),
+                                              image: AssetImage(widget.doctorsDetails['clinics'][widget.index]['image']??"assets/img.jpg"),
                                               fit: BoxFit.cover,
                                             ),
                                             borderRadius: BorderRadius.all(Radius.circular(8))
@@ -194,14 +197,14 @@ class _AppointmentDetailsPageState extends State<AppointmentDetailsPage> {
                                     Column(
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
-                                        Text(widget.map['name']??"",style: TextStyle(fontWeight:FontWeight.w500,fontSize:14),),
+                                        Text(widget.doctorsDetails['clinics'][widget.index]['name']??"",style: TextStyle(fontWeight:FontWeight.w500,fontSize:14),),
                                         GestureDetector(
-                                          onTap: (){
-                                            Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (BuildContext context) => DoctorProfile(map:widget.map)));
-                                          },
+                                          // onTap: (){
+                                          //   Navigator.push(
+                                          //   context,
+                                          //   MaterialPageRoute(
+                                          //     builder: (BuildContext context) => DoctorProfile(map:widget.doctorsDetails)));
+                                          // },
                                           child: Container(
                                             padding: EdgeInsets.fromLTRB(0, 1, 0, 1),
                                             child: Text("View Profile",style: TextStyle(fontWeight:FontWeight.w500,fontSize:14,decoration:TextDecoration.underline,color:Colors.red,decorationColor:Colors.red),)
@@ -332,6 +335,23 @@ class _AppointmentDetailsPageState extends State<AppointmentDetailsPage> {
                     ),
                     SizedBox(height:25),
                     Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 24),
+                      child: Row(
+                        children: [
+                          Text("Visit Hours",style: TextStyle(fontSize: 14,fontWeight: FontWeight.w500,color: Constants.themeSubheadingGrey),),
+                        ],
+                      ),
+                    ),
+                    SizedBox(height:10),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 24),
+                      child: Container(
+                        height:100,
+                        color:Colors.black
+                      ),
+                    ),
+                    SizedBox(height:10),
+                    Padding(
                       padding: EdgeInsets.symmetric(horizontal: 24),
                       child:Row(
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -354,7 +374,7 @@ class _AppointmentDetailsPageState extends State<AppointmentDetailsPage> {
                               RichText(
                                 text: TextSpan(
                                   children: [
-                                    TextSpan(text:"₹${widget.map['fee']}",style: TextStyle(fontSize: 14,fontWeight: FontWeight.w600,color: Constants.feeGreen)),
+                                    TextSpan(text:"₹${widget.doctorsDetails['fee']}",style: TextStyle(fontSize: 14,fontWeight: FontWeight.w600,color: Constants.feeGreen)),
                                     TextSpan(text:"+₹50 booking charge",style: TextStyle(fontSize: 8,fontWeight: FontWeight.w300,color: Constants.themeSubheadingGrey))
                                   ]
                                 )
@@ -370,7 +390,7 @@ class _AppointmentDetailsPageState extends State<AppointmentDetailsPage> {
                               RichText(
                                 text: TextSpan(
                                   children: [
-                                    TextSpan(text:"₹${widget.map['fee']}",style: TextStyle(fontSize: 14,fontWeight: FontWeight.w600,color: Constants.textRed)),
+                                    TextSpan(text:"₹${widget.doctorsDetails['fee']}",style: TextStyle(fontSize: 14,fontWeight: FontWeight.w600,color: Constants.textRed)),
                                     TextSpan(text:"+₹50 booking charge",style: TextStyle(fontSize: 8,fontWeight: FontWeight.w300,color: Constants.themeSubheadingGrey))
                                   ]
                                 )
@@ -384,16 +404,25 @@ class _AppointmentDetailsPageState extends State<AppointmentDetailsPage> {
                     Row(
                       children: [
                         Expanded(
-                          child: Container(
-                            width:double.infinity,
-                            alignment: Alignment.center,
-                            padding: EdgeInsets.symmetric(vertical: 8),
-                            margin: EdgeInsets.symmetric(horizontal: 32),
-                            decoration: BoxDecoration(
-                              color:Constants.textRed,
-                              borderRadius: BorderRadius.all(Radius.circular(20))
+                          child: GestureDetector(
+                            onTap:(){
+                              Navigator.push(
+                                context, MaterialPageRoute(
+                                  builder: ((context) => AppointmentFormPage())
+                                )
+                              );
+                            }, 
+                            child: Container(
+                              width:double.infinity,
+                              alignment: Alignment.center,
+                              padding: EdgeInsets.symmetric(vertical: 8),
+                              margin: EdgeInsets.symmetric(horizontal: 32),
+                              decoration: BoxDecoration(
+                                color:Constants.textRed,
+                                borderRadius: BorderRadius.all(Radius.circular(20))
+                              ),
+                              child:Text("Book Emergency Appointment",style:TextStyle(fontSize:13,fontWeight: FontWeight.w500,color: Colors.white))
                             ),
-                            child:Text("Book Emergency Appointment",style:TextStyle(fontSize:13,fontWeight: FontWeight.w500,color: Colors.white))
                           )
                         )
                       ],
@@ -419,20 +448,30 @@ class _AppointmentDetailsPageState extends State<AppointmentDetailsPage> {
                     Row(
                       children: [
                         Expanded(
-                          child: Container(
-                            width:double.infinity,
-                            alignment: Alignment.center,
-                            padding: EdgeInsets.symmetric(vertical: 8),
-                            margin: EdgeInsets.symmetric(horizontal: 32),
-                            decoration: BoxDecoration(
-                              color:Constants.feeGreen,
-                              borderRadius: BorderRadius.all(Radius.circular(20))
+                          child: GestureDetector(
+                            onTap:(){
+                              Navigator.push(
+                                context, MaterialPageRoute(
+                                  builder: ((context) => AppointmentFormPage())
+                                )
+                              );
+                            },
+                            child: Container(
+                              width:double.infinity,
+                              alignment: Alignment.center,
+                              padding: EdgeInsets.symmetric(vertical: 8),
+                              margin: EdgeInsets.symmetric(horizontal: 32),
+                              decoration: BoxDecoration(
+                                color:Constants.feeGreen,
+                                borderRadius: BorderRadius.all(Radius.circular(20))
+                              ),
+                              child:Text("Book Normal Appointment",style:TextStyle(fontSize:13,fontWeight: FontWeight.w500,color: Colors.white))
                             ),
-                            child:Text("Book Normal Appointment",style:TextStyle(fontSize:13,fontWeight: FontWeight.w500,color: Colors.white))
                           )
                         )
                       ],
-                    )
+                    ),
+                    SizedBox(height:50)
                   ],
                 ),
               ),

@@ -29,7 +29,7 @@ class _SearchDoctorsTileState extends State<SearchDoctorsTile> {
         Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (BuildContext context) => AppointmentDetailsPage(title:widget.title,map:widget.map)));
+              builder: (BuildContext context) => AppointmentDetailsPage(title:widget.title,doctorsDetails:widget.map,index:1)));
       },
       child: Container(
         width:width,

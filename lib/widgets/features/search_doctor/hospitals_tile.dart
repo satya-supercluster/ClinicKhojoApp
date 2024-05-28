@@ -6,10 +6,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 class HospitalsTile extends StatefulWidget {
-  final Map<String,dynamic> map;
+  final Map<String,dynamic> doctorsDetails;
+  final int index;
   const HospitalsTile({
-    required this.map,
+    required this.doctorsDetails,
     super.key,
+    required this.index
   });
 
   @override
@@ -26,7 +28,7 @@ class _HospitalsTileState extends State<HospitalsTile> {
         Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (BuildContext context) => AppointmentDetailsPage(title:"Search Doctors",map:widget.map)));
+              builder: (BuildContext context) => AppointmentDetailsPage(title:"Search Doctors",doctorsDetails:widget.doctorsDetails,index:widget.index)));
       },
       child: Container(
         width:width,
@@ -52,7 +54,7 @@ class _HospitalsTileState extends State<HospitalsTile> {
                           margin:EdgeInsets.only(top:5,right:3),
                           decoration: BoxDecoration(
                             image: DecorationImage(
-                              image: AssetImage(widget.map['image']??""),
+                              image: AssetImage(widget.doctorsDetails['clinics'][widget.index]['image']??"assets/img.jpg"),
                               fit: BoxFit.cover,
                             ),
                             borderRadius: BorderRadius.all(Radius.circular(8))
@@ -85,7 +87,7 @@ class _HospitalsTileState extends State<HospitalsTile> {
                   //Title  
                   Row(
                     children: [
-                      Expanded(child: Text(widget.map['name']??"",style: GoogleFonts.poppins(fontWeight:FontWeight.bold,fontSize:18),)),
+                      Expanded(child: Text(widget.doctorsDetails['clinics'][widget.index]['name']??"",style: GoogleFonts.poppins(fontWeight:FontWeight.bold,fontSize:18),)),
                     ],
                   ),
                   Row(
@@ -98,12 +100,12 @@ class _HospitalsTileState extends State<HospitalsTile> {
                       SizedBox(width:3.7),
                       Align(
                         alignment: Alignment.center,
-                        child: Text("${widget.map['rating']}",style: TextStyle(fontWeight:FontWeight.w500,fontSize:10,color:Constants.themeGrey))
+                        child: Text("${widget.doctorsDetails['clinics'][widget.index]['rating']}",style: TextStyle(fontWeight:FontWeight.w500,fontSize:10,color:Constants.themeGrey))
                       ),
                       SizedBox(width:12),
-                      Text("Fee: ₹${widget.map['fee']}",style: TextStyle(fontWeight:FontWeight.w500,fontSize:11,color:Colors.green),),
+                      Text("Fee: ₹${widget.doctorsDetails['clinics'][widget.index]['fee']}",style: TextStyle(fontWeight:FontWeight.w500,fontSize:11,color:Colors.green),),
                       SizedBox(width:12),
-                      Expanded(child: Text("Location: ${widget.map['location']}",style: TextStyle(fontWeight:FontWeight.w500,fontSize:11,color:Constants.themeGrey),)),
+                      Expanded(child: Text("Location: ${widget.doctorsDetails['clinics'][widget.index]['location']}",style: TextStyle(fontWeight:FontWeight.w500,fontSize:11,color:Constants.themeGrey),)),
                     ],
                   ),
                   SizedBox(height:5),
@@ -114,10 +116,10 @@ class _HospitalsTileState extends State<HospitalsTile> {
                           Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (BuildContext context) => DoctorProfile(map:widget.map)));
+                            builder: (BuildContext context) => DoctorProfile(map:widget.doctorsDetails['clinics'][widget.index])));
                         },
                         child: Container(
-                          padding: EdgeInsets.fromLTRB(0, 1, 0, 1),
+                          padding: EdgeInsets.fromLTRB(0, 1, 1, 1),
                           child: Text("View Profile",style: TextStyle(fontWeight:FontWeight.w500,fontSize:14,decoration:TextDecoration.underline,color:Colors.red,decorationColor:Colors.red),)
                         )
                       ),

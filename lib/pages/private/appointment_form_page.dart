@@ -3,6 +3,7 @@ import 'package:clinic_khojo/widgets/global/common_appbar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppointmentFormPage extends StatefulWidget {
@@ -317,8 +318,18 @@ class _AppointmentFormPageState extends State<AppointmentFormPage> {
                     child: Container(
                       height:height*0.15, 
                       decoration: BoxDecoration(
-                        color: Colors.black,
+                        image: DecorationImage(
+                          image:AssetImage("assets/map.png"),
+                          fit: BoxFit.cover
+                        ),
                         borderRadius: BorderRadius.all(Radius.circular(8)),
+                        boxShadow: [
+                          BoxShadow(
+                            color:Colors.black.withOpacity(0.2),
+                            blurRadius: 5,
+                            offset: Offset(0,2),
+                          ),
+                        ]
                       ),
                     ),
                   ),
@@ -362,7 +373,8 @@ class _AppointmentFormPageState extends State<AppointmentFormPage> {
                     )
                   ],
                 ),
-              )
+              ),
+              Expanded(child: Center(child:Text("Payment dependency")),)
             ],
           ),
         )

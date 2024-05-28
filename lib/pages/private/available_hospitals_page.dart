@@ -159,7 +159,7 @@ class _AvailableHospitalsPageState extends State<AvailableHospitalsPage> {
                   itemBuilder: (context,index){
                     return Column(
                       children: [
-                        HospitalsTile(map: widget.doctorsDetails['clinics'][index],),
+                        HospitalsTile(doctorsDetails: widget.doctorsDetails,index:index),
                         SizedBox(height:20),
                       ],
                     );
