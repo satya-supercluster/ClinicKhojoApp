@@ -28,7 +28,6 @@ class _SortingTileState extends State<SortingTile> {
     double width = MediaQuery.of(context).size.width; // Gives the width
     double height = MediaQuery.of(context).size.height;
     return Container(
-      // height:99,
       child:Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.start,
@@ -39,7 +38,7 @@ class _SortingTileState extends State<SortingTile> {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(8)),
               color:Constants.themeLightBlue,
-            ),
+            ), 
             child:Center(
               child:Image.asset(widget.image,width:width*0.14,height:width*0.14,fit: BoxFit.fill,)
             )
@@ -47,8 +46,7 @@ class _SortingTileState extends State<SortingTile> {
           SizedBox(height:8),
           Text(widget.value,style: TextStyle(fontSize:12,fontWeight:FontWeight.w500),),
           // SizedBox(height:1),
-          if(widget.value!='More')
-          Text(widget.no,style: TextStyle(fontSize:10,fontWeight:FontWeight.w500,color:Constants.themeGrey))
+          Text(widget.no,style: TextStyle(fontSize:10,fontWeight:FontWeight.w500,color:(widget.value=='More')?Colors.white:Constants.themeGrey))
         ],
       )
     );

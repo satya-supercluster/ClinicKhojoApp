@@ -1,5 +1,6 @@
 import 'package:clinic_khojo/pages/private/doctors_profile_page.dart';
 import 'package:clinic_khojo/pages/private/home_page.dart';
+import 'package:clinic_khojo/services/functions/common_functions.dart';
 import 'package:clinic_khojo/utils/constants.dart';
 import 'package:clinic_khojo/widgets/features/search_doctor/doctors_tile.dart';
 import 'package:clinic_khojo/widgets/features/search_doctor/hospitals_tile.dart';
@@ -43,16 +44,16 @@ class _SearchDoctorsPageState extends State<SearchDoctorsPage> {
       // print(result);
     }
     else{
-      // result=widget.details.where((element)=>element['name'].toLowerCase().contains(search.toLowerCase())).toList();
-      result = widget.details
-        .where((element) =>
-            element.containsKey('name') &&
-            (element['name'] is String) &&
-            (element['name'] as String)
-                .toLowerCase()
-                .contains(search.toLowerCase()))
-        .toList();
+      // result = widget.details
+      //   .where((element) =>
+      //       element.containsKey('name') &&
+      //       (element['name'] is String) &&
+      //       (element['name'] as String)
+      //           .toLowerCase()
+      //           .contains(search.toLowerCase()))
+      //   .toList();
       // print(result);
+      result=searchDoctors(widget.details, search);
       print(result.length);
     }
   }
