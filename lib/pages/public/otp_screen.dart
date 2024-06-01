@@ -2,11 +2,8 @@ import 'dart:async';
 
 import 'package:clinic_khojo/pages/private/navigation.dart';
 import 'package:clinic_khojo/utils/constants.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:pinput/pinput.dart';
 
 class OtpPage extends StatefulWidget {

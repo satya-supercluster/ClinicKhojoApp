@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 
 class SlideshowBanner extends StatefulWidget {
+  const SlideshowBanner({
+    super.key
+  });
   @override
-  _SlideshowBannerState createState() => _SlideshowBannerState();
+  State<SlideshowBanner> createState() => _SlideshowBannerState();
 }
 
 class _SlideshowBannerState extends State<SlideshowBanner> {
