@@ -5,10 +5,10 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+  final String? phoneNumber;
+  const LoginPage({super.key, this.phoneNumber});
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -19,7 +19,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
-    TextEditingController phoneNumberController=TextEditingController();
+    TextEditingController phoneNumberController=TextEditingController(text: widget.phoneNumber ?? '');
     return Scaffold(
       backgroundColor:  Color(0xFF0529BB),
       body:SingleChildScrollView(
@@ -107,107 +107,39 @@ class _LoginPageState extends State<LoginPage> {
                           borderRadius:BorderRadius.all(Radius.circular(5))
                         ),
                         child: TextFormField(
-                          // initialValue: phoneNumberController.text!=""?phoneNumberController.text:"",
                           textAlignVertical: TextAlignVertical.center,
-                          // keyboardType: TextInputType.number,
-                          // inputFormatters:[
-                          //   // FilteringTextInputFormatter.digitsOnly,
-                          //   LengthLimitingTextInputFormatter(10)
-                          // ],
+                          keyboardType: TextInputType.number, // Display numeric keyboard
+                          inputFormatters: [
+                            LengthLimitingTextInputFormatter(10), // Limit to 10 digits
+                            FilteringTextInputFormatter.digitsOnly, // Allow only digits
+                          ],
                           cursorColor: Colors.black,
                           controller: phoneNumberController,
-                          autofocus: false,
-                          style: TextStyle(fontSize: 15,fontWeight: FontWeight.w400,color: Colors.black),
+                          autofocus: true,
+                          style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: Constants.themeGrey),
                           decoration: InputDecoration(
                             filled: true,
                             fillColor: Colors.white,
-                            // hintText: "0000000000",
-                            // hintStyle: TextStyle(color: Colors.grey,fontSize: 15),
-                            contentPadding:
-                                const EdgeInsets.only(left:15,right:15),
+                            contentPadding: const EdgeInsets.only(left: 15, right: 15),
                             focusedBorder: OutlineInputBorder(
                               borderSide: BorderSide(color: Colors.white),
                               borderRadius: BorderRadius.circular(5),
                             ),
-                            enabledBorder: UnderlineInputBorder( 
+                            enabledBorder: UnderlineInputBorder(
                               borderSide: BorderSide(color: Colors.white),
                               borderRadius: BorderRadius.circular(5),
                             ),
-                            prefixIcon:SizedBox(
+                            prefixIcon: SizedBox(
                               width: 30,
-                              child: Center(child: Text("+91",style:TextStyle(fontSize:13,fontWeight:FontWeight.w400,color:Constants.themeGrey),))  
+                              child: Center(
+                                child: Text(
+                                  "+91",
+                                  style: TextStyle(fontSize: 13, fontWeight: FontWeight.w400, color: Constants.themeGrey),
+                                ),
+                              ),
                             ),
                           ),
                         ),
-                        // child:TextFormField(
-                        //     controller: phoneNumberController,
-                        //     obscureText: false,
-                        //     keyboardType: TextInputType.number,
-                        //     textAlign: TextAlign.start,
-                        //     maxLines: 1,
-                        //     onChanged: (value){
-                        //       print(value);
-                        //       //   setState(() {
-                        //       //     verify = "Verify";
-                        //       //   });
-                        //       // if(Details.isNotEmpty &&  value==(Details['contactNumber'])) {
-                        //       //   setState(() {
-                        //       //     verify = "Verified";
-                        //       //   });
-                        //       // }
-                        //     },
-                        //     validator: (value) {
-                        //       // if (value == null || value.length == 0) {
-                        //       //   return 'Enter your Phone Number';
-                        //       // } else
-                        //       //   return null;
-                        //     },
-                        //     style: TextStyle(
-                        //       fontWeight: FontWeight.w400,
-                        //       fontStyle: FontStyle.normal,
-                        //       fontSize: 16,
-                        //       color: Colors.black,
-                        //     ),
-                        //     decoration: InputDecoration(
-                        //       errorStyle: TextStyle(color: Colors.red.shade200),
-                        //       prefixIcon: GestureDetector(
-                        //         child: Icon(
-                        //           Icons.phone,
-                        //           color: Color(0xFF949494),
-                        //         ),
-                        //       ),
-                        //       disabledBorder: OutlineInputBorder(
-                        //         borderRadius: BorderRadius.circular(8.0),
-                        //         borderSide: BorderSide(
-                        //           color: Color(0xFF949494),
-                        //           width: 1,
-                        //         ),
-                        //       ),
-                        //       focusedBorder: OutlineInputBorder(
-                        //         borderRadius: BorderRadius.circular(8.0),
-                        //         borderSide: BorderSide(
-                        //           color: Color(0xFF949494),
-                        //           width: 1,
-                        //         ),
-                        //       ),
-                        //       enabledBorder: OutlineInputBorder(
-                        //         borderRadius: BorderRadius.circular(8.0),
-                        //         borderSide: BorderSide(
-                        //           color: Color(0xFF949494),
-                        //           width: 1,
-                        //         ),
-                        //       ),
-                        //       hintText: 'Your Phone Number',
-                        //       filled: true,
-                        //       fillColor: Color(0xFFE1E0E0),
-                        //       hintStyle: TextStyle(fontSize: 14),
-                        //       isCollapsed: true,
-                        //       isDense: true,
-                        //       contentPadding:
-                        //       EdgeInsets.symmetric(vertical: 9, horizontal: 5),
-                        //     ),
-                        //   ),
-// isko usse compare krna kyuki yeh kam kr rhi h theek se
                       ),
                     ),
                     Row(
@@ -217,11 +149,34 @@ class _LoginPageState extends State<LoginPage> {
                         Expanded(
                           child: GestureDetector(
                             onTap: () {
-                              // Handle sign up action
-                              Navigator.push(
+                              if (phoneNumberController.text.length == 10) {
+                                // Navigate to OtpPage if the phone number is valid
+                                Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (BuildContext context) => OtpPage(phoneNumber: phoneNumberController.text,)));
+                                    builder: (BuildContext context) => OtpPage(
+                                      phoneNumber: phoneNumberController.text,
+                                    ),
+                                  ),
+                                );
+                              } else {
+                                // Show an error message or perform any other action if the phone number is invalid
+                                showDialog(
+                                  context: context,
+                                  builder: (BuildContext context) {
+                                    return AlertDialog(
+                                      title: Text('Invalid Phone Number'),
+                                      content: Text('Please enter a valid 10-digit phone number.'),
+                                      actions: [
+                                        TextButton(
+                                          onPressed: () => Navigator.of(context).pop(),
+                                          child: Text('OK'),
+                                        ),
+                                      ],
+                                    );
+                                  },
+                                );
+                              }
                             },
                             child: Container(
                               margin: const EdgeInsets.fromLTRB(20, 60, 20,0),
@@ -260,14 +215,14 @@ class _LoginPageState extends State<LoginPage> {
                             child:RichText(
                               text:TextSpan(
                                 children: [
-                                  TextSpan(text:"By Continuing, You agree to clinic khojo's ",style:TextStyle(fontSize:11,fontWeight:FontWeight.w500,color:Colors.white),),
-                                  TextSpan(text: "Terms of Services",style:TextStyle(fontSize:11,fontWeight:FontWeight.w500,color:Colors.white,decoration:TextDecoration.underline,decorationColor:Colors.white),
+                                  TextSpan(text:"By Continuing, You agree to clinic khojo's ",style:TextStyle(fontSize:13,fontWeight:FontWeight.w500,color:Colors.white),),
+                                  TextSpan(text: "Terms of Services",style:TextStyle(fontSize:13,fontWeight:FontWeight.w500,color:Colors.white,decoration:TextDecoration.underline,decorationColor:Colors.white),
                                     // recognizer: TapGestureRecognizer() ..onTap(){
                                     //   print("Hello")
                                     // }
                                   ),
-                                  TextSpan(text:" and ",style:TextStyle(fontSize:11,fontWeight:FontWeight.w500,color:Colors.white),),
-                                  TextSpan(text:"Privacy Poilicy.",style:TextStyle(fontSize:11,fontWeight:FontWeight.w500,color:Colors.white,decoration:TextDecoration.underline,decorationColor:Colors.white),
+                                  TextSpan(text:" and ",style:TextStyle(fontSize:13,fontWeight:FontWeight.w500,color:Colors.white),),
+                                  TextSpan(text:"Privacy Poilicy.",style:TextStyle(fontSize:13,fontWeight:FontWeight.w500,color:Colors.white,decoration:TextDecoration.underline,decorationColor:Colors.white),
                                     // recognizer: TapGestureRecognizer() ..onTap(){
                                     //   print("Hello")
                                     // }

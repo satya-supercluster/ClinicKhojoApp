@@ -2,6 +2,7 @@ import 'package:clinic_khojo/pages/private/appointment_form_page.dart';
 import 'package:clinic_khojo/pages/private/doctors_profile_page.dart';
 import 'package:clinic_khojo/services/functions/common_functions.dart';
 import 'package:clinic_khojo/utils/constants.dart';
+import 'package:clinic_khojo/widgets/global/time_picker.dart';
 import 'package:date_picker_timeline/date_picker_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -345,10 +346,23 @@ class _AppointmentDetailsPageState extends State<AppointmentDetailsPage> {
                     SizedBox(height:10),
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 24),
-                      child: Container(
-                        height:100,
-                        color:Colors.black
-                      ),
+                      // child: Column(
+                      //   children: [
+                      //     Row(
+                      //       children: [
+                      //         Container(
+                      //           padding: EdgeInsets.symmetric(horizontal: 5,vertical: 3),
+                      //           decoration: BoxDecoration(
+                      //             border: Border.all(width: 2,color: Constants.themeGrey),
+                      //             borderRadius: BorderRadius.all(Radius.circular(5))
+                      //           ),
+                      //           child: Text("11:00",style: TextStyle(fontSize:14,fontWeight: FontWeight.w400,color:Constants.themeSubheadingGrey),),
+                      //         )
+                      //       ],
+                      //     )
+                      //   ],
+                      // )
+                      child:TimePicker(),
                     ),
                     SizedBox(height:10),
                     Padding(

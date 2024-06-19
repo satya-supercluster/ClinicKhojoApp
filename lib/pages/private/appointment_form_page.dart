@@ -374,7 +374,23 @@ class _AppointmentFormPageState extends State<AppointmentFormPage> {
                   ],
                 ),
               ),
-              Expanded(child: Center(child:Text("Payment dependency")),)
+              SizedBox(height: 35,),
+              Center(
+                child:GestureDetector(
+                  onTap: () {
+                      Navigator.of(context).popUntil((route) => route.isFirst);
+                  },
+                  child: Container(
+                    width:width*0.7,
+                    padding: EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
+                      color:Constants.feeGreen
+                    ),
+                    child: Center(child: Text("Payment and Book",style:TextStyle(fontSize: 14,color:Colors.white,fontWeight: FontWeight.bold)))
+                  ),
+                )
+              )
             ],
           ),
         )

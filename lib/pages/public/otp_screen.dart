@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:clinic_khojo/pages/private/navigation.dart';
+import 'package:clinic_khojo/pages/public/login_screen.dart';
 import 'package:clinic_khojo/utils/constants.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -125,7 +126,11 @@ class _OtpPageState extends State<OtpPage> {
                                   TextSpan(text: 'Please enter the verification code we\'ve sent you on +91 '+widget.phoneNumber+". ", style:TextStyle(fontSize:15,fontWeight:FontWeight.w400,color:Colors.white)),
                                   TextSpan(text: "Edit",style:TextStyle(fontSize:15,fontWeight:FontWeight.w400,color:Colors.white,decoration:TextDecoration.underline,decorationColor:Colors.white),
                                   recognizer: TapGestureRecognizer() ..onTap=(){
-                                    Navigator.of(context).pop();
+                                    Navigator.of(context).pushReplacement(
+                                      MaterialPageRoute(
+                                        builder: (context) => LoginPage(phoneNumber: widget.phoneNumber),
+                                      ),
+                                    );
                                   }),
                                 ],
                               ),
