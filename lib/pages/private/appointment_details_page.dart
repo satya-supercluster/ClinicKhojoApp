@@ -346,22 +346,6 @@ class _AppointmentDetailsPageState extends State<AppointmentDetailsPage> {
                     SizedBox(height:10),
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 24),
-                      // child: Column(
-                      //   children: [
-                      //     Row(
-                      //       children: [
-                      //         Container(
-                      //           padding: EdgeInsets.symmetric(horizontal: 5,vertical: 3),
-                      //           decoration: BoxDecoration(
-                      //             border: Border.all(width: 2,color: Constants.themeGrey),
-                      //             borderRadius: BorderRadius.all(Radius.circular(5))
-                      //           ),
-                      //           child: Text("11:00",style: TextStyle(fontSize:14,fontWeight: FontWeight.w400,color:Constants.themeSubheadingGrey),),
-                      //         )
-                      //       ],
-                      //     )
-                      //   ],
-                      // )
                       child:TimePicker(),
                     ),
                     SizedBox(height:10),

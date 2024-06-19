@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 class SlideshowBanner extends StatefulWidget {
@@ -18,6 +20,8 @@ class _SlideshowBannerState extends State<SlideshowBanner> {
     'assets/banner.jpg',
   ];
 
+  Timer? _autoSlideTimer;
+  
   @override
   void initState() {
     super.initState();
@@ -25,18 +29,24 @@ class _SlideshowBannerState extends State<SlideshowBanner> {
   }
 
   void _startAutoSlide() {
-    Future.delayed(const Duration(seconds: 5), () {
+    // Cancel the previous Timer if it exists
+    _autoSlideTimer?.cancel();
+    // Create a new Timer
+    _autoSlideTimer = Timer.periodic(const Duration(seconds: 5), (_) {
       if (_currentPage < _imageUrls.length - 1) {
         _currentPage++;
       } else {
         _currentPage = 0;
       }
-      _pageController.animateToPage(
-        _currentPage,
-        duration: const Duration(milliseconds: 500),
-        curve: Curves.easeInOut,
-      );
-      _startAutoSlide();
+
+      // Check if the _pageController is still attached to the widget tree
+      if (_pageController.hasClients) {
+        _pageController.animateToPage(
+          _currentPage,
+          duration: const Duration(milliseconds: 500),
+          curve: Curves.easeInOut,
+        );
+      }
     });
   }
 
@@ -95,9 +105,11 @@ class _SlideshowBannerState extends State<SlideshowBanner> {
     );
   }
 
-  @override
+   @override
   void dispose() {
     _pageController.dispose();
+    // Cancel the Timer when the widget is disposed
+    _autoSlideTimer?.cancel();
     super.dispose();
   }
 }

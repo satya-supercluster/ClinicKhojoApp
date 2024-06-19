@@ -218,10 +218,30 @@ class _HomePageState extends State<HomePage> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children:[
-                          SortingTile(value:"Pregnany",no:"5"+" Doctors",image:"assets/pregnant.png"),
-                          SortingTile(value:"Fever",no:"5"+" Doctors",image:"assets/fever.png"),
-                          SortingTile(value:"Dengue",no:"5"+" Doctors",image:"assets/dengue.png"),
-                          SortingTile(value:"More",no:"",image:"assets/more.png"),
+                          GestureDetector(
+                            onTap:()=>{
+                              Navigator.push(context,MaterialPageRoute(builder: (context)=>SearchDoctorsPage(title: "View By Specialist", details: details)))
+                            },
+                            child: SortingTile(value:"Pregnany",no:"5"+" Doctors",image:"assets/pregnant.png")
+                          ),
+                          GestureDetector(
+                            onTap:()=>{
+                              Navigator.push(context,MaterialPageRoute(builder: (context)=>SearchDoctorsPage(title: "View By Specialist", details: details)))
+                            },
+                            child: SortingTile(value:"Fever",no:"5"+" Doctors",image:"assets/fever.png")
+                          ),
+                          GestureDetector(
+                            onTap:()=>{
+                              Navigator.push(context,MaterialPageRoute(builder: (context)=>SearchDoctorsPage(title: "View By Specialist", details: details)))
+                            },
+                            child: SortingTile(value:"Dengue",no:"5"+" Doctors",image:"assets/dengue.png")
+                          ),
+                          GestureDetector(
+                            onTap:()=>{
+                              Navigator.push(context,MaterialPageRoute(builder: (context)=>SearchDoctorsPage(title: "View By Specialist", details: details)))
+                            },
+                            child: SortingTile(value:"More",no:"",image:"assets/more.png")
+                          ),
                         ]
                       ),
                     ),
@@ -242,9 +262,24 @@ class _HomePageState extends State<HomePage> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          HospitalTile(),
-                          HospitalTile(),
-                          HospitalTile(),
+                          GestureDetector(
+                            onTap:()=>{
+                              Navigator.push(context,MaterialPageRoute(builder: (context)=>SearchDoctorsPage(title: "View By Specialist", details: details)))
+                            },
+                            child: HospitalTile()
+                          ),
+                          GestureDetector(
+                            onTap:()=>{
+                              Navigator.push(context,MaterialPageRoute(builder: (context)=>SearchDoctorsPage(title: "View By Specialist", details: details)))
+                            },
+                            child: HospitalTile()
+                          ),
+                          GestureDetector(
+                            onTap:()=>{
+                              Navigator.push(context,MaterialPageRoute(builder: (context)=>SearchDoctorsPage(title: "View By Specialist", details: details)))
+                            },
+                            child: HospitalTile()
+                          ),
                         ],
                       ),
                     ),
