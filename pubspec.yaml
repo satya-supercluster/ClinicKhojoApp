@@ -39,9 +39,11 @@ dependencies:
   pinput: ^4.0.0
   date_picker_timeline: 
   intl: ^0.19.0
-  firebase_core: ^2.29.0
+  firebase_core: ^3.1.0
+  firebase_auth: ^5.1.0
   modal_bottom_sheet: ^3.0.0
   string_similarity: ^2.0.0
+  shared_preferences: ^2.2.3
 
 dev_dependencies:
   flutter_test:

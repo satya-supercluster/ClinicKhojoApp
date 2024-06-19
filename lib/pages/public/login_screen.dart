@@ -1,5 +1,6 @@
 import 'package:clinic_khojo/pages/public/otp_screen.dart';
 import 'package:clinic_khojo/utils/constants.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -148,17 +149,27 @@ class _LoginPageState extends State<LoginPage> {
                       children: [
                         Expanded(
                           child: GestureDetector(
-                            onTap: () {
+                            onTap: () async{
                               if (phoneNumberController.text.length == 10) {
                                 // Navigate to OtpPage if the phone number is valid
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (BuildContext context) => OtpPage(
-                                      phoneNumber: phoneNumberController.text,
-                                    ),
-                                  ),
-                                );
+
+                                // await FirebaseAuth.instance.verifyPhoneNumber(
+                                //   verificationCompleted: (PhoneAuthCredential credential){}, 
+                                //   verificationFailed: (FirebaseAuthException ex){}, 
+                                //   codeSent: (String verificationId,int? resendToken){
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (BuildContext context) => OtpPage(
+                                          // verificationId: verificationId,
+                                          phoneNumber: phoneNumberController.text,
+                                        ),
+                                      ),
+                                    );
+                                //   }, 
+                                //   codeAutoRetrievalTimeout: (String verificationId){},
+                                //   phoneNumber: "+91${phoneNumberController.text}"
+                                // );
                               } else {
                                 // Show an error message or perform any other action if the phone number is invalid
                                 showDialog(

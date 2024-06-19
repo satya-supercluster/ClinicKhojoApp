@@ -3,15 +3,18 @@ import 'dart:async';
 import 'package:clinic_khojo/pages/private/navigation.dart';
 import 'package:clinic_khojo/pages/public/login_screen.dart';
 import 'package:clinic_khojo/utils/constants.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:pinput/pinput.dart';
 
 class OtpPage extends StatefulWidget {
+  // final String verificationId;
   final String phoneNumber;
   const OtpPage({
     super.key,
-    required this.phoneNumber
+    required this.phoneNumber,
+    // required this.verificationId
   });
 
   @override
@@ -190,42 +193,31 @@ class _OtpPageState extends State<OtpPage> {
                       ),
                     ),
                     SizedBox(height:50),
-                    Container(
-                      width: width,
-                      height:50,
-                      margin: EdgeInsets.symmetric(horizontal: 20),
-                      child: ElevatedButton(
-                        style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all<Color>(isLoading
-                              ? Colors.grey // Use a disabled color when button is disabled or loading
-                              : Colors.white),
-                          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                            RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(27),
-                              side: const BorderSide(color: Color(0xFF0529BB)),
-                            ),
-                            
-                          ),
-                          shadowColor: MaterialStateProperty.all<Color>(Constants.textRed),
+                    GestureDetector(
+                      onTap:() async{
+                        // try{
+                        //   PhoneAuthCredential credential=await PhoneAuthProvider.credential(verificationId: widget.verificationId, smsCode: otpE.toString());
+                        //   FirebaseAuth.instance.signInWithCredential(credential)
+                        //   .then((value)=>{
+                            Navigator.of(context).popUntil((route) => route.isFirst);
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (BuildContext context) => NavigationPage()));
+                        //   });
+                        // }
+                        // catch(ex){
+                        //   print(ex.toString());
+                        // } 
+                      },
+                      child: Container(
+                        width: width*0.7,
+                        height:50,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(50)),
+                          color:Colors.white
                         ),
-                        // onPressed: isLoading ? null : () async {
-                        //   if (otpE.length == 6) {
-                        //     isLoading=true;
-                        //     // _verifyOTP(otpE);
-                        //   }
-                        //   },
-                        onPressed: (){
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (BuildContext context) => NavigationPage()));
-                        },
-                        child: isLoading
-                            ? CircularProgressIndicator() // Show loader when loading
-                            : Text(
-                          isLoading ? 'Verifying...' : 'Login' ,
-                          style: TextStyle(color:Constants.textRed, fontWeight: FontWeight.w500, fontSize: 15),
-                        ),
+                        child: Center(child: Text("Login",style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500,color:Constants.textRed),))
                       ),
                     ),
                   ],
