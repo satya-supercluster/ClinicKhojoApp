@@ -1,12 +1,9 @@
 import 'package:clinic_khojo/pages/private/appointment_form_page.dart';
-import 'package:clinic_khojo/pages/private/doctors_profile_page.dart';
 import 'package:clinic_khojo/services/functions/common_functions.dart';
 import 'package:clinic_khojo/utils/constants.dart';
 import 'package:clinic_khojo/widgets/global/time_picker.dart';
 import 'package:date_picker_timeline/date_picker_widget.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class AppointmentDetailsPage extends StatefulWidget {
   final String title;
@@ -35,7 +32,6 @@ class _AppointmentDetailsPageState extends State<AppointmentDetailsPage> {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width; // Gives the width
-    double height = MediaQuery.of(context).size.height; // Gives the width
     return SafeArea(
       child: Scaffold(
         backgroundColor:Constants.themeLightBlue,
@@ -54,8 +50,8 @@ class _AppointmentDetailsPageState extends State<AppointmentDetailsPage> {
                         Navigator.of(context).pop();
                       },
                       child: Container(
-                        padding: EdgeInsets.fromLTRB(0, 20, 0, 24),
-                        child: Icon(
+                        padding: const EdgeInsets.fromLTRB(0, 20, 0, 24),
+                        child: const Icon(
                           size: 22,
                           Icons.arrow_back_ios,
                           color: Colors.red,
@@ -64,11 +60,11 @@ class _AppointmentDetailsPageState extends State<AppointmentDetailsPage> {
                     ),
                   ),
                   Container(
-                    padding: EdgeInsets.fromLTRB(0, 20, 0, 24),
+                    padding: const EdgeInsets.fromLTRB(0, 20, 0, 24),
                     alignment: Alignment.center,
                     child: Text(
                       widget.title,
-                      style: TextStyle(color: Constants.themeGrey,fontSize: 14,fontWeight: FontWeight.w400),
+                      style: const TextStyle(color: Constants.themeGrey,fontSize: 14,fontWeight: FontWeight.w400),
                     ),
                   ),
                 ],
@@ -79,7 +75,7 @@ class _AppointmentDetailsPageState extends State<AppointmentDetailsPage> {
                 child: Column(
                   children: [
                     Container(
-                      padding: EdgeInsets.symmetric(horizontal: 16),
+                      padding: const EdgeInsets.symmetric(horizontal: 16),
                       width:width,
                       child:Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -95,13 +91,13 @@ class _AppointmentDetailsPageState extends State<AppointmentDetailsPage> {
                                       Container(
                                         width:width*0.33,
                                         height: width*0.252,
-                                        margin:EdgeInsets.only(top:5,right:3),
+                                        margin:const EdgeInsets.only(top:5,right:3),
                                         decoration: BoxDecoration(
                                           image: DecorationImage(
                                             image: AssetImage(widget.doctorsDetails['image']??"assets/doctor.jpg"),
                                             fit: BoxFit.cover,
                                           ),
-                                          borderRadius: BorderRadius.all(Radius.circular(8))
+                                          borderRadius: const BorderRadius.all(Radius.circular(8))
                                         ),
                                       ),
                                     ],
@@ -114,7 +110,7 @@ class _AppointmentDetailsPageState extends State<AppointmentDetailsPage> {
                                       height:10,
                                       decoration: BoxDecoration(
                                         color:Colors.green,
-                                        borderRadius: BorderRadius.all(Radius.circular(27)),
+                                        borderRadius: const BorderRadius.all(Radius.circular(27)),
                                         border:Border.all(width:1,color: Colors.white)
                                       ),
                                     ),
@@ -123,58 +119,58 @@ class _AppointmentDetailsPageState extends State<AppointmentDetailsPage> {
                               )
                             ],
                           ),
-                          SizedBox(width:24),
+                          const SizedBox(width:24),
                           Expanded(
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.stretch,
                               children: [
                                 //Title
                       
-                                Text("${widget.doctorsDetails['name']}",style: TextStyle(fontWeight:FontWeight.bold,fontSize:18),),
+                                Text("${widget.doctorsDetails['name']}",style: const TextStyle(fontWeight:FontWeight.bold,fontSize:18),),
                       
-                                SizedBox(height:4),
+                                const SizedBox(height:4),
                                 // Degree, Specialization and Fee
                       
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text("${widget.doctorsDetails['degree']}",style: TextStyle(fontWeight:FontWeight.w500,fontSize:10,color:Constants.themeGrey),),
-                                    SizedBox(width:10),
-                                    Text("Fee: ₹${widget.doctorsDetails['fee']}",style: TextStyle(fontWeight:FontWeight.w500,fontSize:10,color:Colors.green),),
-                                    SizedBox(width:10),
+                                    Text("${widget.doctorsDetails['degree']}",style: const TextStyle(fontWeight:FontWeight.w500,fontSize:10,color:Constants.themeGrey),),
+                                    const SizedBox(width:10),
+                                    Text("Fee: ₹${widget.doctorsDetails['fee']}",style: const TextStyle(fontWeight:FontWeight.w500,fontSize:10,color:Colors.green),),
+                                    const SizedBox(width:10),
                                     Expanded(
-                                      child: Text("${widget.doctorsDetails['specialization']} Specialist",style: TextStyle(fontWeight:FontWeight.w500,fontSize:10,color:Constants.themeGrey),)
+                                      child: Text("${widget.doctorsDetails['specialization']} Specialist",style: const TextStyle(fontWeight:FontWeight.w500,fontSize:10,color:Constants.themeGrey),)
                                     ),
                                   ],
                                 ),
-                                SizedBox(height:12),
+                                const SizedBox(height:12),
                                 Row(
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     Container(
                                       alignment: Alignment.center,
-                                      padding:EdgeInsets.fromLTRB(8.5, 6, 8.5, 6),
-                                      decoration:BoxDecoration(
+                                      padding:const EdgeInsets.fromLTRB(8.5, 6, 8.5, 6),
+                                      decoration:const BoxDecoration(
                                         color:Colors.white,
                                         borderRadius: BorderRadius.all(Radius.circular(2)),
                                       ),
-                                      child: Text("Appointment",style: TextStyle(fontWeight:FontWeight.w500,fontSize:10,color:Constants.themeGrey)),
+                                      child: const Text("Appointment",style: TextStyle(fontWeight:FontWeight.w500,fontSize:10,color:Constants.themeGrey)),
                                     ),
-                                    SizedBox(width:24),
+                                    const SizedBox(width:24),
                                     // image of star should be added here
                                     Align(
                                       alignment: Alignment.center,
                                       child: Image.asset("assets/star.png",width:12,height:12),
                                     ),
-                                    SizedBox(width:3.7),
+                                    const SizedBox(width:3.7),
                                     Align(
                                       alignment: Alignment.center,
-                                      child: Text("${widget.doctorsDetails['rating']}",style: TextStyle(fontWeight:FontWeight.w500,fontSize:10,color:Constants.themeGrey))
+                                      child: Text("${widget.doctorsDetails['rating']}",style: const TextStyle(fontWeight:FontWeight.w500,fontSize:10,color:Constants.themeGrey))
                                     )
                                   ],
                                 ),
-                                SizedBox(height:12),
+                                const SizedBox(height:12),
                                 Row(
                                   children: [
                                     Column(
@@ -183,22 +179,22 @@ class _AppointmentDetailsPageState extends State<AppointmentDetailsPage> {
                                         Container(
                                           width:30,
                                           height: 30,
-                                          padding:EdgeInsets.all(5),
+                                          padding:const EdgeInsets.all(5),
                                           decoration: BoxDecoration(
                                             image: DecorationImage(
                                               image: AssetImage(widget.doctorsDetails['clinics'][widget.index]['image']??"assets/img.jpg"),
                                               fit: BoxFit.cover,
                                             ),
-                                            borderRadius: BorderRadius.all(Radius.circular(8))
+                                            borderRadius: const BorderRadius.all(Radius.circular(8))
                                           ),
                                         )
                                       ],
                                     ),
-                                    SizedBox(width:8),
+                                    const SizedBox(width:8),
                                     Column(
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
-                                        Text(widget.doctorsDetails['clinics'][widget.index]['name']??"",style: TextStyle(fontWeight:FontWeight.w500,fontSize:14),),
+                                        Text(widget.doctorsDetails['clinics'][widget.index]['name']??"",style: const TextStyle(fontWeight:FontWeight.w500,fontSize:14),),
                                         GestureDetector(
                                           // onTap: (){
                                           //   Navigator.push(
@@ -207,8 +203,8 @@ class _AppointmentDetailsPageState extends State<AppointmentDetailsPage> {
                                           //     builder: (BuildContext context) => DoctorProfile(map:widget.doctorsDetails)));
                                           // },
                                           child: Container(
-                                            padding: EdgeInsets.fromLTRB(0, 1, 0, 1),
-                                            child: Text("View Profile",style: TextStyle(fontWeight:FontWeight.w500,fontSize:14,decoration:TextDecoration.underline,color:Colors.red,decorationColor:Colors.red),)
+                                            padding: const EdgeInsets.fromLTRB(0, 1, 0, 1),
+                                            child: const Text("View Profile",style: TextStyle(fontWeight:FontWeight.w500,fontSize:14,decoration:TextDecoration.underline,color:Colors.red,decorationColor:Colors.red),)
                                           )
                                         ),
                                       ],
@@ -221,16 +217,16 @@ class _AppointmentDetailsPageState extends State<AppointmentDetailsPage> {
                         ],
                       ),
                     ),
-                    SizedBox(height:25),
+                    const SizedBox(height:25),
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 24),
+                      padding: const EdgeInsets.symmetric(horizontal: 24),
                       child:Container(
-                        padding: EdgeInsets.symmetric(vertical: 10,horizontal: 16),
-                        decoration: BoxDecoration(
+                        padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 16),
+                        decoration: const BoxDecoration(
                           color:Colors.white,
                           borderRadius: BorderRadius.all(Radius.circular(10))
                         ),
-                        child: Row(
+                        child: const Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -259,29 +255,29 @@ class _AppointmentDetailsPageState extends State<AppointmentDetailsPage> {
                         ),
                       )
                     ),
-                    SizedBox(height:25),
+                    const SizedBox(height:25),
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 24),
+                      padding: const EdgeInsets.symmetric(horizontal: 24),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text("Schedules",style: TextStyle(fontSize: 14,fontWeight: FontWeight.w500,color: Constants.themeSubheadingGrey)),
+                          const Text("Schedules",style: TextStyle(fontSize: 14,fontWeight: FontWeight.w500,color: Constants.themeSubheadingGrey)),
                           Row(
                             children: [
-                              Text(currMonth,style: TextStyle(fontSize: 12,fontWeight: FontWeight.w500,color:Constants.textRed,)),
-                              SizedBox(width:8),
-                              Icon(Icons.arrow_forward_ios,color:Constants.textRed,size: 12,)
+                              Text(currMonth,style: const TextStyle(fontSize: 12,fontWeight: FontWeight.w500,color:Constants.textRed,)),
+                              const SizedBox(width:8),
+                              const Icon(Icons.arrow_forward_ios,color:Constants.textRed,size: 12,)
                             ],
                           )
                         ],
                       ),
                     ),
-                    SizedBox(height:10),
+                    const SizedBox(height:10),
                     Stack(
                       children: [
                         Container(
-                          margin: EdgeInsets.symmetric(horizontal: 16),
-                          decoration: BoxDecoration(
+                          margin: const EdgeInsets.symmetric(horizontal: 16),
+                          decoration: const BoxDecoration(
                             color:Constants.themeLightRed,
                             borderRadius: BorderRadius.all(Radius.circular(10))
                           ),
@@ -292,9 +288,9 @@ class _AppointmentDetailsPageState extends State<AppointmentDetailsPage> {
                             initialSelectedDate: DateTime.now(),
                             selectionColor: Constants.themeBlue,
                             selectedTextColor: Colors.white,
-                            dayTextStyle: TextStyle(fontSize: 12),
-                            dateTextStyle: TextStyle(fontSize: 12),
-                            monthTextStyle: TextStyle(fontSize:0,color: Constants.themeLightBlue),
+                            dayTextStyle: const TextStyle(fontSize: 12),
+                            dateTextStyle: const TextStyle(fontSize: 12),
+                            monthTextStyle: const TextStyle(fontSize:0,color: Constants.themeLightBlue),
                             deactivatedColor:Constants.themeGrey,
                             onDateChange: (date){
                               print(getMonth(date));
@@ -310,12 +306,12 @@ class _AppointmentDetailsPageState extends State<AppointmentDetailsPage> {
                           child: Container(
                             width: 20,
                             height:20,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               color:Constants.themeLightRed,
                               borderRadius: BorderRadius.all(Radius.circular(10)),
                             ),
                             alignment: Alignment.center,
-                            child: Icon(Icons.arrow_back_ios,color: Constants.textRed,size:12),
+                            child: const Icon(Icons.arrow_back_ios,color: Constants.textRed,size:12),
                           )
                         ),
                         Positioned(
@@ -324,32 +320,32 @@ class _AppointmentDetailsPageState extends State<AppointmentDetailsPage> {
                           child: Container(
                             width: 20,
                             height:20,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               color:Constants.themeLightRed,
                               borderRadius: BorderRadius.all(Radius.circular(10)),
                             ),
                             alignment: Alignment.center,
-                            child: Icon(Icons.arrow_forward_ios,color: Constants.textRed,size:12),
+                            child: const Icon(Icons.arrow_forward_ios,color: Constants.textRed,size:12),
                           )
                         )
                       ],
                     ),
-                    SizedBox(height:25),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 24),
+                    const SizedBox(height:25),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 24),
                       child: Row(
                         children: [
                           Text("Visit Hours",style: TextStyle(fontSize: 14,fontWeight: FontWeight.w500,color: Constants.themeSubheadingGrey),),
                         ],
                       ),
                     ),
-                    SizedBox(height:10),
-                    Padding(
+                    const SizedBox(height:10),
+                    const Padding(
                       padding: EdgeInsets.symmetric(horizontal: 24),
                       child:TimePicker(),
                     ),
-                    SizedBox(height:10),
-                    Padding(
+                    const SizedBox(height:10),
+                    const Padding(
                       padding: EdgeInsets.symmetric(horizontal: 24),
                       child:Row(
                         mainAxisAlignment: MainAxisAlignment.start,
@@ -359,37 +355,37 @@ class _AppointmentDetailsPageState extends State<AppointmentDetailsPage> {
                         ],
                       ),
                     ),
-                    SizedBox(height:10),
+                    const SizedBox(height:10),
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 24),
+                      padding: const EdgeInsets.symmetric(horizontal: 24),
                       child:Column(
                         children: [
                           Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              Text("Normal Appointment fees",style: TextStyle(fontSize: 11,fontWeight: FontWeight.w400,color: Constants.themeSubheadingGrey)),
-                              SizedBox(width:20),
+                              const Text("Normal Appointment fees",style: TextStyle(fontSize: 11,fontWeight: FontWeight.w400,color: Constants.themeSubheadingGrey)),
+                              const SizedBox(width:20),
                               RichText(
                                 text: TextSpan(
                                   children: [
-                                    TextSpan(text:"₹${widget.doctorsDetails['fee']}",style: TextStyle(fontSize: 14,fontWeight: FontWeight.w600,color: Constants.feeGreen)),
-                                    TextSpan(text:"+₹50 booking charge",style: TextStyle(fontSize: 8,fontWeight: FontWeight.w300,color: Constants.themeSubheadingGrey))
+                                    TextSpan(text:"₹${widget.doctorsDetails['fee']}",style: const TextStyle(fontSize: 14,fontWeight: FontWeight.w600,color: Constants.feeGreen)),
+                                    const TextSpan(text:"+₹50 booking charge",style: TextStyle(fontSize: 8,fontWeight: FontWeight.w300,color: Constants.themeSubheadingGrey))
                                   ]
                                 )
                               )
                             ],
                           ),
-                          SizedBox(height:10),
+                          const SizedBox(height:10),
                           Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              Text("Emergency Appointment fees",style: TextStyle(fontSize: 11,fontWeight: FontWeight.w400,color: Constants.themeSubheadingGrey)),
-                              SizedBox(width:20),
+                              const Text("Emergency Appointment fees",style: TextStyle(fontSize: 11,fontWeight: FontWeight.w400,color: Constants.themeSubheadingGrey)),
+                              const SizedBox(width:20),
                               RichText(
                                 text: TextSpan(
                                   children: [
-                                    TextSpan(text:"₹${widget.doctorsDetails['fee']}",style: TextStyle(fontSize: 14,fontWeight: FontWeight.w600,color: Constants.textRed)),
-                                    TextSpan(text:"+₹50 booking charge",style: TextStyle(fontSize: 8,fontWeight: FontWeight.w300,color: Constants.themeSubheadingGrey))
+                                    TextSpan(text:"₹${widget.doctorsDetails['fee']}",style: const TextStyle(fontSize: 14,fontWeight: FontWeight.w600,color: Constants.textRed)),
+                                    const TextSpan(text:"+₹50 booking charge",style: TextStyle(fontSize: 8,fontWeight: FontWeight.w300,color: Constants.themeSubheadingGrey))
                                   ]
                                 )
                               )
@@ -398,7 +394,7 @@ class _AppointmentDetailsPageState extends State<AppointmentDetailsPage> {
                         ],
                       )
                     ),
-                    SizedBox(height:40),
+                    const SizedBox(height:40),
                     Row(
                       children: [
                         Expanded(
@@ -406,26 +402,26 @@ class _AppointmentDetailsPageState extends State<AppointmentDetailsPage> {
                             onTap:(){
                               Navigator.push(
                                 context, MaterialPageRoute(
-                                  builder: ((context) => AppointmentFormPage())
+                                  builder: ((context) => const AppointmentFormPage())
                                 )
                               );
                             }, 
                             child: Container(
                               width:double.infinity,
                               alignment: Alignment.center,
-                              padding: EdgeInsets.symmetric(vertical: 8),
-                              margin: EdgeInsets.symmetric(horizontal: 32),
-                              decoration: BoxDecoration(
+                              padding: const EdgeInsets.symmetric(vertical: 8),
+                              margin: const EdgeInsets.symmetric(horizontal: 32),
+                              decoration: const BoxDecoration(
                                 color:Constants.textRed,
                                 borderRadius: BorderRadius.all(Radius.circular(20))
                               ),
-                              child:Text("Book Emergency Appointment",style:TextStyle(fontSize:13,fontWeight: FontWeight.w500,color: Colors.white))
+                              child:const Text("Book Emergency Appointment",style:TextStyle(fontSize:13,fontWeight: FontWeight.w500,color: Colors.white))
                             ),
                           )
                         )
                       ],
                     ),
-                    Padding(
+                    const Padding(
                       padding: EdgeInsets.symmetric(horizontal: 32,vertical: 10),
                       child: Row(
                         children: [
@@ -450,26 +446,26 @@ class _AppointmentDetailsPageState extends State<AppointmentDetailsPage> {
                             onTap:(){
                               Navigator.push(
                                 context, MaterialPageRoute(
-                                  builder: ((context) => AppointmentFormPage())
+                                  builder: ((context) => const AppointmentFormPage())
                                 )
                               );
                             },
                             child: Container(
                               width:double.infinity,
                               alignment: Alignment.center,
-                              padding: EdgeInsets.symmetric(vertical: 8),
-                              margin: EdgeInsets.symmetric(horizontal: 32),
-                              decoration: BoxDecoration(
+                              padding: const EdgeInsets.symmetric(vertical: 8),
+                              margin: const EdgeInsets.symmetric(horizontal: 32),
+                              decoration: const BoxDecoration(
                                 color:Constants.feeGreen,
                                 borderRadius: BorderRadius.all(Radius.circular(20))
                               ),
-                              child:Text("Book Normal Appointment",style:TextStyle(fontSize:13,fontWeight: FontWeight.w500,color: Colors.white))
+                              child:const Text("Book Normal Appointment",style:TextStyle(fontSize:13,fontWeight: FontWeight.w500,color: Colors.white))
                             ),
                           )
                         )
                       ],
                     ),
-                    SizedBox(height:50)
+                    const SizedBox(height:50)
                   ],
                 ),
               ),

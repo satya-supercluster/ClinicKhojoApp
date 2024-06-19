@@ -1,8 +1,5 @@
 import 'package:clinic_khojo/utils/constants.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class DoctorProfile extends StatefulWidget {
   final Map<String,dynamic> map;
@@ -22,7 +19,7 @@ class _DoctorProfileState extends State<DoctorProfile> {
     return SafeArea(
       child: Scaffold(
         body:Container(
-          padding: EdgeInsets.symmetric(horizontal: 16),
+          padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Column(
             children: [
               Row(
@@ -36,8 +33,8 @@ class _DoctorProfileState extends State<DoctorProfile> {
                         Navigator.of(context).pop();
                       },
                       child: Container(
-                        padding: EdgeInsets.fromLTRB(0, 20, 0, 24),
-                        child: Icon(
+                        padding: const EdgeInsets.fromLTRB(0, 20, 0, 24),
+                        child: const Icon(
                           size: 22,
                           Icons.arrow_back_ios,
                           color: Colors.red,
@@ -46,11 +43,11 @@ class _DoctorProfileState extends State<DoctorProfile> {
                     ),
                   ),
                   Container(
-                    padding: EdgeInsets.fromLTRB(0, 20, 0, 24),
+                    padding: const EdgeInsets.fromLTRB(0, 20, 0, 24),
                     alignment: Alignment.center,
                     child: Text(
                       '${widget.map['name']}',
-                      style: TextStyle(color: Constants.themeGrey,fontSize: 14,fontWeight: FontWeight.w400),
+                      style: const TextStyle(color: Constants.themeGrey,fontSize: 14,fontWeight: FontWeight.w400),
                     ),
                   ),
                 ],
@@ -61,99 +58,99 @@ class _DoctorProfileState extends State<DoctorProfile> {
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      SizedBox(height:50),
+                      const SizedBox(height:50),
                       Container(
                         width:width*0.25,
                         height:width*0.25,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           borderRadius: BorderRadius.all(Radius.circular(3)),
                           // boxShadow: BoxShadow()
                           image: DecorationImage(image: AssetImage("assets/doctor.jpg"),fit: BoxFit.cover,)
                         ),
                       ),
-                      SizedBox(height:8),
-                      Text('${widget.map['name']}',style:TextStyle(fontSize:18,fontWeight:FontWeight.w500,color:Constants.themeHeadingBlue))
+                      const SizedBox(height:8),
+                      Text('${widget.map['name']}',style:const TextStyle(fontSize:18,fontWeight:FontWeight.w500,color:Constants.themeHeadingBlue))
                     ],
                   ),
                 ],
               ),
-              SizedBox(height:30),
-              Row(
+              const SizedBox(height:30),
+              const Row(
                 children: [
                   SizedBox(width:8),
                   Text("More Details",style:TextStyle(fontSize:18,fontWeight:FontWeight.w500,color:Constants.themeSubheadingGrey))
                 ],
               ),
-              SizedBox(height:10),
+              const SizedBox(height:10),
               Container(
-                padding:EdgeInsets.symmetric(horizontal: 16,vertical: 20),
-                decoration: BoxDecoration(
+                padding:const EdgeInsets.symmetric(horizontal: 16,vertical: 20),
+                decoration: const BoxDecoration(
                   color: Constants.themeLightBlue,
                   borderRadius: BorderRadius.all(Radius.circular(10)),
                 ),
                 child:Column(
                   children: [
-                    Row(
+                    const Row(
                       children: [
                         Text("Gender:",style:TextStyle(fontSize:10,fontWeight:FontWeight.w400,color:Constants.themeGrey)),
                         SizedBox(width:24),
                         Expanded(child: Text("Male",style:TextStyle(fontSize:12,fontWeight:FontWeight.w500,color:Constants.themeSubheadingGrey))),
                       ],
                     ),
-                    SizedBox(height:8),
+                    const SizedBox(height:8),
                     Row(
                       children: [
-                        Text("Address:",style:TextStyle(fontSize:10,fontWeight:FontWeight.w400,color:Constants.themeGrey)),
-                        SizedBox(width:24),
-                        Expanded(child: Text('${widget.map['location']}',style:TextStyle(fontSize:12,fontWeight:FontWeight.w500,color:Constants.themeSubheadingGrey))),
+                        const Text("Address:",style:TextStyle(fontSize:10,fontWeight:FontWeight.w400,color:Constants.themeGrey)),
+                        const SizedBox(width:24),
+                        Expanded(child: Text('${widget.map['location']}',style:const TextStyle(fontSize:12,fontWeight:FontWeight.w500,color:Constants.themeSubheadingGrey))),
                       ],
                     ),
-                    SizedBox(height:8),
+                    const SizedBox(height:8),
                     Row(
                       children: [
-                        Text("Degree:",style:TextStyle(fontSize:10,fontWeight:FontWeight.w400,color:Constants.themeGrey)),
-                        SizedBox(width:24),
-                        Expanded(child: Text('${widget.map['degree']}',style:TextStyle(fontSize:12,fontWeight:FontWeight.w500,color:Constants.themeSubheadingGrey))),
+                        const Text("Degree:",style:TextStyle(fontSize:10,fontWeight:FontWeight.w400,color:Constants.themeGrey)),
+                        const SizedBox(width:24),
+                        Expanded(child: Text('${widget.map['degree']}',style:const TextStyle(fontSize:12,fontWeight:FontWeight.w500,color:Constants.themeSubheadingGrey))),
                       ],
                     ),
-                    SizedBox(height:8),
+                    const SizedBox(height:8),
                     Row(
                       children: [
-                        Text("Specialization:",style:TextStyle(fontSize:10,fontWeight:FontWeight.w400,color:Constants.themeGrey)),
-                        SizedBox(width:24),
-                        Expanded(child: Text('${widget.map['specialization']}',style:TextStyle(fontSize:12,fontWeight:FontWeight.w500,color:Constants.themeSubheadingGrey))),
+                        const Text("Specialization:",style:TextStyle(fontSize:10,fontWeight:FontWeight.w400,color:Constants.themeGrey)),
+                        const SizedBox(width:24),
+                        Expanded(child: Text('${widget.map['specialization']}',style:const TextStyle(fontSize:12,fontWeight:FontWeight.w500,color:Constants.themeSubheadingGrey))),
                       ],
                     ),
-                    SizedBox(height:8),
-                    Row(
+                    const SizedBox(height:8),
+                    const Row(
                       children: [
                         Text("Years of Experience:",style:TextStyle(fontSize:10,fontWeight:FontWeight.w400,color:Constants.themeGrey)),
                         SizedBox(width:24),
                         Expanded(child: Text("2",style:TextStyle(fontSize:12,fontWeight:FontWeight.w500,color:Constants.themeSubheadingGrey))),
                       ],
                     ),
-                    SizedBox(height:8),
+                    const SizedBox(height:8),
                     Row(
                       children: [
-                        Text("Title of clinic:",style:TextStyle(fontSize:10,fontWeight:FontWeight.w400,color:Constants.themeGrey)),
-                        SizedBox(width:24),
-                        Expanded(child: Text('${widget.map['title']}',style:TextStyle(fontSize:12,fontWeight:FontWeight.w500,color:Constants.themeSubheadingGrey))),
+                        const Text("Title of clinic:",style:TextStyle(fontSize:10,fontWeight:FontWeight.w400,color:Constants.themeGrey)),
+                        const SizedBox(width:24),
+                        Expanded(child: Text('${widget.map['title']}',style:const TextStyle(fontSize:12,fontWeight:FontWeight.w500,color:Constants.themeSubheadingGrey))),
                       ],
                     ),
-                    SizedBox(height:8),
+                    const SizedBox(height:8),
                     Row(
                       children: [
-                        Text("Title of clinic:",style:TextStyle(fontSize:10,fontWeight:FontWeight.w400,color:Constants.themeGrey)),
-                        SizedBox(width:24),
-                        Expanded(child: Text('${widget.map['title']}',style:TextStyle(fontSize:12,fontWeight:FontWeight.w500,color:Constants.themeSubheadingGrey))),
+                        const Text("Title of clinic:",style:TextStyle(fontSize:10,fontWeight:FontWeight.w400,color:Constants.themeGrey)),
+                        const SizedBox(width:24),
+                        Expanded(child: Text('${widget.map['title']}',style:const TextStyle(fontSize:12,fontWeight:FontWeight.w500,color:Constants.themeSubheadingGrey))),
                       ],
                     ),
-                    SizedBox(height:8),
+                    const SizedBox(height:8),
                     Row(
                       children: [
-                        Text("Title of clinic:",style:TextStyle(fontSize:10,fontWeight:FontWeight.w400,color:Constants.themeGrey)),
-                        SizedBox(width:24),
-                        Expanded(child: Text('${widget.map['title']}',style:TextStyle(fontSize:12,fontWeight:FontWeight.w500,color:Constants.themeSubheadingGrey))),
+                        const Text("Title of clinic:",style:TextStyle(fontSize:10,fontWeight:FontWeight.w400,color:Constants.themeGrey)),
+                        const SizedBox(width:24),
+                        Expanded(child: Text('${widget.map['title']}',style:const TextStyle(fontSize:12,fontWeight:FontWeight.w500,color:Constants.themeSubheadingGrey))),
                       ],
                     ),
                   ],

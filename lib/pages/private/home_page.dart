@@ -45,19 +45,19 @@ class _HomePageState extends State<HomePage> {
       child: Scaffold(
         body:Column(
           children: [
-            SizedBox(height:20),
-            Row(children: [
+            const SizedBox(height:20),
+            const Row(children: [
               SizedBox(width:28),
               Text("Welcome Back!",style:TextStyle(fontSize:14,fontWeight:FontWeight.w400,color:Constants.themeGrey)),
             ],),
-            SizedBox(height:3),
+            const SizedBox(height:3),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 24),
+              padding: const EdgeInsets.symmetric(horizontal: 24),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Container(
-                    child:Row(
+                    child:const Row(
                       children: [
                         Text("Explore Doctors",style:TextStyle(fontSize:20,fontWeight:FontWeight.w500,color:Constants.themeHeadingBlue))
                       ],
@@ -67,31 +67,31 @@ class _HomePageState extends State<HomePage> {
                     child:Row(
                       children: [
                         Container(
-                          padding: EdgeInsets.all(5),
-                          decoration: BoxDecoration(
+                          padding: const EdgeInsets.all(5),
+                          decoration: const BoxDecoration(
                             color:Constants.themeLightBlue,
                             borderRadius: BorderRadius.all(Radius.circular(4))
                           ),
                           child:Row(
                             children: [
                               Image.asset("assets/Subtract.png",width: 11.83,height:16),
-                              SizedBox(width:3),
-                              Text("Ayushmaan",style:TextStyle(fontSize:10,fontWeight:FontWeight.w500)),
+                              const SizedBox(width:3),
+                              const Text("Ayushmaan",style:TextStyle(fontSize:10,fontWeight:FontWeight.w500)),
                             ],
                           )
                         ),
-                        SizedBox(width:5),
+                        const SizedBox(width:5),
                         Container(
-                          padding: EdgeInsets.all(5),
-                          decoration: BoxDecoration(
+                          padding: const EdgeInsets.all(5),
+                          decoration: const BoxDecoration(
                             color:Constants.themeLightBlue,
                             borderRadius: BorderRadius.all(Radius.circular(4))
                           ),
                           child:Row(
                             children: [
                               Image.asset("assets/Subtract.png",width: 11.83,height:16),
-                              SizedBox(width:3),
-                              Text("ABHA",style:TextStyle(fontSize:10,fontWeight:FontWeight.w500)),
+                              const SizedBox(width:3),
+                              const Text("ABHA",style:TextStyle(fontSize:10,fontWeight:FontWeight.w500)),
                             ],
                           )
                         ),
@@ -101,7 +101,7 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
-            SizedBox(height:10),
+            const SizedBox(height:10),
             GestureDetector(
               onTap:(){
                 Navigator.push(
@@ -117,9 +117,9 @@ class _HomePageState extends State<HomePage> {
                     width: 1,
                     color:Constants.themeGrey
                   ),
-                  borderRadius: BorderRadius.all(Radius.circular(27))
+                  borderRadius: const BorderRadius.all(Radius.circular(27))
                 ),
-                padding: EdgeInsets.only(left:13),
+                padding: const EdgeInsets.only(left:13),
                 child:Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -127,7 +127,7 @@ class _HomePageState extends State<HomePage> {
                     Container(
                       alignment: Alignment.center,
                       width:width*0.06,
-                      padding: EdgeInsets.all(2),
+                      padding: const EdgeInsets.all(2),
                       child: Icon(
                         Icons.search,
                         size:width*0.05,
@@ -142,13 +142,13 @@ class _HomePageState extends State<HomePage> {
                         decoration: InputDecoration(
                           hintText: "Search Doctors...",
                           hintStyle: GoogleFonts.poppins(fontSize:12),
-                          contentPadding: EdgeInsets.only(left:4,bottom: 10),
+                          contentPadding: const EdgeInsets.only(left:4,bottom: 10),
                           floatingLabelBehavior: FloatingLabelBehavior.never,
                           labelText: null,
-                          focusedBorder: OutlineInputBorder(
+                          focusedBorder: const OutlineInputBorder(
                           borderSide: BorderSide(color: Colors.white, width: 0),
                           ),
-                          enabledBorder: OutlineInputBorder(
+                          enabledBorder: const OutlineInputBorder(
                             borderSide: BorderSide(color: Colors.white, width: 0),
                           ),
                         ),
@@ -158,7 +158,7 @@ class _HomePageState extends State<HomePage> {
                       alignment: Alignment.center,
                       width:width*0.13,
                       height: height*0.05,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         border:Border(
                           left:BorderSide(
                             width:1,
@@ -169,7 +169,7 @@ class _HomePageState extends State<HomePage> {
                         bottomRight: Radius.circular(50)),
                         color: Constants.themeLightRed
                       ),
-                      child: Icon(
+                      child: const Icon(
                         Icons.tune,
                         size:25,
                         color:Colors.red
@@ -179,18 +179,18 @@ class _HomePageState extends State<HomePage> {
                 )
               ),
             ),
-            SizedBox(height:20),
+            const SizedBox(height:20),
             Expanded(
               child: SingleChildScrollView(
                 child: Column(
                   children: [
-                    Row(
+                    const Row(
                       children: [
                         SizedBox(width:24),
                         Text("View By Specialist",style:TextStyle(fontSize:14,fontWeight:FontWeight.w500,color:Constants.themeSubheadingGrey))
                       ],
                     ),
-                    SizedBox(height:10),
+                    const SizedBox(height:10),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 16),
                       child: Row(
@@ -205,14 +205,14 @@ class _HomePageState extends State<HomePage> {
                         )
                       ),
                     ),
-                    SizedBox(height:20),
-                    Row(
+                    const SizedBox(height:20),
+                    const Row(
                       children: [
                         SizedBox(width:24),
                         Text("View By Symptom",style:TextStyle(fontSize:14,fontWeight:FontWeight.w500,color:Constants.themeSubheadingGrey))
                       ],
                     ),
-                    SizedBox(height:10),
+                    const SizedBox(height:10),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 16),
                       child: Row(
@@ -222,32 +222,32 @@ class _HomePageState extends State<HomePage> {
                             onTap:()=>{
                               Navigator.push(context,MaterialPageRoute(builder: (context)=>SearchDoctorsPage(title: "View By Specialist", details: details)))
                             },
-                            child: SortingTile(value:"Pregnany",no:"5"+" Doctors",image:"assets/pregnant.png")
+                            child: const SortingTile(value:"Pregnany",no:"5"+" Doctors",image:"assets/pregnant.png")
                           ),
                           GestureDetector(
                             onTap:()=>{
                               Navigator.push(context,MaterialPageRoute(builder: (context)=>SearchDoctorsPage(title: "View By Specialist", details: details)))
                             },
-                            child: SortingTile(value:"Fever",no:"5"+" Doctors",image:"assets/fever.png")
+                            child: const SortingTile(value:"Fever",no:"5"+" Doctors",image:"assets/fever.png")
                           ),
                           GestureDetector(
                             onTap:()=>{
                               Navigator.push(context,MaterialPageRoute(builder: (context)=>SearchDoctorsPage(title: "View By Specialist", details: details)))
                             },
-                            child: SortingTile(value:"Dengue",no:"5"+" Doctors",image:"assets/dengue.png")
+                            child: const SortingTile(value:"Dengue",no:"5"+" Doctors",image:"assets/dengue.png")
                           ),
                           GestureDetector(
                             onTap:()=>{
                               Navigator.push(context,MaterialPageRoute(builder: (context)=>SearchDoctorsPage(title: "View By Specialist", details: details)))
                             },
-                            child: SortingTile(value:"More",no:"",image:"assets/more.png")
+                            child: const SortingTile(value:"More",no:"",image:"assets/more.png")
                           ),
                         ]
                       ),
                     ),
-                    SizedBox(height:20),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 24),
+                    const SizedBox(height:20),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 24),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -256,7 +256,7 @@ class _HomePageState extends State<HomePage> {
                         ],
                       ),
                     ),
-                    SizedBox(height:10),
+                    const SizedBox(height:10),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 16),
                       child: Row(
@@ -266,32 +266,32 @@ class _HomePageState extends State<HomePage> {
                             onTap:()=>{
                               Navigator.push(context,MaterialPageRoute(builder: (context)=>SearchDoctorsPage(title: "View By Specialist", details: details)))
                             },
-                            child: HospitalTile()
+                            child: const HospitalTile()
                           ),
                           GestureDetector(
                             onTap:()=>{
                               Navigator.push(context,MaterialPageRoute(builder: (context)=>SearchDoctorsPage(title: "View By Specialist", details: details)))
                             },
-                            child: HospitalTile()
+                            child: const HospitalTile()
                           ),
                           GestureDetector(
                             onTap:()=>{
                               Navigator.push(context,MaterialPageRoute(builder: (context)=>SearchDoctorsPage(title: "View By Specialist", details: details)))
                             },
-                            child: HospitalTile()
+                            child: const HospitalTile()
                           ),
                         ],
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 20),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 20,vertical: 20),
                       child: SlideshowBanner(),
                     ),
                   ],
                 ),
               ),
             ),
-            SizedBox(height:60)
+            const SizedBox(height:60)
           ],
         )
       )

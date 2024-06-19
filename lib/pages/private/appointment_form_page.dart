@@ -1,10 +1,7 @@
 import 'package:clinic_khojo/utils/constants.dart';
 import 'package:clinic_khojo/widgets/global/common_appbar.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class AppointmentFormPage extends StatefulWidget {
   const AppointmentFormPage({super.key});
@@ -51,19 +48,19 @@ class _AppointmentFormPageState extends State<AppointmentFormPage> {
             // mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              CommonAppBar(title: "Book Appointment", heading: "Enter Patient Details"),
+              const CommonAppBar(title: "Book Appointment", heading: "Enter Patient Details"),
               Container(
                 padding: EdgeInsets.symmetric(horizontal: width*0.04),
                 child:Column(
                   children: [
                     Container(
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(5)),
+                        borderRadius: const BorderRadius.all(Radius.circular(5)),
                         boxShadow: [
                           BoxShadow(
                             color:Colors.black.withOpacity(0.15),
                             blurRadius: 4,
-                            offset: Offset(0,2),
+                            offset: const Offset(0,2),
                           ),
                         ]
                       ),
@@ -71,38 +68,38 @@ class _AppointmentFormPageState extends State<AppointmentFormPage> {
                         cursorColor: Constants.themeGrey,
                         controller: nameController,
                         autofocus: false,
-                        style: TextStyle(fontSize: 15,fontWeight: FontWeight.w400,color: Colors.black),
+                        style: const TextStyle(fontSize: 15,fontWeight: FontWeight.w400,color: Colors.black),
                         decoration: InputDecoration(
                           filled: true,
                           fillColor: Constants.themeInputGrey,
                           hintText: "Full Name",
-                          hintStyle: TextStyle(color: Colors.grey,fontSize: 15),
+                          hintStyle: const TextStyle(color: Colors.grey,fontSize: 15),
                           contentPadding:
                               const EdgeInsets.symmetric(horizontal:15,vertical:10),
                           focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Constants.themeInputGrey),
+                            borderSide: const BorderSide(color: Constants.themeInputGrey),
                             borderRadius: BorderRadius.circular(5),
                           ),
                           enabledBorder: UnderlineInputBorder( 
-                            borderSide: BorderSide(color: Constants.themeInputGrey),
+                            borderSide: const BorderSide(color: Constants.themeInputGrey),
                             borderRadius: BorderRadius.circular(5),
                           ),
-                          prefixIcon:SizedBox(
+                          prefixIcon:const SizedBox(
                             width: 30,
                             child: Center(child: Icon(Icons.person,color: Constants.themeGrey,),)
                           )  
                         ),
                       ),
                     ),
-                    SizedBox(height:9),
+                    const SizedBox(height:9),
                     Container(
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(5)),
+                        borderRadius: const BorderRadius.all(Radius.circular(5)),
                         boxShadow: [
                           BoxShadow(
                             color:Colors.black.withOpacity(0.15),
                             blurRadius: 4,
-                            offset: Offset(0,2),
+                            offset: const Offset(0,2),
                           ),
                         ]
                       ),
@@ -111,7 +108,7 @@ class _AppointmentFormPageState extends State<AppointmentFormPage> {
                         cursorColor: Colors.black,
                         controller: phoneNumberController,
                         autofocus: false,
-                        style: TextStyle(fontSize: 15,fontWeight: FontWeight.w400,color: Constants.themeGrey),
+                        style: const TextStyle(fontSize: 15,fontWeight: FontWeight.w400,color: Constants.themeGrey),
                         inputFormatters:[
                             FilteringTextInputFormatter.digitsOnly,
                             LengthLimitingTextInputFormatter(10)
@@ -120,32 +117,32 @@ class _AppointmentFormPageState extends State<AppointmentFormPage> {
                           filled: true,
                           fillColor: Constants.themeInputGrey,
                           hintText: "xxxxxxxxxx",
-                          hintStyle: TextStyle(color: Colors.grey,fontSize: 15),
+                          hintStyle: const TextStyle(color: Colors.grey,fontSize: 15),
                           contentPadding:
                               const EdgeInsets.symmetric(horizontal:15,vertical:10),
                           focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Constants.themeInputGrey),
+                            borderSide: const BorderSide(color: Constants.themeInputGrey),
                             borderRadius: BorderRadius.circular(5),
                           ),
                           enabledBorder: UnderlineInputBorder( 
-                            borderSide: BorderSide(color: Constants.themeInputGrey),
+                            borderSide: const BorderSide(color: Constants.themeInputGrey),
                             borderRadius: BorderRadius.circular(5),
                           ),
-                          prefixIcon:SizedBox(
+                          prefixIcon:const SizedBox(
                             width: 30,
                             child: Center(child: Icon(Icons.call,color: Constants.themeGrey,),)
                           )  
                         ),
                       ),
                     ),
-                    SizedBox(height:5),
-                    Row(
+                    const SizedBox(height:5),
+                    const Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Text("Different whatsapp number?",style:TextStyle(fontSize:12 ,fontWeight:FontWeight.w400,color:Constants.textRed,decoration:TextDecoration.underline,decorationColor:Constants.textRed),)
                       ],
                     ),
-                    SizedBox(height:5),
+                    const SizedBox(height:5),
                     Row(
                       children: [
                         Expanded(
@@ -153,31 +150,31 @@ class _AppointmentFormPageState extends State<AppointmentFormPage> {
                           child: Container(
                             width:double.infinity,
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.all(Radius.circular(5)),
+                              borderRadius: const BorderRadius.all(Radius.circular(5)),
                               boxShadow: [
                                 BoxShadow(
                                   color:Colors.black.withOpacity(0.15),
                                   blurRadius: 4,
-                                  offset: Offset(0,2),
+                                  offset: const Offset(0,2),
                                 ),
                               ]
                             ),
                             child: DropdownButtonFormField(
-                              hint: Text("Gender",style: TextStyle(fontSize: 15,fontWeight: FontWeight.w400,color: Constants.themeGrey)),
+                              hint: const Text("Gender",style: TextStyle(fontSize: 15,fontWeight: FontWeight.w400,color: Constants.themeGrey)),
                               decoration: InputDecoration(
                                 filled: true,
                                 fillColor: Constants.themeInputGrey,
                                 contentPadding:
                                     const EdgeInsets.symmetric(horizontal:15,vertical:10),
                                 focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(color: Constants.themeInputGrey),
+                                  borderSide: const BorderSide(color: Constants.themeInputGrey),
                                   borderRadius: BorderRadius.circular(5),
                                 ),
                                 enabledBorder: UnderlineInputBorder( 
-                                  borderSide: BorderSide(color: Constants.themeInputGrey),
+                                  borderSide: const BorderSide(color: Constants.themeInputGrey),
                                   borderRadius: BorderRadius.circular(5),
                                 ),
-                                prefixIcon:SizedBox(
+                                prefixIcon:const SizedBox(
                                   width: 30,
                                   child: Center(child: Icon(Icons.male,color: Constants.themeGrey,),)
                                 )  
@@ -190,24 +187,24 @@ class _AppointmentFormPageState extends State<AppointmentFormPage> {
                               },
                               items: ["Male","Female","Others"].map((value){
                                 return DropdownMenuItem(
-                                  child: Text(value,style: TextStyle(fontSize: 15,fontWeight: FontWeight.w400,color: Constants.themeGrey)),
+                                  child: Text(value,style: const TextStyle(fontSize: 15,fontWeight: FontWeight.w400,color: Constants.themeGrey)),
                                   value: value,
                                 );
                               }).toList()
                             ),
                           ),
                         ),
-                        SizedBox(width:8),
+                        const SizedBox(width:8),
                         Expanded(
                           flex:1,
                           child:Container(
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.all(Radius.circular(5)),
+                              borderRadius: const BorderRadius.all(Radius.circular(5)),
                               boxShadow: [
                                 BoxShadow(
                                   color:Colors.black.withOpacity(0.15),
                                   blurRadius: 4,
-                                  offset: Offset(0,2),
+                                  offset: const Offset(0,2),
                                 ),
                               ]
                             ),
@@ -216,7 +213,7 @@ class _AppointmentFormPageState extends State<AppointmentFormPage> {
                               cursorColor: Colors.black,
                               controller: ageController,
                               autofocus: false,
-                              style: TextStyle(fontSize: 15,fontWeight: FontWeight.w400,color: Constants.themeGrey),
+                              style: const TextStyle(fontSize: 15,fontWeight: FontWeight.w400,color: Constants.themeGrey),
                               inputFormatters:[
                                 FilteringTextInputFormatter.digitsOnly,
                                 LengthLimitingTextInputFormatter(3)
@@ -225,18 +222,18 @@ class _AppointmentFormPageState extends State<AppointmentFormPage> {
                                 filled: true,
                                 fillColor: Constants.themeInputGrey,
                                 hintText: "Age",
-                                hintStyle: TextStyle(color: Colors.grey,fontSize: 15),
+                                hintStyle: const TextStyle(color: Colors.grey,fontSize: 15),
                                 contentPadding:
                                     const EdgeInsets.symmetric(horizontal:15,vertical:10),
                                 focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(color: Constants.themeInputGrey),
+                                  borderSide: const BorderSide(color: Constants.themeInputGrey),
                                   borderRadius: BorderRadius.circular(5),
                                 ),
                                 enabledBorder: UnderlineInputBorder( 
-                                  borderSide: BorderSide(color: Constants.themeInputGrey),
+                                  borderSide: const BorderSide(color: Constants.themeInputGrey),
                                   borderRadius: BorderRadius.circular(5),
                                 ),
-                                prefixIcon:SizedBox(
+                                prefixIcon:const SizedBox(
                                   width: 30,
                                   child: Center(child: Icon(Icons.stacked_bar_chart,color: Constants.themeGrey,),)
                                 )  
@@ -246,7 +243,7 @@ class _AppointmentFormPageState extends State<AppointmentFormPage> {
                         )
                       ],
                     ),
-                    SizedBox(height:9),
+                    const SizedBox(height:9),
                     Row(
                       children: [
                         Expanded(
@@ -254,31 +251,31 @@ class _AppointmentFormPageState extends State<AppointmentFormPage> {
                           child: Container(
                             width:double.infinity,
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.all(Radius.circular(5)),
+                              borderRadius: const BorderRadius.all(Radius.circular(5)),
                               boxShadow: [
                                 BoxShadow(
                                   color:Colors.black.withOpacity(0.15),
                                   blurRadius: 4,
-                                  offset: Offset(0,2),
+                                  offset: const Offset(0,2),
                                 ),
                               ]
                             ),
                             child: DropdownButtonFormField(
-                              hint: Text("Select Block",style: TextStyle(fontSize: 15,fontWeight: FontWeight.w400,color: Constants.themeGrey)),
+                              hint: const Text("Select Block",style: TextStyle(fontSize: 15,fontWeight: FontWeight.w400,color: Constants.themeGrey)),
                               decoration: InputDecoration(
                                 filled: true,
                                 fillColor: Constants.themeInputGrey,
                                 contentPadding:
                                     const EdgeInsets.symmetric(horizontal:15,vertical:10),
                                 focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(color: Constants.themeInputGrey),
+                                  borderSide: const BorderSide(color: Constants.themeInputGrey),
                                   borderRadius: BorderRadius.circular(5),
                                 ),
                                 enabledBorder: UnderlineInputBorder( 
-                                  borderSide: BorderSide(color: Constants.themeInputGrey),
+                                  borderSide: const BorderSide(color: Constants.themeInputGrey),
                                   borderRadius: BorderRadius.circular(5),
                                 ),
-                                prefixIcon:SizedBox(
+                                prefixIcon:const SizedBox(
                                   width: 30,
                                   child: Center(child: Icon(Icons.add_business_outlined,color: Constants.themeGrey,),)
                                 )  
@@ -291,7 +288,7 @@ class _AppointmentFormPageState extends State<AppointmentFormPage> {
                               },
                               items: blocks.map((value){
                                 return DropdownMenuItem(
-                                  child: Text(value,style: TextStyle(fontSize: 15,fontWeight: FontWeight.w400,color: Constants.themeGrey)),
+                                  child: Text(value,style: const TextStyle(fontSize: 15,fontWeight: FontWeight.w400,color: Constants.themeGrey)),
                                   value: value.split(" ").last,
                                 );
                               }).toList()
@@ -303,14 +300,14 @@ class _AppointmentFormPageState extends State<AppointmentFormPage> {
                   ],
                 )
               ),
-              SizedBox(height: 15,),
+              const SizedBox(height: 15,),
               Row(
                 children: [
                   SizedBox(width:width*0.02),
-                  Text("Clinic Location",style: TextStyle(fontSize: 14,fontWeight: FontWeight.w500,color: Constants.themeSubheadingGrey)),
+                  const Text("Clinic Location",style: TextStyle(fontSize: 14,fontWeight: FontWeight.w500,color: Constants.themeSubheadingGrey)),
                 ],
               ),
-              SizedBox(height:15),
+              const SizedBox(height:15),
               //map aayega yaha par
               Row(
                 children: [
@@ -318,16 +315,16 @@ class _AppointmentFormPageState extends State<AppointmentFormPage> {
                     child: Container(
                       height:height*0.15, 
                       decoration: BoxDecoration(
-                        image: DecorationImage(
+                        image: const DecorationImage(
                           image:AssetImage("assets/map.png"),
                           fit: BoxFit.cover
                         ),
-                        borderRadius: BorderRadius.all(Radius.circular(8)),
+                        borderRadius: const BorderRadius.all(Radius.circular(8)),
                         boxShadow: [
                           BoxShadow(
                             color:Colors.black.withOpacity(0.2),
                             blurRadius: 5,
-                            offset: Offset(0,2),
+                            offset: const Offset(0,2),
                           ),
                         ]
                       ),
@@ -335,13 +332,13 @@ class _AppointmentFormPageState extends State<AppointmentFormPage> {
                   ),
                 ],
               ),
-              SizedBox(height:15),
+              const SizedBox(height:15),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: width*0.02),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Row(
+                    const Row(
                       children: [
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -358,10 +355,10 @@ class _AppointmentFormPageState extends State<AppointmentFormPage> {
                         Container(
                           decoration: BoxDecoration(
                             border:Border.all(width: 1,color: Constants.textRed),
-                            borderRadius: BorderRadius.all(Radius.circular(20))
+                            borderRadius: const BorderRadius.all(Radius.circular(20))
                           ),
-                          padding: EdgeInsets.symmetric(vertical: 6,horizontal: 8),
-                          child: Row(
+                          padding: const EdgeInsets.symmetric(vertical: 6,horizontal: 8),
+                          child: const Row(
                             children: [
                               Icon(Icons.directions,size:12,color:Constants.textRed),
                               SizedBox(width:8),
@@ -374,7 +371,7 @@ class _AppointmentFormPageState extends State<AppointmentFormPage> {
                   ],
                 ),
               ),
-              SizedBox(height: 35,),
+              const SizedBox(height: 35,),
               Center(
                 child:GestureDetector(
                   onTap: () {
@@ -382,12 +379,12 @@ class _AppointmentFormPageState extends State<AppointmentFormPage> {
                   },
                   child: Container(
                     width:width*0.7,
-                    padding: EdgeInsets.all(10),
-                    decoration: BoxDecoration(
+                    padding: const EdgeInsets.all(10),
+                    decoration: const BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(10)),
                       color:Constants.feeGreen
                     ),
-                    child: Center(child: Text("Payment and Book",style:TextStyle(fontSize: 14,color:Colors.white,fontWeight: FontWeight.bold)))
+                    child: const Center(child: Text("Payment and Book",style:TextStyle(fontSize: 14,color:Colors.white,fontWeight: FontWeight.bold)))
                   ),
                 )
               )

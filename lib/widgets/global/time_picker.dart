@@ -46,7 +46,7 @@ class _TimePickerState extends State<TimePicker> {
             const SizedBox(height: 16),
             Text(
               'Selected Time: ${selectedTime?.format(context) ?? 'Not selected'}',
-              style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400,color:Constants.themeSubheadingGrey),
+              style: const TextStyle(fontSize: 14,fontWeight: FontWeight.w400,color:Constants.themeSubheadingGrey),
             ),
           ],
         ),

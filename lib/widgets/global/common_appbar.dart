@@ -1,5 +1,4 @@
 import 'package:clinic_khojo/utils/constants.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CommonAppBar extends StatelessWidget {
@@ -28,9 +27,9 @@ class CommonAppBar extends StatelessWidget {
                       Navigator.of(context).pop();
                   },
                   child: Container(
-                    padding: EdgeInsets.fromLTRB(0, 20, 0, 5),
+                    padding: const EdgeInsets.fromLTRB(0, 20, 0, 5),
                     alignment: Alignment.center,
-                    child:Icon(
+                    child:const Icon(
                       size: 22,
                       Icons.arrow_back_ios,
                       color: Colors.red,
@@ -38,21 +37,21 @@ class CommonAppBar extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.fromLTRB(0, 20, 0, 5),
+                  padding: const EdgeInsets.fromLTRB(0, 20, 0, 5),
                   alignment: Alignment.center,
                   child: Text(
                     title,
-                    style: TextStyle(color: Constants.themeGrey,fontSize: 14,fontWeight: FontWeight.w400),
+                    style: const TextStyle(color: Constants.themeGrey,fontSize: 14,fontWeight: FontWeight.w400),
                   ),
                 ),
               ],
           ),
           Padding(
-            padding: EdgeInsets.fromLTRB(8, 0, 0, 0),
-            child:Text(heading,style: TextStyle(color: Constants.themeHeadingBlue,fontSize: 20,fontWeight: FontWeight.w500),
+            padding: const EdgeInsets.fromLTRB(8, 0, 0, 0),
+            child:Text(heading,style: const TextStyle(color: Constants.themeHeadingBlue,fontSize: 20,fontWeight: FontWeight.w500),
           )
           ),
-          SizedBox(height:16),
+          const SizedBox(height:16),
         ],
       ),
     );

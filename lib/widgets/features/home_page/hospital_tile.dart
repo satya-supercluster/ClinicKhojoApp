@@ -15,11 +15,10 @@ class _HospitalTileState extends State<HospitalTile> {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width; // Gives the width
-    double height = MediaQuery.of(context).size.height;
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 8,horizontal: 6),
+      padding: const EdgeInsets.symmetric(vertical: 8,horizontal: 6),
       width:(width-32)/3-10,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(5.98)),
         color: Constants.themeLightBlue
       ),
@@ -27,13 +26,13 @@ class _HospitalTileState extends State<HospitalTile> {
         children: [
           Container(
             height:width*0.13,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(image: AssetImage("assets/hospital.png"),fit: BoxFit.fill),
               borderRadius: BorderRadius.all(Radius.circular(3.99)),
             ),
           ),
-          SizedBox(height:6),
-          Row(
+          const SizedBox(height:6),
+          const Row(
             children: [
               Expanded(
                 child: Center(
@@ -42,7 +41,7 @@ class _HospitalTileState extends State<HospitalTile> {
               ),
             ],
           ),
-          SizedBox(height:6),
+          const SizedBox(height:6),
           Container(
             width:79,
             child: Row(
@@ -51,8 +50,8 @@ class _HospitalTileState extends State<HospitalTile> {
                 Row(
                   children: [
                     Image.asset("assets/icon/location.png",width:width*0.03,height:width*0.03),
-                    SizedBox(width:1.85),
-                    Text("xyz",style:TextStyle(fontSize:4.99,fontWeight:FontWeight.w500,color:Constants.themeSubheadingGrey)),
+                    const SizedBox(width:1.85),
+                    const Text("xyz",style:TextStyle(fontSize:4.99,fontWeight:FontWeight.w500,color:Constants.themeSubheadingGrey)),
                   ],
                 ),
                 Row(
@@ -61,8 +60,8 @@ class _HospitalTileState extends State<HospitalTile> {
                       alignment: Alignment.center,
                       child: Image.asset("assets/star.png",width:5.98,height:5.98),
                     ),
-                    SizedBox(width:1.85),
-                    Align(
+                    const SizedBox(width:1.85),
+                    const Align(
                       alignment: Alignment.center,
                       child: Text("3.9",style: TextStyle(fontWeight:FontWeight.w500,fontSize:4.99,color:Constants.themeGrey))
                     )

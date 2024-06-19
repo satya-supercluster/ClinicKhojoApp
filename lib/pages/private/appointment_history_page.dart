@@ -1,12 +1,7 @@
 
-import 'package:clinic_khojo/utils/constants.dart';
 import 'package:clinic_khojo/widgets/features/appointment_history/appointment_history_tile.dart';
 import 'package:clinic_khojo/widgets/global/common_appbar.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class AppointmentHistoryPage extends StatefulWidget {
   const AppointmentHistoryPage({super.key});
@@ -151,12 +146,12 @@ class _AppointmentHistoryPageState extends State<AppointmentHistoryPage> {
     return SafeArea(
       child: Scaffold(
         body: Container(
-          padding: EdgeInsets.symmetric(horizontal: 16),
+          padding: const EdgeInsets.symmetric(horizontal: 16),
           width:width,
           child: Column(
             children: [
-              CommonAppBar(title: "Explore Doctor", heading: "Appointment History"),
-              SizedBox(height:20),
+              const CommonAppBar(title: "Explore Doctor", heading: "Appointment History"),
+              const SizedBox(height:20),
               Expanded(
                 child: ListView.builder(
                   itemCount: l.length,
@@ -164,13 +159,13 @@ class _AppointmentHistoryPageState extends State<AppointmentHistoryPage> {
                     return Column(
                       children: [
                         AppointmentHistoryTile(title: l[index]['title']??"", location: l[index]['location']??"", time: l[index]['time']??"", fee: l[index]['fee']??""),
-                        SizedBox(height:10),
+                        const SizedBox(height:10),
                       ],
                     );
                   },
                 ),
               ),
-              SizedBox(height:60)
+              const SizedBox(height:60)
             ],
           ),
         ),

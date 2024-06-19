@@ -55,7 +55,7 @@ class _SlideshowBannerState extends State<SlideshowBanner> {
     return Container(
       height: 100,
       clipBehavior: Clip.hardEdge,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(25)),
       ),
       child: Stack(

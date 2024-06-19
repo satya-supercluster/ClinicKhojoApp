@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:clinic_khojo/pages/private/navigation.dart';
 import 'package:clinic_khojo/pages/public/login_screen.dart';
 import 'package:clinic_khojo/utils/constants.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:pinput/pinput.dart';
@@ -75,8 +74,8 @@ class _OtpPageState extends State<OtpPage> {
         child: Container(
           height: height,
           alignment: Alignment.center,
-          padding: EdgeInsets.symmetric(horizontal: 10),
-          decoration: BoxDecoration(color: Color(0xFF0529BB)),
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+          decoration: const BoxDecoration(color: Color(0xFF0529BB)),
           child:Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -92,7 +91,7 @@ class _OtpPageState extends State<OtpPage> {
                           child: Container(
                             width: width * 0.5,
                             height: width * 0.307,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               image: DecorationImage(
                                 image: AssetImage("assets/appLogo1.png"),
                                 fit: BoxFit.fill,
@@ -106,7 +105,7 @@ class _OtpPageState extends State<OtpPage> {
                           child: Container(
                             width: width * 0.03,
                             height: width * 0.03, // Adjust the size as needed
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               image: DecorationImage(
                                 image: AssetImage("assets/image8.png"),
                                 fit: BoxFit.fill,
@@ -116,7 +115,7 @@ class _OtpPageState extends State<OtpPage> {
                         ),
                       ],
                     ),
-                    SizedBox(height:50),
+                    const SizedBox(height:50),
                     Row(
                       children: [
                         Expanded(
@@ -124,10 +123,11 @@ class _OtpPageState extends State<OtpPage> {
                             padding: const EdgeInsets.symmetric(horizontal: 20),
                             child: RichText(
                               text: TextSpan(
-                                style: TextStyle(fontSize:14,fontWeight:FontWeight.w400,color:Colors.white),
+                                style: const TextStyle(fontSize:14,fontWeight:FontWeight.w400,color:Colors.white),
                                 children:[
-                                  TextSpan(text: 'Please enter the verification code we\'ve sent you on +91 '+widget.phoneNumber+". ", style:TextStyle(fontSize:15,fontWeight:FontWeight.w400,color:Colors.white)),
-                                  TextSpan(text: "Edit",style:TextStyle(fontSize:15,fontWeight:FontWeight.w400,color:Colors.white,decoration:TextDecoration.underline,decorationColor:Colors.white),
+                                  // ignore: prefer_interpolation_to_compose_strings
+                                  TextSpan(text: 'Please enter the verification code we\'ve sent you on +91 '+widget.phoneNumber+". ", style:const TextStyle(fontSize:15,fontWeight:FontWeight.w400,color:Colors.white)),
+                                  TextSpan(text: "Edit",style:const TextStyle(fontSize:15,fontWeight:FontWeight.w400,color:Colors.white,decoration:TextDecoration.underline,decorationColor:Colors.white),
                                   recognizer: TapGestureRecognizer() ..onTap=(){
                                     Navigator.of(context).pushReplacement(
                                       MaterialPageRoute(
@@ -143,7 +143,7 @@ class _OtpPageState extends State<OtpPage> {
                       ],
                     ),
                     Padding(
-                      padding:EdgeInsets.fromLTRB(20, 15, 20, 0), 
+                      padding:const EdgeInsets.fromLTRB(20, 15, 20, 0), 
                       child: SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         child: Row(
@@ -184,15 +184,15 @@ class _OtpPageState extends State<OtpPage> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text("Trying to capture",style:TextStyle(fontSize:10,fontWeight:FontWeight.w500,color:Colors.white)),
+                          const Text("Trying to capture",style:TextStyle(fontSize:10,fontWeight:FontWeight.w500,color:Colors.white)),
                           Text(
                             formatTime(_timeLeftInSeconds),
-                            style:TextStyle(fontSize:10,fontWeight:FontWeight.w500,color:Colors.white)
+                            style:const TextStyle(fontSize:10,fontWeight:FontWeight.w500,color:Colors.white)
                           ),
                         ],
                       ),
                     ),
-                    SizedBox(height:50),
+                    const SizedBox(height:50),
                     GestureDetector(
                       onTap:() async{
                         // try{
@@ -203,7 +203,7 @@ class _OtpPageState extends State<OtpPage> {
                             Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
-                                builder: (BuildContext context) => NavigationPage()));
+                                builder: (BuildContext context) => const NavigationPage()));
                         //   });
                         // }
                         // catch(ex){
@@ -213,11 +213,11 @@ class _OtpPageState extends State<OtpPage> {
                       child: Container(
                         width: width*0.7,
                         height:50,
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           borderRadius: BorderRadius.all(Radius.circular(50)),
                           color:Colors.white
                         ),
-                        child: Center(child: Text("Login",style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500,color:Constants.textRed),))
+                        child: const Center(child: Text("Login",style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500,color:Constants.textRed),))
                       ),
                     ),
                   ],
@@ -228,28 +228,28 @@ class _OtpPageState extends State<OtpPage> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    Text(
+                    const Text(
                       'An ISO 9001:2015 Certified Company',
                       style:TextStyle(fontSize:10,fontWeight:FontWeight.w400,color:Colors.white)
                     ),
-                    SizedBox(height:5),
+                    const SizedBox(height:5),
                     Padding(
                       padding: const EdgeInsets.fromLTRB(0, 0, 0, 20),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text(
+                          const Text(
                             'Powered by',
                             style:TextStyle(fontSize:12,fontWeight:FontWeight.w400,color:Colors.white)
                           ),
-                          SizedBox(width: 5), // Adjust the spacing between text and image
+                          const SizedBox(width: 5), // Adjust the spacing between text and image
                           Image.asset(
                             "assets/icon1.png",
                             width: 20, // Adjust the width of the image
                             height: 20, // Adjust the height of the image
                           ),
-                          SizedBox(width: 5), // Adjust the spacing between image and text
-                          Text(
+                          const SizedBox(width: 5), // Adjust the spacing between image and text
+                          const Text(
                             'ZORWAY',
                             style:TextStyle(fontSize:12,fontWeight:FontWeight.w400,color:Colors.white)
                           ),

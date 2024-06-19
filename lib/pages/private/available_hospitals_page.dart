@@ -1,7 +1,4 @@
-import 'package:clinic_khojo/pages/private/home_page.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import '../../utils/constants.dart';
 import '../../widgets/features/search_doctor/hospitals_tile.dart';
 import 'doctors_profile_page.dart';
@@ -18,7 +15,6 @@ class _AvailableHospitalsPageState extends State<AvailableHospitalsPage> {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width; // Gives the width
-    double height = MediaQuery.of(context).size.height; // Gives the width
     return SafeArea(
       child: Scaffold(
       body:Column(
@@ -36,8 +32,8 @@ class _AvailableHospitalsPageState extends State<AvailableHospitalsPage> {
                       Navigator.of(context).pop();
                     },
                     child: Container(
-                      padding: EdgeInsets.fromLTRB(0, 20, 0, 24),
-                      child: Icon(
+                      padding: const EdgeInsets.fromLTRB(0, 20, 0, 24),
+                      child: const Icon(
                         size: 22,
                         Icons.arrow_back_ios,
                         color: Colors.red,
@@ -46,9 +42,9 @@ class _AvailableHospitalsPageState extends State<AvailableHospitalsPage> {
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.fromLTRB(0, 20, 0, 24),
+                  padding: const EdgeInsets.fromLTRB(0, 20, 0, 24),
                   alignment: Alignment.center,
-                  child: Text(
+                  child: const Text(
                     "Search Doctors",
                     style: TextStyle(color: Constants.themeGrey,fontSize: 14,fontWeight: FontWeight.w400),
                   ),
@@ -59,7 +55,7 @@ class _AvailableHospitalsPageState extends State<AvailableHospitalsPage> {
           Container(
             alignment: Alignment.center,
             width:width,
-            padding: EdgeInsets.symmetric(horizontal: 16,vertical: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 16,vertical: 10),
             child:Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -70,39 +66,39 @@ class _AvailableHospitalsPageState extends State<AvailableHospitalsPage> {
                     Container(
                       width:width*0.2,
                       height: width*0.2,
-                      padding:EdgeInsets.all(5),
+                      padding:const EdgeInsets.all(5),
                       decoration: BoxDecoration(
                         image: DecorationImage(
                           image: AssetImage(widget.doctorsDetails['dp']??""),
                           fit: BoxFit.cover,
                         ),
-                        borderRadius: BorderRadius.all(Radius.circular(8))
+                        borderRadius: const BorderRadius.all(Radius.circular(8))
                       ),
                     )
                   ],
                 ),
-                SizedBox(width:10),
+                const SizedBox(width:10),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       Row(
                         children: [
-                          Text("${widget.doctorsDetails['name']}",style: TextStyle(fontWeight:FontWeight.bold,fontSize:18),)
+                          Text("${widget.doctorsDetails['name']}",style: const TextStyle(fontWeight:FontWeight.bold,fontSize:18),)
                         ],
                       ),
-                      SizedBox(height: 5,),
+                      const SizedBox(height: 5,),
                       // Degree, Specialization and Fee
                       Row(
                         children: [
-                          Text("${widget.doctorsDetails['degree']}",style: TextStyle(fontWeight:FontWeight.w500,fontSize:11,color:Constants.themeGrey),),
-                          SizedBox(width:12),
-                          Text("Fee: ₹${widget.doctorsDetails['fee']}",style: TextStyle(fontWeight:FontWeight.w500,fontSize:11,color:Colors.green),),
-                          SizedBox(width:12),
-                          Expanded(child: Text("${widget.doctorsDetails['specialization']} Specialist",style: TextStyle(fontWeight:FontWeight.w500,fontSize:11,color:Constants.themeGrey),)),
+                          Text("${widget.doctorsDetails['degree']}",style: const TextStyle(fontWeight:FontWeight.w500,fontSize:11,color:Constants.themeGrey),),
+                          const SizedBox(width:12),
+                          Text("Fee: ₹${widget.doctorsDetails['fee']}",style: const TextStyle(fontWeight:FontWeight.w500,fontSize:11,color:Colors.green),),
+                          const SizedBox(width:12),
+                          Expanded(child: Text("${widget.doctorsDetails['specialization']} Specialist",style: const TextStyle(fontWeight:FontWeight.w500,fontSize:11,color:Constants.themeGrey),)),
                         ],
                       ),
-                      SizedBox(height:1),
+                      const SizedBox(height:1),
                       Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -111,16 +107,16 @@ class _AvailableHospitalsPageState extends State<AvailableHospitalsPage> {
                             alignment: Alignment.center,
                             child: Image.asset("assets/star.png",width:12,height:12),
                           ),
-                          SizedBox(width:3.7),
+                          const SizedBox(width:3.7),
                           Align(
                             alignment: Alignment.center,
-                            child: Text("${widget.doctorsDetails['rating']}",style: TextStyle(fontWeight:FontWeight.w500,fontSize:10,color:Constants.themeGrey))
+                            child: Text("${widget.doctorsDetails['rating']}",style: const TextStyle(fontWeight:FontWeight.w500,fontSize:10,color:Constants.themeGrey))
                           ),
-                          SizedBox(width:12),
-                          Expanded(child: Text("Location: ${widget.doctorsDetails['location']}",style: TextStyle(fontWeight:FontWeight.w500,fontSize:11,color:Constants.themeGrey),)),
+                          const SizedBox(width:12),
+                          Expanded(child: Text("Location: ${widget.doctorsDetails['location']}",style: const TextStyle(fontWeight:FontWeight.w500,fontSize:11,color:Constants.themeGrey),)),
                         ],
                       ),
-                      SizedBox(height:1),
+                      const SizedBox(height:1),
                       Row(
                         children: [
                           GestureDetector(
@@ -131,8 +127,8 @@ class _AvailableHospitalsPageState extends State<AvailableHospitalsPage> {
                                 builder: (BuildContext context) => DoctorProfile(map:widget.doctorsDetails)));
                             },
                             child: Container(
-                              padding: EdgeInsets.fromLTRB(0, 1, 0, 1),
-                              child: Text("View Profile",style: TextStyle(fontWeight:FontWeight.w500,fontSize:14,decoration:TextDecoration.underline,color:Colors.red,decorationColor:Colors.red),)
+                              padding: const EdgeInsets.fromLTRB(0, 1, 0, 1),
+                              child: const Text("View Profile",style: TextStyle(fontWeight:FontWeight.w500,fontSize:14,decoration:TextDecoration.underline,color:Colors.red,decorationColor:Colors.red),)
                             )
                           ),
                         ],
@@ -143,24 +139,24 @@ class _AvailableHospitalsPageState extends State<AvailableHospitalsPage> {
               ],
             )
           ),
-          SizedBox(height:10),
-          Row(
+          const SizedBox(height:10),
+          const Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text("Available Doctors",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500,color:Constants.themeBlue),)
             ],
           ),
-          SizedBox(height:10),
+          const SizedBox(height:10),
           Expanded(
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16),
+              padding: const EdgeInsets.symmetric(horizontal: 16),
               child:ListView.builder(
                   itemCount: widget.doctorsDetails['clinics'].length,
                   itemBuilder: (context,index){
                     return Column(
                       children: [
                         HospitalsTile(doctorsDetails: widget.doctorsDetails,index:index),
-                        SizedBox(height:20),
+                        const SizedBox(height:20),
                       ],
                     );
                   }

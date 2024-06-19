@@ -1,6 +1,5 @@
 import 'package:clinic_khojo/pages/private/appointment_form_page.dart';
 import 'package:clinic_khojo/utils/constants.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -28,8 +27,8 @@ class _AppointmentHistoryTileState extends State<AppointmentHistoryTile> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(8),
-      decoration: BoxDecoration(
+      padding: const EdgeInsets.all(8),
+      decoration: const BoxDecoration(
         color:Constants.themeLightBlue,
         borderRadius: BorderRadius.all(Radius.circular(8))
       ),
@@ -45,12 +44,12 @@ class _AppointmentHistoryTileState extends State<AppointmentHistoryTile> {
                   Row(
                     children: [
                       Text(widget.title,style:GoogleFonts.poppins(fontSize:16,fontWeight:FontWeight.w500)),
-                      SizedBox(width:5),
+                      const SizedBox(width:5),
                       Padding(
-                        padding: EdgeInsets.symmetric(vertical: 2),
+                        padding: const EdgeInsets.symmetric(vertical: 2),
                         child: Container(
-                          padding: EdgeInsets.all(4),
-                          decoration:BoxDecoration(
+                          padding: const EdgeInsets.all(4),
+                          decoration:const BoxDecoration(
                             borderRadius: BorderRadius.all(Radius.circular(2)),
                             color:Constants.themeRed,
                           ),
@@ -63,37 +62,37 @@ class _AppointmentHistoryTileState extends State<AppointmentHistoryTile> {
                   Row(
                     children: [
                       Text("Appointed",style:GoogleFonts.poppins(fontSize:10,fontWeight:FontWeight.w500,color:Constants.themeSubheadingGrey)),
-                      SizedBox(width:4),
+                      const SizedBox(width:4),
                       Image.asset("assets/icon/tick.png",width:9.04,height:8.67)
                     ],
                   )
                 ],
               ),
-              SizedBox(height:5),
+              const SizedBox(height:5),
               Row(
                 children: [
                   Row(
                     children: [
                       Image.asset("assets/icon/location.png",width:12,height:12),
-                      SizedBox(width:1.85),
+                      const SizedBox(width:1.85),
                       Text(widget.location,style:GoogleFonts.poppins(fontSize:10,fontWeight:FontWeight.w500,color:Constants.themeSubheadingGrey)),
                     ],
                   ),
-                  SizedBox(width:15),
+                  const SizedBox(width:15),
                   Row(
                     children: [
                       Image.asset("assets/icon/clock.png",width:12,height:12),
-                      SizedBox(width:4),
+                      const SizedBox(width:4),
                       Text(widget.time,style:GoogleFonts.poppins(fontSize:10,fontWeight:FontWeight.w500,color:Constants.themeSubheadingGrey)),
                     ],
                   )
                 ],
               ),
-              SizedBox(height:8),
+              const SizedBox(height:8),
               Text("Fee: "+widget.fee,style:GoogleFonts.poppins(fontSize:10,fontWeight:FontWeight.w500,color:Constants.feeGreen))
             ],
           ),
-          SizedBox(height:24),
+          const SizedBox(height:24),
           Row(
             children: [
               Expanded(
@@ -102,23 +101,23 @@ class _AppointmentHistoryTileState extends State<AppointmentHistoryTile> {
                   onTap:(){
                     Navigator.push(
                       context, MaterialPageRoute(
-                        builder: ((context) => AppointmentFormPage())
+                        builder: ((context) => const AppointmentFormPage())
                       )
                     );
                   },
                   child: Container(
                     width: double.infinity,
                     alignment: Alignment.center,
-                    padding: EdgeInsets.symmetric(horizontal: 20,vertical: 8),
+                    padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 8),
                     decoration: BoxDecoration(
                       color:Colors.white,
-                      borderRadius: BorderRadius.all(Radius.circular(20)),
+                      borderRadius: const BorderRadius.all(Radius.circular(20)),
                       //BoxShadow
                       boxShadow: [
                             BoxShadow(
                               color:Colors.black.withOpacity(0.15),
                               blurRadius: 8,
-                              offset: Offset(0,4),
+                              offset: const Offset(0,4),
                             ),
                           ]
                     ),
@@ -128,16 +127,16 @@ class _AppointmentHistoryTileState extends State<AppointmentHistoryTile> {
                   ),
                 ),
               ),
-              SizedBox(width:8),
+              const SizedBox(width:8),
               Expanded(
                 flex:2,
                 child: Container(
                   width: double.infinity,
                   alignment: Alignment.center,
-                  padding: EdgeInsets.symmetric(horizontal: 20,vertical: 8),
+                  padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 8),
                   decoration: BoxDecoration(
                     border:Border.all(width: 1,color:Constants.themeRed),
-                    borderRadius: BorderRadius.all(Radius.circular(20))
+                    borderRadius: const BorderRadius.all(Radius.circular(20))
                     //BoxShadow
                   ),
                   child:Text("Give Feedback",style:GoogleFonts.poppins(fontSize:10,fontWeight:FontWeight.w500,color:Constants.themeRed

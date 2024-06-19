@@ -1,8 +1,6 @@
 import 'package:clinic_khojo/utils/constants.dart';
 import 'package:clinic_khojo/widgets/global/filter_bottom_sheet.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CustomSearchBar extends StatefulWidget {
@@ -19,6 +17,7 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
   String filter="";
   List<Map<String,dynamic>> filters=[];
   TextEditingController searchController=TextEditingController();
+  @override
   void initState(){
     super.initState();
     filter="";
@@ -62,9 +61,9 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
           width: 1,
           color:Constants.themeGrey
         ),
-        borderRadius: BorderRadius.all(Radius.circular(27))
+        borderRadius: const BorderRadius.all(Radius.circular(27))
       ),
-      padding: EdgeInsets.only(left:13),
+      padding: const EdgeInsets.only(left:13),
       child:Row(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -72,7 +71,7 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
           Container(
             alignment: Alignment.center,
             width:width*0.06,
-            padding: EdgeInsets.all(2),
+            padding: const EdgeInsets.all(2),
             child: Icon(
               Icons.search,
               size:width*0.05,
@@ -89,13 +88,13 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
               decoration: InputDecoration(
                 hintText: "Search Doctors...",
                 hintStyle: GoogleFonts.poppins(fontSize:12,),
-                contentPadding: EdgeInsets.only(left:4,bottom:10),
+                contentPadding: const EdgeInsets.only(left:4,bottom:10),
                 floatingLabelBehavior: FloatingLabelBehavior.never,
                 labelText: null,
-                focusedBorder: OutlineInputBorder(
+                focusedBorder: const OutlineInputBorder(
                 borderSide: BorderSide(color: Colors.white, width: 0),
                 ),
-                enabledBorder: OutlineInputBorder(
+                enabledBorder: const OutlineInputBorder(
                   borderSide: BorderSide(color: Colors.white, width: 0),
                 ),
               ),
@@ -110,7 +109,7 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
               alignment: Alignment.center,
               width:width*0.13,
               height: height*0.05,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 border:Border(
                   left:BorderSide(
                     width:1,
@@ -121,7 +120,7 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
                 bottomRight: Radius.circular(50)),
                 color: Constants.themeLightRed
               ),
-              child: Icon(
+              child: const Icon(
                 Icons.tune,
                 size:25,
                 color:Colors.red

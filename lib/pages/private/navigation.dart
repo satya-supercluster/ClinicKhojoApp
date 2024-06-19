@@ -27,8 +27,8 @@ class _NavigationPageState extends State<NavigationPage> {
       child: Scaffold(
         body:Stack(
           children: [
-            (selectedIndex==0)?HomePage():
-            (selectedIndex==1)?AppointmentHistoryPage():
+            (selectedIndex==0)?const HomePage():
+            (selectedIndex==1)?const AppointmentHistoryPage():
             Container(),
             Container(
               width:width,
@@ -36,7 +36,7 @@ class _NavigationPageState extends State<NavigationPage> {
               alignment: Alignment.bottomCenter,
               child: Container(
                 height: 60,
-                color: Color(0xFFFFEEEE),
+                color: const Color(0xFFFFEEEE),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
@@ -52,16 +52,16 @@ class _NavigationPageState extends State<NavigationPage> {
                         child: Image.asset(
                           "assets/icon/home.png",
                           color: selectedIndex == 0
-                              ? Color(0xFFFF0B0B)
-                              : Color(0xFF4d4d4d),
+                              ? const Color(0xFFFF0B0B)
+                              : const Color(0xFF4d4d4d),
                         ),
                       ),
                     ),
                     IconButton(
-                      icon: Icon(CupertinoIcons.calendar),
+                      icon: const Icon(CupertinoIcons.calendar),
                       color: selectedIndex == 1
-                          ? Color(0xFFFF0B0B)
-                          : Color(0xFF949494),
+                          ? const Color(0xFFFF0B0B)
+                          : const Color(0xFF949494),
                       onPressed: () {
                         setState(() {
                           selectedIndex = 1;
@@ -92,11 +92,11 @@ class _NavigationPageState extends State<NavigationPage> {
                         height: 30,
                         child: Image.asset(
                           "assets/icon/logout.png",
-                          color: Color(0xFF4d4d4d),
+                          color: const Color(0xFF4d4d4d),
                         ),
                       ),
                     ),
-                    SizedBox(width: 40,),
+                    const SizedBox(width: 40,),
                   ],
                 ),
               ),
@@ -119,15 +119,15 @@ class _NavigationPageState extends State<NavigationPage> {
                     width: 64, // Adjust width as needed
                     height: 64, // Adjust height as needed
                     decoration: BoxDecoration(
-                      color: showOptions ? Color(0xFFFF0B0B) : Colors.white,
+                      color: showOptions ? const Color(0xFFFF0B0B) : Colors.white,
                       shape: BoxShape.circle,
-                      border: Border.all(color: showOptions ? Colors.white : Color(0xFFFF0B0B), width: 2), // Set border color and width
+                      border: Border.all(color: showOptions ? Colors.white : const Color(0xFFFF0B0B), width: 2), // Set border color and width
                       boxShadow: [
                         BoxShadow(
-                          color: Color(0xFFFF0B0B).withOpacity(0.2), // Set shadow color and opacity
+                          color: const Color(0xFFFF0B0B).withOpacity(0.2), // Set shadow color and opacity
                           spreadRadius: 2, // Set the spread radius of the shadow
                           blurRadius: 8, // Set the blur radius of the shadow
-                          offset: Offset(0, 2), // Set the offset of the shadow
+                          offset: const Offset(0, 2), // Set the offset of the shadow
                         ),
                       ],
                     ),
@@ -137,14 +137,14 @@ class _NavigationPageState extends State<NavigationPage> {
                         children: [
                           Icon(
                             CupertinoIcons.chat_bubble_text_fill, // Replace with your desired icon
-                            color: showOptions ? Colors.white : Color(0xFFFF0B0B),
+                            color: showOptions ? Colors.white : const Color(0xFFFF0B0B),
                             size: 30,
                           ),
-                          SizedBox(height: 3), // Add some spacing between the icon and text
+                          const SizedBox(height: 3), // Add some spacing between the icon and text
                           Text(
                             'Support', // Replace with your desired text
                             style: TextStyle(
-                              color: showOptions ? Colors.white : Color(0xFFFF0B0B),
+                              color: showOptions ? Colors.white : const Color(0xFFFF0B0B),
                               fontSize: 10,
                               fontWeight: FontWeight.w600,
                             ),

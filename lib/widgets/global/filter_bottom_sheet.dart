@@ -1,10 +1,5 @@
-
-
 import 'package:clinic_khojo/utils/constants.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:pinput/pinput.dart';
 
 class FilterBottomSheet extends StatefulWidget {
   final Function setFilter;
@@ -26,7 +21,7 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
     return Container(
       width:double.infinity,
       height:height*0.3,
-      padding:EdgeInsets.symmetric(horizontal: 20,vertical: 10),
+      padding:const EdgeInsets.symmetric(horizontal: 20,vertical: 10),
       child: Column(
         children: [
           Row(
@@ -35,21 +30,21 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
               Container(
                 width:width*0.4,
                 height:5,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color:Colors.black,
                   borderRadius: BorderRadius.all(Radius.circular(10))
                 ),
               )
             ],
           ),
-          SizedBox(height:20),
-          Row(
+          const SizedBox(height:20),
+          const Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Text("Filter by:",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500,color:Constants.themeBlue),),
             ],
           ),
-          SizedBox(height:10),
+          const SizedBox(height:10),
           // Expanded(
           //   child:ListView.builder(
           //     itemCount: widget.filters.length,
@@ -112,11 +107,11 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
                         crossAxisAlignment:CrossAxisAlignment.start,
                         children: [
                           Container(
-                            padding: EdgeInsets.symmetric(vertical: 10,horizontal: 20),
+                            padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 20),
                             decoration: BoxDecoration( 
                               color:(widget.filters[index]['enabled']==true)?Constants.themeGrey:Colors.white,
                               border:Border.all(width:1,color:Constants.themeSubheadingGrey),
-                              borderRadius: BorderRadius.all(Radius.circular(10))
+                              borderRadius: const BorderRadius.all(Radius.circular(10))
                             ),
                             child:Text("${widget.filters[index]['filter']}",style:TextStyle(fontSize: 12,fontWeight: FontWeight.w600,color: (widget.filters[index]['enabled']==true)?Colors.white:Constants.themeGrey,))
                           ),
